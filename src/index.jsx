@@ -1,5 +1,7 @@
 import React from "react";
 import  ReactDOM  from "react-dom";
+import { createRoot } from "react-dom/client";
+
 
 import { MainView } from "./components/main-view/main-view";
 
@@ -10,15 +12,15 @@ import './index.scss';
 class MovieApplication extends React.Component {
   render() {
     return (
-      <div className="my-flix">
-        <div>Good morning</div>
-      </div>
+      <MainView />
     );
   }
 }
 
 // Finds the root of the app
-const container = document.getElementsByClassName('app-container')[0];
+const rootElement = document.getElementsByClassName('app-container')[0];
+
+const root = createRoot(rootElement);
 
 // Tells React to render  app in the root DOM element
-ReactDOM.render(React.createElement(MovieApplication), container);
+root.render(React.createElement(MovieApplication));
