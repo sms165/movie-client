@@ -28487,7 +28487,7 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __self: this,
             children: [
-                movie.Title,
+                movie.title,
                 " "
             ]
         }));
@@ -28684,7 +28684,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: movie.ImagePath,
+                        src: movie.imageUrl,
                         alt: "movie poster",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
@@ -28717,7 +28717,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 13
                             },
                             __self: this,
-                            children: movie.Title
+                            children: movie.title
                         })
                     ]
                 }),
@@ -28745,7 +28745,7 @@ class MovieView extends _reactDefault.default.Component {
                                 lineNumber: 17
                             },
                             __self: this,
-                            children: movie.Description
+                            children: movie.description
                         })
                     ]
                 }),

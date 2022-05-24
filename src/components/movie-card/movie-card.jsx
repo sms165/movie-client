@@ -10,7 +10,7 @@ export class MovieCard extends React.Component {
           onMovieClick(movie);
         }}
       >
-        {movie.Title}{" "}
+        {movie.title}{" "}
       </div>
     );
   }
