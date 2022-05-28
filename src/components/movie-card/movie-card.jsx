@@ -27,10 +27,10 @@ MovieCard.propTypes ={
       name: PropTypes.string.isRequired,
       bio: PropTypes.string.isRequired
     }),
-    genre: PropTypes.shape({
+    genre: PropTypes.objectOf( PropTypes.shape({
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
-    })
+    }))
   }).isRequired,
   onMovieClick: PropTypes.func.isRequired
 };
