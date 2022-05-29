@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import "./movie-card.scss";
 
 // bootstrap
-import Button from "react-bootstrap/Button";
 import { Card } from "react-bootstrap";
+import {Button} from "react-bootstrap";
 
 export class MovieCard extends React.Component {
   render() {
