@@ -1,4 +1,5 @@
 import React from "react";
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
   keypressCallback(event){
@@ -18,7 +19,7 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-view">
         <div className="movie-image">
-          <img src={movie.imageUrl} alt="movie poster" crossorigin/>
+          <img src={movie.imageUrl} alt="movie poster" crossOrigin="anonymous"/>
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>
