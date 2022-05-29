@@ -18,7 +18,7 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-view">
         <div className="movie-image">
-          <img src={movie.imageUrl} alt="movie poster" />
+          <img src={movie.imageUrl} alt="movie poster" crossorigin/>
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>
@@ -38,18 +38,16 @@ export class MovieView extends React.Component {
         </div>
         <div className="genre">
           <span className="label">Genre: </span>
-          <span className="value">{movie.genre.name}</span>
-         
-          {console.log(movie.genre.map((genre)=>
-          {genre.name[0]}))}
 
-        </div>
-        <div className="genre">
-          <span className="label">Genre description: </span>
-          <span className="value">{movie.genre.description}</span>
-          {console.log(movie.genre.map((genre,key)=>
-          {genre.description}))}
-          
+        {
+          movie.genre.map((genre,index)=>(
+            <div key={index}>
+              <p>Name: {genre.name}</p>
+              <p> Description: {genre.description}</p>
+              </div>
+          ))
+        }
+
         </div>
         <button
           onClick={() => {

@@ -27,7 +27,7 @@ MovieCard.propTypes ={
       name: PropTypes.string.isRequired,
       bio: PropTypes.string.isRequired
     }),
-    genre: PropTypes.objectOf( PropTypes.shape({
+    genre: PropTypes.arrayOf( PropTypes.shape({
       name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired
     }))

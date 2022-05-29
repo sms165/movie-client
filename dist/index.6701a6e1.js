@@ -28999,7 +28999,7 @@ MovieCard.propTypes = {
             name: _propTypesDefault.default.string.isRequired,
             bio: _propTypesDefault.default.string.isRequired
         }),
-        genre: _propTypesDefault.default.objectOf(_propTypesDefault.default.shape({
+        genre: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
             name: _propTypesDefault.default.string.isRequired,
             description: _propTypesDefault.default.string.isRequired
         }))
@@ -29808,6 +29808,7 @@ class MovieView extends _reactDefault.default.Component {
                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
                         src: movie.imageUrl,
                         alt: "movie poster",
+                        crossorigin: true,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 21
@@ -29944,49 +29945,38 @@ class MovieView extends _reactDefault.default.Component {
                             __self: this,
                             children: "Genre: "
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "value",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 41
-                            },
-                            __self: this,
-                            children: movie.genre.name
-                        }),
-                        console.log(movie.genre.map((genre)=>{
-                            genre.name[0];
-                        }))
-                    ]
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                    className: "genre",
-                    __source: {
-                        fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 47
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "label",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 48
-                            },
-                            __self: this,
-                            children: "Genre description: "
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                            className: "value",
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 49
-                            },
-                            __self: this,
-                            children: movie.genre.description
-                        }),
-                        console.log(movie.genre.map((genre, key)=>{
-                            genre.description;
-                        }))
+                        movie.genre.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 44
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 45
+                                        },
+                                        __self: this,
+                                        children: [
+                                            "Name: ",
+                                            genre.name
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 46
+                                        },
+                                        __self: this,
+                                        children: [
+                                            " Description: ",
+                                            genre.description
+                                        ]
+                                    })
+                                ]
+                            }, index)
+                        )
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -29995,7 +29985,7 @@ class MovieView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 54
+                        lineNumber: 52
                     },
                     __self: this,
                     children: "Back"
