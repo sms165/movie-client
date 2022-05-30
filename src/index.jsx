@@ -1,4 +1,5 @@
 import React from "react";
+import { Container } from "react-bootstrap";
 import  ReactDOM  from "react-dom";
 import { createRoot } from "react-dom/client";
 
@@ -12,7 +13,9 @@ import './index.scss';
 class MovieApplication extends React.Component {
   render() {
     return (
+      <Container>
       <MainView />
+      </Container>
     );
   }
 }

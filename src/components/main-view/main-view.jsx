@@ -1,6 +1,8 @@
 import React from "react";
 import axios from 'axios';
 import './main-view.scss';
+import { Row } from "react-bootstrap";
+import { Col } from "react-bootstrap";
 
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
@@ -62,17 +64,20 @@ export class MainView extends React.Component {
     }
 
     return (
-      <div className="main-view">
+      <Row className="main-view justify-content-md-center">
         {/* ternary operator */}
         {selectedMovie ? (
+          <Col md={8}>
           <MovieView
             movie={selectedMovie}
             onBackClick={(newSelectedMovie) => {
               this.setSelectedMovie(newSelectedMovie);
             }}
           />
-        ) : (
-          movies.map((movie) => (
+          </Col>
+        ) : 
+          movies.map(movie => (
+            <Col md={3}>
             <MovieCard
               key={movie._id}
               movie={movie}
@@ -80,10 +85,11 @@ export class MainView extends React.Component {
                 this.setSelectedMovie(movie);
               }}
             />
+            </Col>
           ))
-        )}
+        }
        
-      </div>
+      </Row>
     );
   }
 }
