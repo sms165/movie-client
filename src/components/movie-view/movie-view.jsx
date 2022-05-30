@@ -1,4 +1,5 @@
 import React from "react";
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
   keypressCallback(event){
@@ -18,7 +19,7 @@ export class MovieView extends React.Component {
     return (
       <div className="movie-view">
         <div className="movie-image">
-          <img src={movie.imageUrl} alt="movie poster" />
+          <img src={movie.imageUrl} alt="movie poster" crossOrigin="anonymous"/>
         </div>
         <div className="movie-title">
           <span className="label">Title: </span>
@@ -27,6 +28,27 @@ export class MovieView extends React.Component {
         <div className="description">
           <span className="label">Description: </span>
           <span className="value">{movie.description}</span>
+        </div>
+        <div className="director-name">
+          <span className="label">Name: </span>
+          <span className="value">{movie.director.name}</span>
+        </div>
+        <div className="director-bio">
+          <span className="label">Bio: </span>
+          <span className="value">{movie.director.bio}</span>
+        </div>
+        <div className="genre">
+          <span className="label">Genre: </span>
+
+        {
+          movie.genre.map((genre,index)=>(
+            <div key={index}>
+              <p>Name: {genre.name}</p>
+              <p> Description: {genre.description}</p>
+              </div>
+          ))
+        }
+
         </div>
         <button
           onClick={() => {

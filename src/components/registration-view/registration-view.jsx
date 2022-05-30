@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './registration-view.scss';
 
 export function RegistrationView(props){
     const [userName, setUserName] = useState('');
