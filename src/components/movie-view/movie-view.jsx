@@ -1,6 +1,8 @@
 import React from "react";
 import './movie-view.scss';
 
+import {Container, Row, Col, Button, Card, CardGroup} from 'react-bootstrap';
+
 export class MovieView extends React.Component {
   keypressCallback(event){
     console.log(event.key);
@@ -16,7 +18,10 @@ export class MovieView extends React.Component {
 
   render() {
     const { movie, onBackClick } = this.props;
+
     return (
+      <Container>
+        <Row>
       <div className="movie-view">
         <div className="movie-image">
           <img src={movie.imageUrl} alt="movie poster" crossOrigin="anonymous"/>
@@ -58,6 +63,7 @@ export class MovieView extends React.Component {
           Back
         </button>
       </div>
-    );
+      </Row>
+      </Container>);
   }
 }

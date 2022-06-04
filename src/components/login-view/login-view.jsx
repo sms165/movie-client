@@ -1,40 +1,74 @@
-import React, {useState} from "react";
-import './login-view.scss';
+import React, { useState } from "react";
+import "./login-view.scss";
 
 // bootstrap
-import { Form } from "react-bootstrap";
-import { Button} from "react-bootstrap";
+import {
+  Form,
+  Button,
+  Card,
+  CardGroup,
+  Container,
+  Col,
+  Row,
+} from "react-bootstrap";
 
 export function LoginView(props) {
-    const [userName, setUserName] =useState('');
-    const [password, setPassword] =useState('');
+  const [userName, setUserName] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(userName, password);
-        props.onLoggedIn(userName);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userName, password);
+    props.onLoggedIn(userName);
+  };
 
-    const handleRegister = (e) => {
-        e.preventDefault();
-        props.onRegister(true);
-    }
+  const handleRegister = (e) => {
+    e.preventDefault();
+    props.onRegister(true);
+  };
 
-    return (
-        <Form>
-            <Form.Group controlId="formUserName">
-                <Form.Label>Username:</Form.Label>
-                <Form.Control type="text" onChange={e => setUserName(e.target.value)} />
-            </Form.Group>
+  return (
+      <div className="background">
+    <Container className="container">
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card className="login-card">
+              <Card.Body>
+                <Card.Title>Login</Card.Title>
+                <Form>
+                  <Form.Group controlId="formUserName">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setUserName(e.target.value)}
+                    />
+                  </Form.Group>
 
-            <Form.Group controlId="formPassword">
-                <Form.Label>Password:</Form.Label>
-                <Form.Control type="text" onChange={e => setPassword(e.target.value)} />
-            </Form.Group>
+                  <Form.Group controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </Form.Group>
 
-            <Button variant="primary" type="submit" onClick={handleSubmit}>Submit</Button>
-        </Form>
-    );
+                  <Button
+                    variant="primary"
+                    type="submit"
+                    onClick={handleSubmit}
+                  >
+                    Login
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Container>
+    </div>
+  );
 }
 //         <form>
 //                <label>
@@ -82,7 +116,6 @@ export function LoginView(props) {
 //         console.log(userName, password);
 //     }
 
-
 //     render(){
 //         return(
 //             <form>
@@ -98,6 +131,5 @@ export function LoginView(props) {
 //             </form>
 //         )
 //     }
-
 
 // }

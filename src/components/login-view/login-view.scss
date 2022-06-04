@@ -1,0 +1,20 @@
+$font: Helvetica, sans-serif;
+$primary-color: grey;
+$background-color:pink;
+
+
+.background{
+    background-image: url(/img/movie-theater.jpg);
+    background-size: contain;
+
+
+}
+.container{
+    color: $primary-color;
+    
+
+}
+
+.card.login-card{
+    background-color: $background-color;
+}
