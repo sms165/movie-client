@@ -28,14 +28,16 @@ export function LoginView(props) {
   };
 
   return (
-      <div className="background">
+     
     <Container className="container">
       <Row>
         <Col>
           <CardGroup>
             <Card className="login-card">
+            <Card.Img variant="top" src="../assets/myFlixLogo.gif" alt="myFlix Logo"/>
               <Card.Body>
                 <Card.Title>Login</Card.Title>
+                <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="#">register here</Card.Link>.</Card.Subtitle>
                 <Form>
                   <Form.Group controlId="formUserName">
                     <Form.Label>Username:</Form.Label>
@@ -53,8 +55,8 @@ export function LoginView(props) {
                     />
                   </Form.Group>
 
-                  <Button
-                    variant="primary"
+                  <Button 
+                    variant="custom"
                     type="submit"
                     onClick={handleSubmit}
                   >
@@ -67,7 +69,6 @@ export function LoginView(props) {
         </Col>
       </Row>
     </Container>
-    </div>
   );
 }
 //         <form>

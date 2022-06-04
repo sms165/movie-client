@@ -1,0 +1,42 @@
+$font: Helvetica, sans-serif;
+$primary-color: grey;
+$background-color: rgb(13, 26, 37);
+$btn-color: rgb(89, 169, 240);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  background-image: url(../assets/movie-theater.jpg);
+
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 0;
+  border: 0;
+}
+.container {
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.card.registration-card {
+  background-color: $background-color;
+  padding: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.btn-custom {
+  background-color: $btn-color !important;
+}
