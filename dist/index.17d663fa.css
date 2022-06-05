@@ -81,6 +81,12 @@
 .movie-title {
   text-align: center;
 }
+
+.backbtn {
+  margin-left: 50%;
+  margin-right: 50%;
+  padding: 5px;
+}
 .my-flix {
   color: steelblue;
 }

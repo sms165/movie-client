@@ -1,3 +1,5 @@
+$btn-color: rgb(89, 169, 240);
+
 .movie-view {
   background-color: white;
 }
@@ -12,3 +14,10 @@
 .movie-title{
     text-align: center;
 }
+
+.backbtn{
+    margin-left: 50%;
+    margin-right: 50%;
+    padding: 5px;
+}
+  
