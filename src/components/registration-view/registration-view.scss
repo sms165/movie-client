@@ -3,13 +3,8 @@ $primary-color: grey;
 $background-color: rgb(13, 26, 37);
 $btn-color: rgb(89, 169, 240);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.app-container {
+.registration {
   background-image: url(../assets/movie-theater.jpg);
 
   min-height: 100vh;
@@ -20,13 +15,13 @@ $btn-color: rgb(89, 169, 240);
   padding: 0;
   border: 0;
 }
-.container {
-  color: $primary-color;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
+// .container {
+//   color: $primary-color;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+// }
 
 .card.registration-card {
   background-color: $background-color;

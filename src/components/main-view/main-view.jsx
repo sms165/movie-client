@@ -64,20 +64,27 @@ export class MainView extends React.Component {
     }
 
     return (
-      <Row className="main-view justify-content-md-center">
+      <div className="main-view">
+      <Row className="justify-content-md-left">
         {/* ternary operator */}
         {selectedMovie ? (
-          <Col md={8}>
+         
+          <Col md={12}>
           <MovieView
             movie={selectedMovie}
             onBackClick={(newSelectedMovie) => {
               this.setSelectedMovie(newSelectedMovie);
             }}
           />
+          
           </Col>
+          
+         
         ) : 
           movies.map(movie => (
+            
             <Col md={3}>
+               
             <MovieCard
               key={movie._id}
               movie={movie}
@@ -86,10 +93,14 @@ export class MainView extends React.Component {
               }}
             />
             </Col>
+            
+            
           ))
         }
        
       </Row>
+      
+      </div>
     );
   }
 }

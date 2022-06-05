@@ -26,6 +26,7 @@ export function RegistrationView(props) {
   };
 
   return (
+    <div className="registration">
     <Container>
       <Row>
         <Col>
@@ -94,5 +95,6 @@ export function RegistrationView(props) {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }

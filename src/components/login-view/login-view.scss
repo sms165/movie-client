@@ -3,13 +3,9 @@ $primary-color: grey;
 $background-color: rgb(13, 26, 37);
 $btn-color: rgb(89, 169, 240);
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-.app-container {
+
+.login-container {
   background-image: url(../assets/movie-theater.jpg);
 
   min-height: 100vh;
@@ -20,7 +16,7 @@ $btn-color: rgb(89, 169, 240);
   padding: 0;
   border: 0;
 }
-.container {
+.login-container {
   color: $primary-color;
   display: flex;
   align-items: center;

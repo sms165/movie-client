@@ -1,0 +1,21 @@
+$background-color: rgb(13, 26, 37);
+
+
+
+.main-view {
+    background-color: $background-color;
+  
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 0;
+    border: 0;
+  }
+
+.row{
+    
+    padding:1rem;
+}
+

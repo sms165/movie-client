@@ -20,21 +20,24 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
-      <Container>
+      <Container className="movie-detail">
         <Row>
       <div className="movie-view">
         <div className="movie-image">
-          <img src={movie.imageUrl} alt="movie poster" crossOrigin="anonymous"/>
+          <img src={movie.imageUrl} alt="movie poster" crossOrigin="anonymous" className="image"/>
         </div>
         <div className="movie-title">
-          <span className="label">Title: </span>
-          <span className="value">{movie.title}</span>
+          <span className="title h1 ">{movie.title}</span>
         </div>
+        <br />
         <div className="description">
-          <span className="label">Description: </span>
-          <span className="value">{movie.description}</span>
+          <div className="label
+          h5">Synopsis: </div>
+          <div className="value">{movie.description}</div>
         </div>
+        <br />
         <div className="director-name">
+          <div className="director h5">Director: </div>
           <span className="label">Name: </span>
           <span className="value">{movie.director.name}</span>
         </div>
@@ -42,13 +45,14 @@ export class MovieView extends React.Component {
           <span className="label">Bio: </span>
           <span className="value">{movie.director.bio}</span>
         </div>
+        <br />
         <div className="genre">
-          <span className="label">Genre: </span>
+          <div className="label h5">Genre: </div>
 
         {
           movie.genre.map((genre,index)=>(
             <div key={index}>
-              <p>Name: {genre.name}</p>
+              <p className="h6">{genre.name}</p>
               <p> Description: {genre.description}</p>
               </div>
           ))

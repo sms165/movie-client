@@ -28,13 +28,13 @@ export function LoginView(props) {
   };
 
   return (
-     
-    <Container className="container">
-      <Row>
+     <div className="login">
+    <Container className="login-container" >
+      <Row >
         <Col>
           <CardGroup>
             <Card className="login-card">
-            <Card.Img variant="top" src="../assets/myFlixLogo.gif" alt="myFlix Logo"/>
+            <Card.Img  src="/public/myFlixLogo.gif" alt="myFlix Logo" />
               <Card.Body>
                 <Card.Title>Login</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="#">register here</Card.Link>.</Card.Subtitle>
@@ -69,6 +69,7 @@ export function LoginView(props) {
         </Col>
       </Row>
     </Container>
+    </div>
   );
 }
 //         <form>

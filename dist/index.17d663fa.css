@@ -1,11 +1,18 @@
-
-* {
-  margin: 0;
+.main-view {
+  background-color: rgb(13, 26, 37);
+  min-height: 100vh;
+  min-width: 100vw;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 0;
-  box-sizing: border-box;
+  border: 0;
 }
 
-.app-container {
+.row {
+  padding: 1rem;
+}
+.login-container {
   background-image: url(movie-theater.d443e8c0.jpg);
   min-height: 100vh;
   min-width: 100vw;
@@ -16,7 +23,7 @@
   border: 0;
 }
 
-.container {
+.login-container {
   color: grey;
   display: flex;
   align-items: center;
@@ -36,13 +43,7 @@
 .btn-custom {
   background-color: rgb(89, 169, 240) !important;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.app-container {
+.registration {
   background-image: url(movie-theater.d443e8c0.jpg);
   min-height: 100vh;
   min-width: 100vw;
@@ -51,14 +52,6 @@
   background-repeat: no-repeat;
   padding: 0;
   border: 0;
-}
-
-.container {
-  color: grey;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .card.registration-card {
@@ -74,8 +67,26 @@
   background-color: rgb(89, 169, 240) !important;
 }
 
+.movie-view {
+  background-color: white;
+}
 
+.image {
+  height: 50vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.movie-title {
+  text-align: center;
+}
 .my-flix {
   color: steelblue;
+}
+
+* {
+  padding: 0;
+  margin: 0;
 }
 /*# sourceMappingURL=index.17d663fa.css.map */
