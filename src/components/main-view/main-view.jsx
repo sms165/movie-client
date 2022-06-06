@@ -46,6 +46,14 @@ export class MainView extends React.Component {
     localStorage.setItem("user", authData.user.userName);
     this.getMovies(authData.token);
   }
+  
+  onLoggedOut(){
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.setState({
+      user:null
+    });
+  }
 
   getMovies(token) {
     axios
@@ -84,6 +92,7 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
+        <button  onClick={()=> { this.onLoggedOut()}}>Logout</button>
         <Row className="justify-content-md-left">
           {/* ternary operator */}
           {selectedMovie ? (
