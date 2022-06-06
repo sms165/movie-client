@@ -41488,7 +41488,7 @@ function LoginView(props) {
             setPasswordErr('Password is required');
             isReq = false;
         } else if (password.length < 6) {
-            setPassword('Password must be at least 6 characters long');
+            setPasswordErr('Password must be at least 6 characters long');
             isReq = false;
         }
         return isReq;
@@ -41630,6 +41630,14 @@ function LoginView(props) {
                                                                 lineNumber: 84
                                                             },
                                                             __self: this
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 90
+                                                            },
+                                                            __self: this,
+                                                            children: userNameErr
                                                         })
                                                     ]
                                                 }),
@@ -41637,14 +41645,14 @@ function LoginView(props) {
                                                     controlId: "formPassword",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 92
+                                                        lineNumber: 93
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 93
+                                                                lineNumber: 94
                                                             },
                                                             __self: this,
                                                             children: "Password:"
@@ -41657,9 +41665,17 @@ function LoginView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 94
+                                                                lineNumber: 95
                                                             },
                                                             __self: this
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            __source: {
+                                                                fileName: "src/components/login-view/login-view.jsx",
+                                                                lineNumber: 101
+                                                            },
+                                                            __self: this,
+                                                            children: passwordErr
                                                         })
                                                     ]
                                                 }),
@@ -41669,7 +41685,7 @@ function LoginView(props) {
                                                     onClick: handleSubmit,
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 102
+                                                        lineNumber: 105
                                                     },
                                                     __self: this,
                                                     children: "Login"
