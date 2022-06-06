@@ -41423,8 +41423,8 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _loginViewScss = require("./login-view.scss");
-var _popcornJpg = require("../assets/popcorn.jpg");
-var _popcornJpgDefault = parcelHelpers.interopDefault(_popcornJpg);
+var _myFlixWhiteSvg = require("url:../assets/myFlix-white.svg");
+var _myFlixWhiteSvgDefault = parcelHelpers.interopDefault(_myFlixWhiteSvg);
 // bootstrap
 var _reactBootstrap = require("react-bootstrap");
 var _s = $RefreshSig$();
@@ -41482,7 +41482,7 @@ function LoginView(props) {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
-                                    src: _popcornJpgDefault.default,
+                                    src: _myFlixWhiteSvgDefault.default,
                                     alt: "myFlix Logo",
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
@@ -41622,7 +41622,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./login-view.scss":"lS4BK","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../assets/popcorn.jpg":"aOT9P"}],"lS4BK":[function() {},{}],"lpaPZ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./login-view.scss":"lS4BK","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","url:../assets/myFlix-white.svg":"bJftO"}],"lS4BK":[function() {},{}],"lpaPZ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
@@ -41742,8 +41742,8 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"eqMEG"}],"aOT9P":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "popcorn.f5e0342d.jpg";
+},{"react-refresh/runtime":"eqMEG"}],"bJftO":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "myFlix-white.21131a10.svg";
 
 },{"./helpers/bundle-url":"7B0nW"}],"7B0nW":[function(require,module,exports) {
 "use strict";

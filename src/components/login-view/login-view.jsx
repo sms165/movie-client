@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./login-view.scss";
-import Logo from "../assets/myFlixLogo.gif"
+import Logo from "url:../assets/myFlix-white.svg"
 
 // bootstrap
 import {
