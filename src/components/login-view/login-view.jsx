@@ -23,8 +23,8 @@ export function LoginView(props) {
     e.preventDefault();
     
     axios.post('https://my-flix-careerfoundry.herokuapp.com/login', {
-      Username: userName,
-      Password: password
+      userName: userName,
+      password: password
     })
     .then(response => {
       const data = respose.data;
@@ -39,6 +39,8 @@ export function LoginView(props) {
     e.preventDefault();
     props.onRegister(true);
   };
+  
+  
 
   return (
      <div className="login">
