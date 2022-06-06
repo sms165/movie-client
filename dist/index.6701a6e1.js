@@ -41437,8 +41437,8 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault();
         _axiosDefault.default.post('https://my-flix-careerfoundry.herokuapp.com/login', {
-            userName: userName,
-            password: password
+            Userame: userName,
+            Password: password
         }).then((response)=>{
             const data = respose.data;
             props.onLoggedIn(data);
