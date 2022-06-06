@@ -38055,22 +38055,39 @@ class MainView extends _reactDefault.default.Component {
         };
     }
     componentDidMount() {
-        _axiosDefault.default.get('https://my-flix-careerfoundry.herokuapp.com/movies').then((response)=>{
+        let accessToken = localStorage.getItem("token");
+        if (accessToken !== null) {
             this.setState({
-                movies: response.data
+                user: localStorage.getItem("user")
             });
-        }).catch((error)=>{
-            console.log(error);
-        });
+            this.getMovies(accessToken);
+        }
     }
     setSelectedMovie(newSelectedMovie) {
         this.setState({
             selectedMovie: newSelectedMovie
         });
     }
-    onLoggedIn(user) {
+    onLoggedIn(authData) {
+        console.log(authData);
         this.setState({
-            user
+            user: authData.user.userName
+        });
+        localStorage.setItem("token", authData.token);
+        localStorage.setItem("user", authData.user.userName);
+        this.getMovies(authData.token);
+    }
+    getMovies(token) {
+        _axiosDefault.default.get("https://my-flix-careerfoundry.herokuapp.com/movies", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>{
+            this.setState({
+                movies: response.data
+            });
+        }).catch(function(error) {
+            console.log(error);
         });
     }
     onRegister(registered) {
@@ -38083,7 +38100,7 @@ class MainView extends _reactDefault.default.Component {
         if (registered) return(/*#__PURE__*/ _jsxRuntime.jsx(_registrationView.RegistrationView, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 56
+                lineNumber: 74
             },
             __self: this
         }));
@@ -38092,7 +38109,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 58
+                lineNumber: 77
             },
             __self: this
         }));
@@ -38101,7 +38118,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 63
+                lineNumber: 82
             },
             __self: this
         }));
@@ -38109,21 +38126,21 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 67
+                lineNumber: 86
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 className: "justify-content-md-left",
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 68
+                    lineNumber: 87
                 },
                 __self: this,
                 children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     md: 12,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 72
+                        lineNumber: 90
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -38133,7 +38150,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 73
+                            lineNumber: 91
                         },
                         __self: this
                     })
@@ -38141,7 +38158,7 @@ class MainView extends _reactDefault.default.Component {
                         md: 3,
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 86
+                            lineNumber: 100
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -38151,7 +38168,7 @@ class MainView extends _reactDefault.default.Component {
                             },
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 88
+                                lineNumber: 101
                             },
                             __self: this
                         }, movie._id)
@@ -41443,7 +41460,7 @@ function LoginView(props) {
             const data = response.data;
             props.onLoggedIn(data);
         }).catch((e1)=>{
-            console.log('no such user');
+            console.log('no such user', userName, password);
         });
     };
     const handleRegister = (e)=>{

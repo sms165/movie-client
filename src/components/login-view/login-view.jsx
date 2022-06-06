@@ -13,7 +13,7 @@ import {
   Row,
 } from "react-bootstrap";
 
-import axios from 'axios';
+import axios from "axios";
 
 export function LoginView(props) {
   const [userName, setUserName] = useState("");
@@ -31,7 +31,7 @@ export function LoginView(props) {
       props.onLoggedIn(data);
     })
     .catch(e=> {
-      console.log('no such user')
+      console.log('no such user', userName, password)
     })
   };
 
