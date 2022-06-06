@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./login-view.scss";
+import Logo from "../assets/myFlixLogo.gif"
 
 // bootstrap
 import {
@@ -34,7 +35,7 @@ export function LoginView(props) {
         <Col>
           <CardGroup>
             <Card className="login-card">
-            <Card.Img  src="/public/myFlixLogo.gif" alt="myFlix Logo" />
+            <Card.Img  src={Logo} alt="myFlix Logo" />
               <Card.Body>
                 <Card.Title>Login</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="#">register here</Card.Link>.</Card.Subtitle>
