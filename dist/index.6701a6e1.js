@@ -41560,6 +41560,8 @@ function LoginView(props) {
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                             type: "text",
+                                                            placeholder: "Enter username",
+                                                            value: userName,
                                                             onChange: (e)=>setUserName(e.target.value)
                                                             ,
                                                             __source: {
@@ -41574,25 +41576,27 @@ function LoginView(props) {
                                                     controlId: "formPassword",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 63
+                                                        lineNumber: 65
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 64
+                                                                lineNumber: 66
                                                             },
                                                             __self: this,
                                                             children: "Password:"
                                                         }),
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
                                                             type: "text",
+                                                            placeholder: "Password",
+                                                            value: password,
                                                             onChange: (e)=>setPassword(e.target.value)
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 65
+                                                                lineNumber: 67
                                                             },
                                                             __self: this
                                                         })
@@ -41604,7 +41608,7 @@ function LoginView(props) {
                                                     onClick: handleSubmit,
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 71
+                                                        lineNumber: 75
                                                     },
                                                     __self: this,
                                                     children: "Login"

@@ -56,7 +56,9 @@ export function LoginView(props) {
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                       type="text"
-                      onChange={(e) => setUserName(e.target.value)}
+                      placeholder="Enter username"
+                      value={userName}
+                      onChange={e => setUserName(e.target.value)}
                     />
                   </Form.Group>
 
@@ -64,7 +66,9 @@ export function LoginView(props) {
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
                       type="text"
-                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Password"
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
                     />
                   </Form.Group>
 
