@@ -13,14 +13,26 @@ import {
   Row,
 } from "react-bootstrap";
 
+import axios from 'axios';
+
 export function LoginView(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userName, password);
-    props.onLoggedIn(userName);
+    
+    axios.post('https://my-flix-careerfoundry.herokuapp.com/login', {
+      Username: userName,
+      Password: password
+    })
+    .then(response => {
+      const data = respose.data;
+      props.onLoggedIn(data);
+    })
+    .catch(e=> {
+      console.log('no such user')
+    })
   };
 
   const handleRegister = (e) => {

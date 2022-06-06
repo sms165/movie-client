@@ -41427,6 +41427,8 @@ var _myFlixWhiteSvg = require("url:../assets/myFlix-white.svg");
 var _myFlixWhiteSvgDefault = parcelHelpers.interopDefault(_myFlixWhiteSvg);
 // bootstrap
 var _reactBootstrap = require("react-bootstrap");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _s = $RefreshSig$();
 function LoginView(props) {
     _s();
@@ -41434,8 +41436,15 @@ function LoginView(props) {
     const [password, setPassword] = _react.useState("");
     const handleSubmit = (e)=>{
         e.preventDefault();
-        console.log(userName, password);
-        props.onLoggedIn(userName);
+        _axiosDefault.default.post('https://my-flix-careerfoundry.herokuapp.com/login', {
+            Username: userName,
+            Password: password
+        }).then((response)=>{
+            const data = respose.data;
+            props.onLoggedIn(data);
+        }).catch((e1)=>{
+            console.log('no such user');
+        });
     };
     const handleRegister = (e)=>{
         e.preventDefault();
@@ -41445,39 +41454,39 @@ function LoginView(props) {
         className: "login",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 32
+            lineNumber: 44
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             className: "login-container",
             __source: {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 33
+                lineNumber: 45
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 34
+                    lineNumber: 46
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 35
+                        lineNumber: 47
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.CardGroup, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 36
+                            lineNumber: 48
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                             className: "login-card",
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 37
+                                lineNumber: 49
                             },
                             __self: this,
                             children: [
@@ -41486,21 +41495,21 @@ function LoginView(props) {
                                     alt: "myFlix Logo",
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 38
+                                        lineNumber: 50
                                     },
                                     __self: this
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card.Body, {
                                     __source: {
                                         fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 39
+                                        lineNumber: 51
                                     },
                                     __self: this,
                                     children: [
                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                             __source: {
                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 40
+                                                lineNumber: 52
                                             },
                                             __self: this,
                                             children: "Login"
@@ -41509,7 +41518,7 @@ function LoginView(props) {
                                             className: "mb-2 text-muted",
                                             __source: {
                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 41
+                                                lineNumber: 53
                                             },
                                             __self: this,
                                             children: [
@@ -41518,7 +41527,7 @@ function LoginView(props) {
                                                     href: "#",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 41
+                                                        lineNumber: 53
                                                     },
                                                     __self: this,
                                                     children: "register here"
@@ -41529,7 +41538,7 @@ function LoginView(props) {
                                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                                             __source: {
                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                lineNumber: 42
+                                                lineNumber: 54
                                             },
                                             __self: this,
                                             children: [
@@ -41537,14 +41546,14 @@ function LoginView(props) {
                                                     controlId: "formUserName",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 43
+                                                        lineNumber: 55
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 44
+                                                                lineNumber: 56
                                                             },
                                                             __self: this,
                                                             children: "Username:"
@@ -41555,7 +41564,7 @@ function LoginView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 45
+                                                                lineNumber: 57
                                                             },
                                                             __self: this
                                                         })
@@ -41565,14 +41574,14 @@ function LoginView(props) {
                                                     controlId: "formPassword",
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 51
+                                                        lineNumber: 63
                                                     },
                                                     __self: this,
                                                     children: [
                                                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 52
+                                                                lineNumber: 64
                                                             },
                                                             __self: this,
                                                             children: "Password:"
@@ -41583,7 +41592,7 @@ function LoginView(props) {
                                                             ,
                                                             __source: {
                                                                 fileName: "src/components/login-view/login-view.jsx",
-                                                                lineNumber: 53
+                                                                lineNumber: 65
                                                             },
                                                             __self: this
                                                         })
@@ -41595,7 +41604,7 @@ function LoginView(props) {
                                                     onClick: handleSubmit,
                                                     __source: {
                                                         fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 59
+                                                        lineNumber: 71
                                                     },
                                                     __self: this,
                                                     children: "Login"
@@ -41622,7 +41631,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./login-view.scss":"lS4BK","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","url:../assets/myFlix-white.svg":"bJftO"}],"lS4BK":[function() {},{}],"lpaPZ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./login-view.scss":"lS4BK","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","url:../assets/myFlix-white.svg":"bJftO","axios":"iYoWk"}],"lS4BK":[function() {},{}],"lpaPZ":[function(require,module,exports) {
 "use strict";
 var Refresh = require('react-refresh/runtime');
 function debounce(func, delay) {
