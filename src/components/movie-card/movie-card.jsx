@@ -2,13 +2,15 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./movie-card.scss";
 
+import {Link} from 'react-router-dom'
+
 // bootstrap
 import { Card } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
 
     return (
       <Card>

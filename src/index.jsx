@@ -13,9 +13,9 @@ import './index.scss';
 class MovieApplication extends React.Component {
   render() {
     return (
-      
+      <Container>
       <MainView />
-      
+      </Container>
     );
   }
 }
