@@ -3,6 +3,7 @@ import axios from "axios";
 import "./main-view.scss";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
@@ -11,6 +12,12 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+
+const MainViewWrapper = () => {
+  const { title } = useParams();
+  const item = this.state.starters.find((movies) => movies.title === title )
+ }
+
 
 export class MainView extends React.Component {
   constructor() {
@@ -79,6 +86,8 @@ export class MainView extends React.Component {
     });
   }
 
+  
+
   render() {
     const { movies, user } = this.state;
 
@@ -115,18 +124,17 @@ export class MainView extends React.Component {
               <Route
                 exact
                 path="/"
-                element={() => {
-                  return movies.map((m) => (
-                    <Col md={3} key={m._id}>
-                      <MovieCard movie={m} />
-                    </Col>
-                  ));
-                }}
+                element={movies.map((m) => (
+                  <Col md={3} key={m._id}>
+                    <MovieCard movie={m} />
+                  </Col>
+                )) }
+              
               />
-            
+
               <Route
                 path="/movies/:title"
-               element={({ match }) => {
+                element={({ match }) => {
                   return (
                     <Col md={8}>
                       <MovieView
@@ -143,29 +151,9 @@ export class MainView extends React.Component {
         </div>
       </Router>
 
-      // {/* ternary operator */}
-      // {selectedMovie ? (
-      //   <Col md={12}>
-      //     <MovieView
-      //       movie={selectedMovie}
-      //       onBackClick={(newSelectedMovie) => {
-      //         this.setSelectedMovie(newSelectedMovie);
-      //       }}
-      //     />
-      //   </Col>
-      // ) : (
-      //   movies.map((movie) => (
-      //     <Col md={3}>
-      //       <MovieCard
-      //         key={movie._id}
-      //         movie={movie}
-      //         onMovieClick={(movie) => {
-      //           this.setSelectedMovie(movie);
-      //         }}
-      //       />
-      //     </Col>
-      //   ))
-      // )}
+      
     );
   }
 }
+
+
