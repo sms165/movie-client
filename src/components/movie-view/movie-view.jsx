@@ -5,6 +5,8 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button, Card, CardGroup } from "react-bootstrap";
 
+import ReactPlayer from 'react-player/youtube';
+
 export function MovieView(props) {
   const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
 
@@ -125,11 +127,13 @@ export function MovieView(props) {
           </div>
           
           
-          <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-          
+          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+           */}
+
+<div > <iframe frameBorder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x2ckf9i?autoplay=1" width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
          
 
-          
+<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
           <div className="backbtn">
             <Button
               variant="custom"

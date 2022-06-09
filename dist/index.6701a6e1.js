@@ -44377,25 +44377,37 @@ function MovieView(props) {
                             )
                         ]
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx("iframe", {
-                        width: "560",
-                        height: "315",
-                        src: movie.trailerUrl,
-                        title: "YouTube video player",
-                        frameBorder: "0",
-                        allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture",
-                        allowFullScreen: true,
+                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 128
+                            lineNumber: 131
                         },
-                        __self: this
+                        __self: this,
+                        children: [
+                            " ",
+                            /*#__PURE__*/ _jsxRuntime.jsx("iframe", {
+                                frameBorder: "0",
+                                type: "text/html",
+                                src: "https://www.dailymotion.com/embed/video/x2ckf9i?autoplay=1",
+                                width: "560",
+                                height: "315",
+                                allowFullScreen: true,
+                                crossOrigin: "anonymous",
+                                __source: {
+                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                    lineNumber: 131
+                                },
+                                __self: this,
+                                children: " "
+                            }),
+                            " "
+                        ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "backbtn",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 133
+                            lineNumber: 135
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -44405,7 +44417,7 @@ function MovieView(props) {
                             },
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 134
+                                lineNumber: 136
                             },
                             __self: this,
                             children: "Back"
