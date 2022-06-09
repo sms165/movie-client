@@ -1,26 +1,76 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import './movie-view.scss';
+import axios from "axios";
 
+import { useParams } from "react-router-dom";
 import {Container, Row, Col, Button, Card, CardGroup} from 'react-bootstrap';
 
-export class MovieView extends React.Component {
-  keypressCallback(event){
-    console.log(event.key);
-  }
+export function MovieView(props) {
 
-  componentDidMount(){
-    document.addEventListener('keypress', this.keypressCallback);
-  }
+  const baseURL= 'https://my-flix-careerfoundry.herokuapp.com/';
 
-  componentWillUnmount(){
-    document.removeEventListener('keypress', this.keypressCallback);
-  }
+  const {title} =useParams()
+  // let movie = movie.find(movie =>movie.title === {title})
 
-  render() {
-    const { movie, onBackClick } = this.props;
+  const[ user, setUser] = useState('');
+   const[movie, setMovie] = useState('');
+
+   const [director, setDirector] = 'useState';
+
+  const accessToken = localStorage.getItem('token');
+  const activeUser = localStorage.getItem('user');
+
+  	
+  
+  // async function getData(activeUser) {
+    axios.all([
+          
+          axios(baseURL + 'movies/' + title,{ headers: { Authorization: `Bearer ${accessToken}`} } ),
+          
+          ])
+            .then(axios.spread((movie) => {
+             
+              setMovie(movie.data)
+              
+              
+            }))
+            .catch(error => console.error(error))
+            
+            		
+          // }
+
+          // useEffect(() => {
+          //   getData(activeUser)
+          // },[])	
+        
+      
+  // keypressCallback((event)=>{
+  //   console.log(event.key);
+  // })
+
+  // componentDidMount(() =>{
+  //   document.addEventListener('keypress', this.keypressCallback);
+  // })
+
+  // componentWillUnmount(() =>{
+  //   document.removeEventListener('keypress', this.keypressCallback);
+  // })
+
+  // render() {
+  //   const { movie, onBackClick } = this.props;
 
     return (
       <Container className="movie-detail">
+       
+        
+         {/* {props.match.params.title} */}
+        {/* {movie.filter(movie => movie.title === title).map((mov, index) =>(
+          <div key={index} className="movDetail"> */}
+{console.log(movie.director)}
+
+{console.log(movie.genre)}
+        {/* {movie.find(movie =>movie.title === {title})} */}
+          
         <Row>
       <div className="movie-view">
         <div className="movie-image">
@@ -39,6 +89,7 @@ export class MovieView extends React.Component {
         <div className="director-name">
           <div className="director h5">Director: </div>
           <span className="label">Name: </span>
+         
           <span className="value">{movie.director.name}</span>
         </div>
         <div className="director-bio">
@@ -48,15 +99,25 @@ export class MovieView extends React.Component {
         <br />
         <div className="genre">
           <div className="label h5">Genre: </div>
-
-        {
+{/* 
+          {
           movie.genre.map((genre,index)=>(
             <div key={index}>
-              <p className="h6">{genre.name}</p>
-              <p> Description: {genre.description}</p>
+              <p className="h6">{movie.genre.name}</p>
+              <p> Description: {moviegenre.description}</p>
               </div>
           ))
-        }
+        } */}
+        
+{/*           
+         {movie.genre.forEach((genre, index) =>{
+           console.log(genre.name);
+           
+           
+           
+         }
+         )} */}
+
 
         </div>
         <div className="backbtn">
@@ -70,6 +131,8 @@ export class MovieView extends React.Component {
         </div>
       </div>
       </Row>
+      {/* </div>
+        ))} */}
       </Container>);
   }
-}
+

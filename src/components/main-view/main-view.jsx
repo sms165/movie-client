@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import axios from "axios";
 import "./main-view.scss";
 
@@ -12,6 +12,7 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
+<<<<<<< Updated upstream
 export class MainView extends React.Component {
   constructor() {
     super();
@@ -22,16 +23,43 @@ export class MainView extends React.Component {
       registered: null,
     };
   }
+=======
+>>>>>>> Stashed changes
 
-  componentDidMount() {
-    let accessToken = localStorage.getItem("token");
+
+
+export function MainView(props) {
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     movies: [],
+  //     // selectedMovie: null,
+  //     user: null,
+  //     registered: null,
+  //   };
+  // }
+  const [movies, setMovies] = useState([]);
+    const [user, setUser] = useState(props.user);
+
+  // componentDidMount() {
+  //   let accessToken = localStorage.getItem("token");
+  //   if (accessToken !== null) {
+  //     this.setState({
+  //       user: localStorage.getItem("user"),
+  //     });
+  //     this.getMovies(accessToken);
+  //   }
+  // }
+
+  // instead of componentDidMount
+  useEffect(()=>{
+       let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      this.setState({
-        user: localStorage.getItem("user"),
-      });
-      this.getMovies(accessToken);
-    }
-  }
+      setUser(localStorage.getItem("user"));
+      }
+      getMovies(accessToken);
+    
+  },[user])
 
   // setSelectedMovie(newSelectedMovie) {
   //   this.setState({
@@ -39,73 +67,74 @@ export class MainView extends React.Component {
   //   });
   // }
 
-  onLoggedIn(authData) {
+  function onLoggedIn(authData) {
     console.log(authData);
-    this.setState({
-      user: authData.user.userName,
-    });
+    setUser(authData.user.userName);
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.userName);
-    this.getMovies(authData.token);
+    // this.getMovies(authData.token);
   }
 
-  onLoggedOut() {
+  function onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    this.setState({
-      user: null,
-    });
+    setUser("");
   }
 
-  getMovies(token) {
+  function getMovies(token) {
     axios
       .get("https://my-flix-careerfoundry.herokuapp.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        this.setState({
-          movies: response.data,
-        });
+        setMovies(response.data)
       })
       .catch(function (error) {
         console.log(error);
       });
   }
 
-  onRegister(registered) {
-    this.setState({
-      registered,
-    });
-  }
+  // onRegister(registered) {
+  //   this.setState({
+  //     registered,
+  //   });
+  // }
 
+<<<<<<< Updated upstream
   render() {
     const { movies, user } = this.state;
+=======
+  
+
+  // render() {
+  //   const { movies, user } = this.state;
+>>>>>>> Stashed changes
 
     // const { movies, selectedMovie, user, registered } = this.state;
 
     // if (registered) return <RegistrationView />;
 
-    if (!user)
-      return (
-        <Row>
-          <Col>
-            <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
-          </Col>
-        </Row>
-      );
-    // if (selectedMovie) return <MovieView movie={selectedMovie} />;
+    // if (!user)
+    //   return (
+    //     <Row>
+    //       <Col>
+    //         <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />;
+    //       </Col>
+    //     </Row>
+    //   );
+    // // if (selectedMovie) return <MovieView movie={selectedMovie} />;
 
-    if (movies.length === 0) {
-      return <div className="main-view" />;
-    }
+    // if (movies.length === 0) {
+    //   return <div className="main-view" />;
+    // }
 
     return (
       <Router>
         <div className="main-view">
           <button
             onClick={() => {
-              this.onLoggedOut();
+              onLoggedOut();
             }}
           >
             Logout
@@ -115,6 +144,7 @@ export class MainView extends React.Component {
               <Route
                 exact
                 path="/"
+<<<<<<< Updated upstream
                 element={() => {
                   return movies.map((m) => (
                     <Col md={3} key={m._id}>
@@ -122,10 +152,19 @@ export class MainView extends React.Component {
                     </Col>
                   ));
                 }}
+=======
+                element={ (!user) ? <Col><LoginView onLoggedIn={(user) => onLoggedIn(user)} /></Col>:movies.map((m) => (
+                  <Col md={3} key={m._id}>
+                    <MovieCard movie={m} />
+                  </Col>
+                )) }
+                
+>>>>>>> Stashed changes
               />
             
               <Route
                 path="/movies/:title"
+<<<<<<< Updated upstream
                element={({ match }) => {
                   return (
                     <Col md={8}>
@@ -137,6 +176,10 @@ export class MainView extends React.Component {
                     </Col>
                   );
                 }}
+=======
+                element={ <MovieView />
+                }
+>>>>>>> Stashed changes
               />
             </Routes>
           </Row>
@@ -168,4 +211,10 @@ export class MainView extends React.Component {
       // )}
     );
   }
+<<<<<<< Updated upstream
 }
+=======
+
+
+
+>>>>>>> Stashed changes
