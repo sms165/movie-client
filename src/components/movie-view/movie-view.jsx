@@ -39,9 +39,9 @@ export function MovieView(props) {
             		
           // }
 
-          // useEffect(() => {
-          //   getData(activeUser)
-          // },[])	
+          useEffect(() => {
+            getData(activeUser)
+          },[])	
         
       
   // keypressCallback((event)=>{

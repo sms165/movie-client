@@ -14,13 +14,15 @@ export class MovieCard extends React.Component {
 
     return (
       <Card>
+        <Link to={(`/movies/&{title}`)}>
         <Card.Img variant="top" src={movie.imageUrl} crossOrigin="anonymous" />
+        </Link>
         <Card.Body>
           <Card.Title>{movie.title}</Card.Title>
           <Card.Text>{movie.description}</Card.Text>
-          <Button onClick={() => onMovieClick(movie)} variant="link">
+          {/* <Button onClick={() => onMovieClick(movie)} variant="link">
             Open
-          </Button>
+          </Button> */}
         </Card.Body>
       </Card>
     );
@@ -55,5 +57,5 @@ MovieCard.propTypes = {
       })
     ),
   }).isRequired,
-  onMovieClick: PropTypes.func.isRequired,
+  // onMovieClick: PropTypes.func.isRequired,
 };

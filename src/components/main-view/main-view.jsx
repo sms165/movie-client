@@ -12,19 +12,6 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
-<<<<<<< Updated upstream
-export class MainView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      movies: [],
-      // selectedMovie: null,
-      user: null,
-      registered: null,
-    };
-  }
-=======
->>>>>>> Stashed changes
 
 
 
@@ -101,15 +88,10 @@ export function MainView(props) {
   //   });
   // }
 
-<<<<<<< Updated upstream
-  render() {
-    const { movies, user } = this.state;
-=======
   
 
   // render() {
   //   const { movies, user } = this.state;
->>>>>>> Stashed changes
 
     // const { movies, selectedMovie, user, registered } = this.state;
 
@@ -144,42 +126,18 @@ export function MainView(props) {
               <Route
                 exact
                 path="/"
-<<<<<<< Updated upstream
-                element={() => {
-                  return movies.map((m) => (
-                    <Col md={3} key={m._id}>
-                      <MovieCard movie={m} />
-                    </Col>
-                  ));
-                }}
-=======
                 element={ (!user) ? <Col><LoginView onLoggedIn={(user) => onLoggedIn(user)} /></Col>:movies.map((m) => (
                   <Col md={3} key={m._id}>
                     <MovieCard movie={m} />
                   </Col>
                 )) }
                 
->>>>>>> Stashed changes
               />
             
               <Route
                 path="/movies/:title"
-<<<<<<< Updated upstream
-               element={({ match }) => {
-                  return (
-                    <Col md={8}>
-                      <MovieView
-                        movie={movies.find(
-                          (m) => m.title === match.params.title
-                        )}
-                      />
-                    </Col>
-                  );
-                }}
-=======
                 element={ <MovieView />
                 }
->>>>>>> Stashed changes
               />
             </Routes>
           </Row>
@@ -211,10 +169,6 @@ export function MainView(props) {
       // )}
     );
   }
-<<<<<<< Updated upstream
-}
-=======
 
 
 
->>>>>>> Stashed changes
