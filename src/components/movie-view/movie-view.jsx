@@ -20,9 +20,9 @@ export function MovieView(props) {
   const accessToken = localStorage.getItem('token');
   const activeUser = localStorage.getItem('user');
 
-  	
   
-  // async function getData(activeUser) {
+
+  async function getData(activeUser) {
     axios.all([
           
           axios(baseURL + 'movies/' + title,{ headers: { Authorization: `Bearer ${accessToken}`} } ),
@@ -36,8 +36,8 @@ export function MovieView(props) {
             }))
             .catch(error => console.error(error))
             
-            		
-          // }
+          }
+          
 
           useEffect(() => {
             getData(activeUser)
@@ -66,6 +66,7 @@ export function MovieView(props) {
          {/* {props.match.params.title} */}
         {/* {movie.filter(movie => movie.title === title).map((mov, index) =>(
           <div key={index} className="movDetail"> */}
+          
 {console.log(movie.director)}
 
 {console.log(movie.genre)}
@@ -90,11 +91,11 @@ export function MovieView(props) {
           <div className="director h5">Director: </div>
           <span className="label">Name: </span>
          
-          <span className="value">{movie.director.name}</span>
+          {/* <span className="value">{movie.director.name}</span> */}
         </div>
         <div className="director-bio">
           <span className="label">Bio: </span>
-          <span className="value">{movie.director.bio}</span>
+          {/* <span className="value">{movie.director.bio}</span> */}
         </div>
         <br />
         <div className="genre">
@@ -135,4 +136,5 @@ export function MovieView(props) {
         ))} */}
       </Container>);
   }
+
 
