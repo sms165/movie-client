@@ -5,7 +5,7 @@ import "./movie-card.scss";
 import {Link} from 'react-router-dom'
 
 // bootstrap
-import { Card } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 
 export class MovieCard extends React.Component {
@@ -13,6 +13,7 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
+      <Container>
       <Card>
         <Link to={`/movies/${movie.title}`}>
         <Card.Img variant="top" src={movie.imageUrl} crossOrigin="anonymous" />
@@ -25,6 +26,7 @@ export class MovieCard extends React.Component {
           </Button> */}
         </Card.Body>
       </Card>
+      </Container>
     );
   }
 }
