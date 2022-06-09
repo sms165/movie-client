@@ -4,6 +4,13 @@ import './movie-view.scss';
 import {Container, Row, Col, Button, Card, CardGroup} from 'react-bootstrap';
 
 export class MovieView extends React.Component {
+
+  constructor(props) {
+    super(props);
+    
+    
+  }
+
   keypressCallback(event){
     console.log(event.key);
   }
@@ -17,7 +24,12 @@ export class MovieView extends React.Component {
   }
 
   render() {
-    const { movie, onBackClick } = this.props;
+    console.log(this.props)
+    let { title } = this.props.match.params;
+    let selectMovie = this.props.movies.find(m => m.title === math.params.title);
+    let movie= this.props.movies[selectMovie];
+    console.log(movie);
+    // const { movie2, onBackClick } = this.props;
 
     return (
       <Container className="movie-detail">

@@ -13,10 +13,6 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
-const MainViewWrapper = () => {
-  const { title } = useParams();
-  const item = this.state.starters.find((movies) => movies.title === title )
- }
 
 
 export class MainView extends React.Component {
@@ -134,17 +130,18 @@ export class MainView extends React.Component {
 
               <Route
                 path="/movies/:title"
-                element={({ match }) => {
-                  return (
-                    <Col md={8}>
-                      <MovieView
-                        movie={movies.find(
-                          (m) => m.title === match.params.title
-                        )}
-                      />
-                    </Col>
-                  );
-                }}
+                element={<MovieView movieData={this.state.movies} />}
+                // element={({ match }) => {
+                //   return (
+                //     <Col md={8}>
+                //       <MovieView
+                //         movie={movies.find(
+                //           (m) => m.title === match.params.title
+                //         )}
+                //       />
+                //     </Col>
+                //   );
+                // }}
               />
             </Routes>
           </Row>
