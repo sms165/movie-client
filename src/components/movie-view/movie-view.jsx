@@ -23,6 +23,8 @@ export function MovieView(props) {
 
   const navigate = useNavigate();
 
+  const trail = "&origin=http://localhost:58937"
+
   // async function getData(activeUser) {
   //   axios.all([
   //     axios
@@ -129,11 +131,13 @@ export function MovieView(props) {
           
           {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
            */}
+<video width="560" height="315"  src={movie.trailerUrl}  crossOrigin="anonymous"/>
+{/* <link src="https://www.youtube.com/watch?v=hxyp_LkKDdk " /> */}
 
-<div > <iframe frameBorder="0" type="text/html" src="https://www.dailymotion.com/embed/video/x2ckf9i?autoplay=1" width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
+<div > <iframe frameBorder="0" type="text/html" src={`${movie.trailerUrl}${trail}`} width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
          
 
-<ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+{/* <ReactPlayer url={`https://www.youtube.com/watch?v=hxyp_LkKDdk${trail}`} crossOrigin="anonymous" /> */}
           <div className="backbtn">
             <Button
               variant="custom"
