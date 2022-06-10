@@ -44383,39 +44383,13 @@ function MovieView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx("video", {
                         width: "560",
                         height: "315",
-                        src: movie.trailerUrl,
+                        src: "//v.traileraddict.com/109699",
                         crossOrigin: "anonymous",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 134
                         },
                         __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        __source: {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 137
-                        },
-                        __self: this,
-                        children: [
-                            " ",
-                            /*#__PURE__*/ _jsxRuntime.jsx("iframe", {
-                                frameBorder: "0",
-                                type: "text/html",
-                                src: `${movie.trailerUrl}${trail}`,
-                                width: "560",
-                                height: "315",
-                                allowFullScreen: true,
-                                crossOrigin: "anonymous",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 137
-                                },
-                                __self: this,
-                                children: " "
-                            }),
-                            " "
-                        ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("div", {
                         className: "backbtn",

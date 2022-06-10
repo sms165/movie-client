@@ -16,6 +16,10 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import {DirectorView} from "../director-view";
+import {ActorView} from "../actor-view";
+import {GenreView} from "../genre-view";
+
 
 export function MainView(props) {
   // constructor() {
@@ -156,9 +160,69 @@ export function MainView(props) {
               }
             />
 
-            <Route
-            path="/movies/director/:directorName"
+<Route
+              path="/movies/director/:directorName"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  <DirectorView />
+                )
+              }
+            />
 
+<Route
+              path="/movies/actor/:actor"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  <ActorView />
+                )
+              }
+            />
+
+<Route
+              path="/movies/genre/:genres"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  <GenreView />
+                )
+              }
+            />
+
+<Route
+              path="/movies/director/:directorName"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  <DirectorView />
+                )
+              }
+            />
+
+<Route
+              path="/users"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  <RegistrationView />
+                )
+              }
             />
 
           </Routes>
