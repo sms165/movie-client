@@ -17,6 +17,7 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { ActorCard } from "../actor-card/actor-card";
+import { GenreCard } from "../genre-card/genre-card";
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
 // import {GenreView} from "../genre-view";
@@ -35,6 +36,7 @@ export function MainView(props) {
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(props.user);
   const [actors, setActors] = useState([]);
+  const [genres, setGenres] = useState([]);
 
   // const navigate= useNavigate();
   // componentDidMount() {
@@ -55,6 +57,7 @@ export function MainView(props) {
     }
     getMovies(accessToken);
     getActors(accessToken);
+    getGenres(accessToken);
   }, [user]);
 
   // setSelectedMovie(newSelectedMovie) {
@@ -98,6 +101,19 @@ export function MainView(props) {
       })
       .then((response) => {
         setActors(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function getGenres(token) {
+    axios
+      .get("https://my-flix-careerfoundry.herokuapp.com/genre", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        setGenres(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -190,6 +206,23 @@ export function MainView(props) {
                   actors.map((a) => (
                     <Col md={3} key={a._id}>
                       <ActorCard actors={a} />
+                    </Col>
+                  ))
+                )
+              }
+            />
+            <Route
+              exact
+              path="/genre"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  genres.map((a) => (
+                    <Col md={3} key={a._id}>
+                      <GenreCard genres={a} />
                     </Col>
                   ))
                 )

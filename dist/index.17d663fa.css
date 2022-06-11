@@ -1,5 +1,5 @@
 .main-view {
-  background-color: rgb(13, 26, 37);
+  background-color: #0d1a25;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -107,6 +107,7 @@
 .wrapper {
   flex: 25%;
 }
+
 
 .my-flix {
   color: steelblue;
