@@ -70,14 +70,14 @@ export function LoginView(props) {
   return (
      <div className="login">
     <Container className="login-container" >
-      <Row >
+      <Row  >
         <Col>
           <CardGroup>
             <Card className="login-card">
             <Card.Img  src={Logo} alt="myFlix Logo" />
               <Card.Body>
                 <Card.Title>Login</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="#">register here</Card.Link>.</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="/register">register here</Card.Link>.</Card.Subtitle>
                 <Form>
                   <Form.Group controlId="formUserName">
                     <Form.Label>Username:</Form.Label>

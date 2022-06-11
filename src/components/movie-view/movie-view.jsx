@@ -78,8 +78,9 @@ export function MovieView(props) {
     
     <Container className="movie-detail">
     {movie &&
-
-      <Row>
+      
+      
+      
         <div className="movie-view">
           <div className="movie-image">
             <img
@@ -89,10 +90,12 @@ export function MovieView(props) {
               className="image"
             />
           </div>
+          
+          
           <div className="movie-title">
             <span className="title h1 ">{movie.title}</span>
           </div>
-          <br />
+          <br /><Container><Row><Col md={3}>
           <div className="description">
             <div
               className="label
@@ -103,6 +106,8 @@ export function MovieView(props) {
             <div className="value">{movie.description}</div>
           </div>
           <br />
+          </Col>
+          <Col>
           <div className="director-name">
             <div className="director h5">Director: </div>
             <span className="label">Name: </span>
@@ -113,25 +118,61 @@ export function MovieView(props) {
             <span className="label">Bio: </span>
             <span className="value">{movie.director.bio}</span>
           </div>
+          </Col></Row></Container>
           <br />
+          <Container><Row>
           <div className="genre">
             <div className="label h5">Genre: </div>
             
           {
           movie.genre.map((genre,index)=>(
+            
             <div key={index}>
+              <Col>
               <p className="h6">{genre.name}</p>
-              <p> Description: {genre.description}</p>
-              </div>
+              {/* <p> Description: {genre.description}</p> */}
+              </Col></div>
           ))
         }
 
+          </div></Row></Container><Container>
+          <div className="actors">
+            <div className="label h5">Actors: </div>
+            <Row>
+        <Col className="actor-grid">
+          {
+          movie.actors.map((actor,index)=>(
+            
+            
+            <Container className="wrapper">
+            <div key={index}>
+              <Row >
+             <Col xs={true} md={true}>
+              < div className="actor-image">
+            <img
+              src={actor.portrait}
+              alt="actor image"
+              crossOrigin="anonymous"
+              className="actor-image"
+            />
+          </div> 
+          <p className="h6">{actor.name}</p></Col> 
+          </Row>
+              </div>
+              
+            </Container>
+          ))
+        }
+        </Col>
+      </Row>
+  
           </div>
           
+          </Container>
           
           {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
            */}
-<video width="560" height="315"  src="//v.traileraddict.com/109699"   crossOrigin="anonymous"/>
+{/* <video width="560" height="315"  src="//v.traileraddict.com/109699"   crossOrigin="anonymous"/> */}
 {/* <link src="https://www.youtube.com/watch?v=hxyp_LkKDdk " /> */}
 
 {/* <div > <iframe frameBorder="0" type="text/html" src="//v.traileraddict.com/109699"  width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
@@ -149,9 +190,9 @@ export function MovieView(props) {
             </Button>
           </div>
         </div>
-      </Row>
-      
+     
             }
+            
     </Container>
   );
 }

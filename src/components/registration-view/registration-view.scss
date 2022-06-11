@@ -4,6 +4,7 @@ $background-color: rgb(13, 26, 37);
 $btn-color: rgb(89, 169, 240);
 
 
+
 .registration {
   background-image: url(../assets/movie-theater.jpg);
 
@@ -14,8 +15,13 @@ $btn-color: rgb(89, 169, 240);
   background-repeat: no-repeat;
   padding: 0;
   border: 0;
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-// .container {
+// .login-container {
 //   color: $primary-color;
 //   display: flex;
 //   align-items: center;
@@ -23,9 +29,15 @@ $btn-color: rgb(89, 169, 240);
 //   height: 100vh;
 // }
 
+.error-mesg{
+  color: rgb(255, 0, 0);
+}
+
 .card.registration-card {
   background-color: $background-color;
   padding: 20px;
+  
+  
 }
 
 .btn {
@@ -35,3 +47,8 @@ $btn-color: rgb(89, 169, 240);
 .btn-custom {
   background-color: $btn-color !important;
 }
+
+// .logout{
+//   display: none;
+//   visibility: hidden;
+// }

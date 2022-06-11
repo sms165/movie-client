@@ -16,9 +16,10 @@ import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
-import {DirectorView} from "../director-view";
-import {ActorView} from "../actor-view";
-import {GenreView} from "../genre-view";
+import { ActorCard } from "../actor-card/actor-card";
+// import {DirectorView} from "../director-view";
+// import {ActorView} from "../actor-view";
+// import {GenreView} from "../genre-view";
 
 
 export function MainView(props) {
@@ -33,6 +34,7 @@ export function MainView(props) {
   // }
   const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(props.user);
+  const [actors, setActors] = useState([]);
 
   // const navigate= useNavigate();
   // componentDidMount() {
@@ -52,6 +54,7 @@ export function MainView(props) {
       setUser(localStorage.getItem("user"));
     }
     getMovies(accessToken);
+    getActors(accessToken);
   }, [user]);
 
   // setSelectedMovie(newSelectedMovie) {
@@ -82,6 +85,19 @@ export function MainView(props) {
       })
       .then((response) => {
         setMovies(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+  function getActors(token) {
+    axios
+      .get("https://my-flix-careerfoundry.herokuapp.com/actor", {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((response) => {
+        setActors(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -155,12 +171,31 @@ export function MainView(props) {
                     <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                   </Col>
                 ) : (
+                  
                   <MovieView />
+                
                 )
               }
             />
 
 <Route
+              exact
+              path="/actor"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  actors.map((a) => (
+                    <Col md={3} key={a._id}>
+                      <ActorCard actors={a} />
+                    </Col>
+                  ))
+                )
+              }
+            />
+{/* <Route
               path="/movies/director/:directorName"
               element={
                 !user ? (
@@ -171,9 +206,9 @@ export function MainView(props) {
                   <DirectorView />
                 )
               }
-            />
+            /> */}
 
-<Route
+{/* <Route
               path="/movies/actor/:actor"
               element={
                 !user ? (
@@ -184,9 +219,9 @@ export function MainView(props) {
                   <ActorView />
                 )
               }
-            />
+            /> */}
 
-<Route
+{/* <Route
               path="/movies/genre/:genres"
               element={
                 !user ? (
@@ -197,9 +232,9 @@ export function MainView(props) {
                   <GenreView />
                 )
               }
-            />
+            /> */}
 
-<Route
+{/* <Route
               path="/movies/director/:directorName"
               element={
                 !user ? (
@@ -210,18 +245,12 @@ export function MainView(props) {
                   <DirectorView />
                 )
               }
-            />
+            /> */}
 
 <Route
-              path="/users"
-              element={
-                !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
-                ) : (
+              path="/register"
+              element={ 
                   <RegistrationView />
-                )
               }
             />
 

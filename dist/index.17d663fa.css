@@ -21,9 +21,6 @@
   background-repeat: no-repeat;
   padding: 0;
   border: 0;
-}
-
-.login-container {
   color: grey;
   display: flex;
   align-items: center;
@@ -52,6 +49,15 @@
   background-repeat: no-repeat;
   padding: 0;
   border: 0;
+  color: grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.error-mesg {
+  color: rgb(255, 0, 0);
 }
 
 .card.registration-card {
@@ -87,6 +93,21 @@
   margin-right: 50%;
   padding: 5px;
 }
+
+.actor-image {
+  height: 30vh;
+}
+
+.actor-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  flex: 25%;
+}
+
 .my-flix {
   color: steelblue;
 }

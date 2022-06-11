@@ -15,14 +15,19 @@ $btn-color: rgb(89, 169, 240);
   background-repeat: no-repeat;
   padding: 0;
   border: 0;
-}
-.login-container {
   color: $primary-color;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
 }
+// .login-container {
+//   color: $primary-color;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   height: 100vh;
+// }
 
 .card.login-card {
   background-color: $background-color;
