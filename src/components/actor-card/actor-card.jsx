@@ -14,7 +14,7 @@ export class ActorCard extends React.Component {
 
     return (
       <Container>
-      <Card>
+      <Card className="mb-4">
         <Link to={`/actor/${actors.name}`}>
         <Card.Img variant="top" src={actors.portrait} crossOrigin="anonymous" />
         </Link>
@@ -30,11 +30,11 @@ export class ActorCard extends React.Component {
 
 
 ActorCard.propTypes = {
-  actor: PropTypes.shape({
+  actors: PropTypes.shape({
     name: PropTypes.string.isRequired,
     bio: PropTypes.string.isRequired,
-    birthYear: PropTypes.instanceOf(Date),
-    deathYear: PropTypes.instanceOf(Date),
+    // birthYear: PropTypes.instanceOf(Date),
+    // deathYear: PropTypes.instanceOf(Date),
     portrait: PropTypes.string
     
   }).isRequired,

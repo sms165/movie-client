@@ -44180,6 +44180,7 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                className: "mb-4",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
                     lineNumber: 18
@@ -46955,6 +46956,7 @@ class ActorCard extends _reactDefault.default.Component {
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                className: "mb-4",
                 __source: {
                     fileName: "src/components/actor-card/actor-card.jsx",
                     lineNumber: 17
@@ -47000,11 +47002,11 @@ class ActorCard extends _reactDefault.default.Component {
     }
 }
 ActorCard.propTypes = {
-    actor: _propTypesDefault.default.shape({
+    actors: _propTypesDefault.default.shape({
         name: _propTypesDefault.default.string.isRequired,
         bio: _propTypesDefault.default.string.isRequired,
-        birthYear: _propTypesDefault.default.instanceOf(Date),
-        deathYear: _propTypesDefault.default.instanceOf(Date),
+        // birthYear: PropTypes.instanceOf(Date),
+        // deathYear: PropTypes.instanceOf(Date),
         portrait: _propTypesDefault.default.string
     }).isRequired
 };
@@ -47043,43 +47045,36 @@ class GenreCard extends _reactDefault.default.Component {
                 lineNumber: 16
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                className: "border-0 mb-4",
                 __source: {
                     fileName: "src/components/genre-card/genre-card.jsx",
                     lineNumber: 17
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                        to: `/genre/${genres.name}`,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    className: "genreImg",
+                    to: `/genre/${genres.name}`,
+                    __source: {
+                        fileName: "src/components/genre-card/genre-card.jsx",
+                        lineNumber: 18
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/genre-card/genre-card.jsx",
-                            lineNumber: 18
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Body, {
-                        __source: {
-                            fileName: "src/components/genre-card/genre-card.jsx",
-                            lineNumber: 21
+                            lineNumber: 19
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
-                            __source: {
-                                fileName: "src/components/genre-card/genre-card.jsx",
-                                lineNumber: 22
-                            },
-                            __self: this,
-                            children: genres.name
-                        })
+                        children: genres.name
                     })
-                ]
+                })
             })
         }));
     }
 }
 GenreCard.propTypes = {
-    genre: _propTypesDefault.default.shape({
+    genres: _propTypesDefault.default.shape({
         name: _propTypesDefault.default.string.isRequired,
         description: _propTypesDefault.default.string.isRequired
     }).isRequired
