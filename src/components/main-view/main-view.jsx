@@ -17,6 +17,7 @@ import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { ActorCard } from "../actor-card/actor-card";
+import { ActorView } from "../actor-view/actor-view";
 import { GenreCard } from "../genre-card/genre-card";
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
@@ -58,6 +59,7 @@ export function MainView(props) {
     getMovies(accessToken);
     getActors(accessToken);
     getGenres(accessToken);
+    
   }, [user]);
 
   // setSelectedMovie(newSelectedMovie) {
@@ -120,6 +122,7 @@ export function MainView(props) {
       });
   }
 
+  
   // onRegister(registered) {
   //   this.setState({
   //     registered,
@@ -241,7 +244,7 @@ export function MainView(props) {
               }
             /> */}
 
-{/* <Route
+<Route
               path="/movies/actor/:actor"
               element={
                 !user ? (
@@ -252,7 +255,7 @@ export function MainView(props) {
                   <ActorView />
                 )
               }
-            /> */}
+            />
 
 {/* <Route
               path="/movies/genre/:genres"

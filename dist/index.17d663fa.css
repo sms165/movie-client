@@ -12,6 +12,12 @@
 .row {
   padding: 1rem;
 }
+
+.card-body {
+  background-color: #122535;
+  color: white;
+  font-family: "Joan", serif;
+}
 .login-container {
   background-image: url(movie-theater.d443e8c0.jpg);
   min-height: 100vh;
@@ -72,7 +78,11 @@
 .btn-custom {
   background-color: rgb(89, 169, 240) !important;
 }
-
+.movie-card {
+  background-color: #122535;
+  color: white;
+  padding-top: 10px;
+}
 .movie-view {
   background-color: white;
 }
@@ -107,7 +117,11 @@
 .wrapper {
   flex: 25%;
 }
-
+.actor-card {
+  background-color: #122535;
+  color: white;
+  padding-top: 10px;
+}
 .genreImg {
   text-decoration: none;
   color: #ffffff;
@@ -121,6 +135,45 @@
 
 .genreImg:hover {
   text-decoration: none;
+}
+.actor-view {
+  background-color: #122535;
+  padding: 5px;
+  color: white;
+  font-family: "Joan", serif;
+}
+
+.actor-size {
+  height: 55vh;
+}
+
+.image {
+  height: 50vh;
+  padding: 10px;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.backbtn {
+  margin-left: 50%;
+  margin-right: 50%;
+  padding: 5px;
+}
+
+.actor-image {
+  height: 30vh;
+}
+
+.movie-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.wrapper {
+  flex: 25%;
 }
 .my-flix {
   color: steelblue;
