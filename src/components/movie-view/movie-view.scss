@@ -9,7 +9,7 @@ $btn-color: rgb(89, 169, 240);
 
 
 .movie-size{
-  height:55vh;
+  height:60vh;
 }
 
 .image {
@@ -30,11 +30,11 @@ $btn-color: rgb(89, 169, 240);
     padding: 5px;
 }
 
-.actor-image{
+.actor-image, .director-image{
   height:30vh
 }
 
-.actor-grid{
+.actor-grid, .director-grid{
   display: flex;
         flex-direction: row;
         flex-wrap: wrap;

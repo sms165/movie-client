@@ -74,7 +74,7 @@ export function ActorView(props) {
                       <Row>
                         <Col xs={true} md={true}>
                           <div className="movie-image">
-                          <a src={`/movies/${actor.title}`}>
+                          <a href={`/movies/${actor.title}`}>
                             <img
                             
                               src={actor.imageUrl}

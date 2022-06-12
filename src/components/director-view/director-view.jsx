@@ -107,7 +107,7 @@ export function DirectorView(props) {
                       <Row>
                         <Col xs={true} md={true}>
                           <div className="movie-image">
-                          <a src={`/movies/${director.title}`}>
+                          <a href={`/movies/${director.title}`}>
                             <img
                             
                               src={director.imageUrl}

@@ -19,12 +19,13 @@ import { MovieView } from "../movie-view/movie-view";
 import { ActorCard } from "../actor-card/actor-card";
 import { ActorView } from "../actor-view/actor-view";
 import { GenreCard } from "../genre-card/genre-card";
+import {GenreView} from "../genre-view/genre-view";
 import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
+
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
 // import {GenreView} from "../genre-view";
-
 
 export function MainView(props) {
   // constructor() {
@@ -61,7 +62,6 @@ export function MainView(props) {
     getMovies(accessToken);
     getActors(accessToken);
     getGenres(accessToken);
-    
   }, [user]);
 
   // setSelectedMovie(newSelectedMovie) {
@@ -124,7 +124,6 @@ export function MainView(props) {
       });
   }
 
-  
   // onRegister(registered) {
   //   this.setState({
   //     registered,
@@ -192,14 +191,12 @@ export function MainView(props) {
                     <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                   </Col>
                 ) : (
-                  
                   <MovieView />
-                
                 )
               }
             />
 
-<Route
+            <Route
               exact
               path="/actor"
               element={
@@ -233,20 +230,21 @@ export function MainView(props) {
                 )
               }
             />
-{/* <Route
-              path="/movies/director/:directorName"
+
+            <Route
+              path="/movies/genre/:genres"
               element={
                 !user ? (
                   <Col>
                     <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                   </Col>
                 ) : (
-                  <DirectorView />
+                  <GenreView />
                 )
               }
-            /> */}
+            />
 
-<Route
+            <Route
               path="/movies/actor/:actor"
               element={
                 !user ? (
@@ -259,7 +257,7 @@ export function MainView(props) {
               }
             />
 
-<Route
+            <Route
               path="/movies/director"
               element={
                 !user ? (
@@ -276,22 +274,7 @@ export function MainView(props) {
               }
             />
 
-            
-
-{/* <Route
-              path="/movies/genre/:genres"
-              element={
-                !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
-                ) : (
-                  <GenreView />
-                )
-              }
-            /> */}
-
-<Route
+            <Route
               path="/movies/director/:directorName"
               element={
                 !user ? (
@@ -304,13 +287,7 @@ export function MainView(props) {
               }
             />
 
-<Route
-              path="/register"
-              element={ 
-                  <RegistrationView />
-              }
-            />
-
+            <Route path="/register" element={<RegistrationView />} />
           </Routes>
         </Row>
       </div>
