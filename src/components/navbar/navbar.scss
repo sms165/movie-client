@@ -1,0 +1,28 @@
+*{
+    font-family: 'Joan', serif;;
+}
+.navbar{
+    color: #ffffff;
+    background-color: #122535;
+}
+
+.menu li{
+    @media (max-width: 992px) {
+        list-style-type:none;
+        
+    }
+  @media (min-width: 992px) {
+    display: inline;
+    list-style-type:none;
+    padding-right: 8px;
+   
+  }
+   
+}
+
+.menu ul{
+    float: right;
+}
+    
+
+

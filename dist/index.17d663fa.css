@@ -227,6 +227,31 @@
 .genre-title {
   height: 50vh;
 }
+* {
+  font-family: "Joan", serif;
+}
+
+.navbar {
+  color: #ffffff;
+  background-color: #122535;
+}
+
+@media (max-width: 992px) {
+  .menu li {
+    list-style-type: none;
+  }
+}
+@media (min-width: 992px) {
+  .menu li {
+    display: inline;
+    list-style-type: none;
+    padding-right: 8px;
+  }
+}
+
+.menu ul {
+  float: right;
+}
 .my-flix {
   color: steelblue;
 }

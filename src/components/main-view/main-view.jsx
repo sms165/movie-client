@@ -7,6 +7,8 @@ import {
   Route,
   Routes,
   useNavigate,
+  Navigate,
+  Redirect
 } from "react-router-dom";
 
 import { Row } from "react-bootstrap";
@@ -19,9 +21,10 @@ import { MovieView } from "../movie-view/movie-view";
 import { ActorCard } from "../actor-card/actor-card";
 import { ActorView } from "../actor-view/actor-view";
 import { GenreCard } from "../genre-card/genre-card";
-import {GenreView} from "../genre-view/genre-view";
+import { GenreView } from "../genre-view/genre-view";
 import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
+import { Navbar } from "../navbar/navbar";
 
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
@@ -154,7 +157,9 @@ export function MainView(props) {
   return (
     <Router>
       <div className="main-view">
-        <div className="logout">
+        {user && <Navbar />}
+
+        {/* <div className="logout">
           <button
             onClick={() => {
               onLoggedOut();
@@ -162,7 +167,7 @@ export function MainView(props) {
           >
             Logout
           </button>
-        </div>
+        </div> */}
         <Row className="justify-content-md-left">
           <Routes>
             <Route
@@ -170,9 +175,7 @@ export function MainView(props) {
               path="/"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   movies.map((m) => (
                     <Col md={3} key={m._id}>
@@ -187,9 +190,7 @@ export function MainView(props) {
               path="/movies/:title"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   <MovieView />
                 )
@@ -201,9 +202,7 @@ export function MainView(props) {
               path="/actor"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   actors.map((a) => (
                     <Col md={3} key={a._id}>
@@ -218,9 +217,7 @@ export function MainView(props) {
               path="/genre"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   genres.map((a) => (
                     <Col md={3} key={a._id}>
@@ -235,9 +232,7 @@ export function MainView(props) {
               path="/movies/genre/:genres"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   <GenreView />
                 )
@@ -248,9 +243,7 @@ export function MainView(props) {
               path="/movies/actor/:actor"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   <ActorView />
                 )
@@ -261,9 +254,7 @@ export function MainView(props) {
               path="/movies/director"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   movies.map((m) => (
                     <Col md={3} key={m._id}>
@@ -278,16 +269,17 @@ export function MainView(props) {
               path="/movies/director/:directorName"
               element={
                 !user ? (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                  </Col>
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   <DirectorView />
                 )
               }
             />
 
-            <Route path="/register" element={<RegistrationView />} />
+            <Route
+              path="/register"
+              element={user ? <Navigate replace to="/" /> : <RegistrationView />}
+            />
           </Routes>
         </Row>
       </div>

@@ -69,7 +69,7 @@ export function LoginView(props) {
 
   return (
      <div className="login">
-    <Container className="login-container" >
+    <Container className="login-container fluid" >
       <Row  >
         <Col>
           <CardGroup>
