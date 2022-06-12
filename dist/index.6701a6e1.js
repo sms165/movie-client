@@ -47872,35 +47872,69 @@ function GenreView(props) {
         className: "actor-detail",
         __source: {
             fileName: "src/components/genre-view/genre-view.jsx",
-            lineNumber: 37
+            lineNumber: 43
         },
         __self: this,
         children: genreDetail && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "actor-view",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 40
+                lineNumber: 45
             },
             __self: this,
             children: [
+                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                    className: "genre-title",
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 46
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 47
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            className: " mr-4 float-left h1 pb-4",
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 48
+                            },
+                            __self: this,
+                            children: genreDetail[0].genre[0].name
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 49
+                            },
+                            __self: this,
+                            children: genreDetail[0].genre[0].description
+                        })
+                    ]
+                }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 43
+                        lineNumber: 52
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        className: "actor-movies",
+                        className: "float-none actor-movies",
                         __source: {
                             fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 44
+                            lineNumber: 53
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 45
+                                    lineNumber: 54
                                 },
                                 __self: this,
                                 children: "Movies: "
@@ -47908,26 +47942,26 @@ function GenreView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 46
+                                    lineNumber: 55
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                     className: "movie-grid",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 47
+                                        lineNumber: 56
                                     },
                                     __self: this,
                                     children: genreDetail.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 49
+                                                lineNumber: 58
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                                 __source: {
                                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                                    lineNumber: 50
+                                                    lineNumber: 59
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
@@ -47935,7 +47969,7 @@ function GenreView(props) {
                                                     md: true,
                                                     __source: {
                                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                                        lineNumber: 51
+                                                        lineNumber: 60
                                                     },
                                                     __self: this,
                                                     children: [
@@ -47943,14 +47977,14 @@ function GenreView(props) {
                                                             className: "movie-image",
                                                             __source: {
                                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 52
+                                                                lineNumber: 61
                                                             },
                                                             __self: this,
                                                             children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
                                                                 href: `/movies/${genre.title}`,
                                                                 __source: {
                                                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                                                    lineNumber: 53
+                                                                    lineNumber: 62
                                                                 },
                                                                 __self: this,
                                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -47960,7 +47994,7 @@ function GenreView(props) {
                                                                     className: "image ",
                                                                     __source: {
                                                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                                                        lineNumber: 54
+                                                                        lineNumber: 63
                                                                     },
                                                                     __self: this
                                                                 })
@@ -47970,7 +48004,7 @@ function GenreView(props) {
                                                             className: "h6 text-center",
                                                             __source: {
                                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 63
+                                                                lineNumber: 71
                                                             },
                                                             __self: this,
                                                             children: genre.title
@@ -47989,7 +48023,7 @@ function GenreView(props) {
                     className: "backbtn",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 73
+                        lineNumber: 81
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -47999,7 +48033,7 @@ function GenreView(props) {
                         },
                         __source: {
                             fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 74
+                            lineNumber: 82
                         },
                         __self: this,
                         children: "Back"

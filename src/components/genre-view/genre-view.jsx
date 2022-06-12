@@ -3,7 +3,15 @@ import "./genre-view.scss";
 import axios from "axios";
 
 import { useParams, useNavigate } from "react-router-dom";
-import { Container, Row, Col, Button, Card, CardGroup,Link } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Card,
+  CardGroup,
+  Link,
+} from "react-bootstrap";
 
 export function GenreView(props) {
   const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
@@ -13,8 +21,6 @@ export function GenreView(props) {
 
   const [user, setUser] = useState("");
   const [genreDetail, setGenreDetail] = useState(null);
-
- 
 
   const accessToken = localStorage.getItem("token");
   const activeUser = localStorage.getItem("user");
@@ -35,13 +41,16 @@ export function GenreView(props) {
 
   return (
     <Container className="actor-detail">
-      
       {genreDetail && (
         <div className="actor-view">
-          
-        
-          <Container  >
-            <div className="actor-movies">
+            <Container className="genre-title">
+                <br/>
+                <div className=" mr-4 float-left h1 pb-4">{genreDetail[0].genre[0].name}</div>
+                <div>{genreDetail[0].genre[0].description}</div>
+            </Container>
+
+          <Container>
+            <div className="float-none actor-movies">
               <h2>Movies: </h2>
               <Row>
                 <Col className="movie-grid">
@@ -50,14 +59,13 @@ export function GenreView(props) {
                       <Row>
                         <Col xs={true} md={true}>
                           <div className="movie-image">
-                          <a href={`/movies/${genre.title}`}>
-                            <img
-                            
-                              src={genre.imageUrl}
-                              alt="movie poster"
-                              crossOrigin="anonymous"
-                              className="image "
-                            />
+                            <a href={`/movies/${genre.title}`}>
+                              <img
+                                src={genre.imageUrl}
+                                alt="movie poster"
+                                crossOrigin="anonymous"
+                                className="image "
+                              />
                             </a>
                           </div>
                           <p className="h6 text-center">{genre.title}</p>
@@ -84,5 +92,4 @@ export function GenreView(props) {
       )}
     </Container>
   );
- 
 }

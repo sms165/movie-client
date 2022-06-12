@@ -224,7 +224,9 @@
 .wrapper {
   flex: 25%;
 }
-
+.genre-title {
+  height: 50vh;
+}
 .my-flix {
   color: steelblue;
 }
