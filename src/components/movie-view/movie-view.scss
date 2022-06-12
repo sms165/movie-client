@@ -1,14 +1,23 @@
 $btn-color: rgb(89, 169, 240);
 
 .movie-view {
-  background-color: white;
+  background-color: #122535;
+  padding: 5px;
+  color:white;
+  font-family: 'Joan', serif;
+}
+
+
+.movie-size{
+  height:55vh;
 }
 
 .image {
   height: 50vh;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 10px;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
 }
 
 .movie-title{
@@ -29,6 +38,7 @@ $btn-color: rgb(89, 169, 240);
   display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        
 }
 
 .wrapper {
@@ -40,3 +50,5 @@ $btn-color: rgb(89, 169, 240);
   //     flex: 50%;
   // }
 }
+
+

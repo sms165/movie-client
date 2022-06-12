@@ -31,14 +31,14 @@ export class ActorCard extends React.Component {
 }
 
 
-ActorCard.propTypes = {
-  actors: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    bio: PropTypes.string.isRequired,
-    // birthYear: PropTypes.instanceOf(Date),
-    // deathYear: PropTypes.instanceOf(Date),
-    portrait: PropTypes.string
+// ActorCard.propTypes = {
+//   actor: PropTypes.shape({
+//     name: PropTypes.string.isRequired,
+//     bio: PropTypes.string.isRequired,
+//     // birthYear: PropTypes.instanceOf(Date),
+//     // deathYear: PropTypes.instanceOf(Date),
+//     portrait: PropTypes.string
     
-  }).isRequired,
-  // onMovieClick: PropTypes.func.isRequired,
-};
+//   }).isRequired,
+//   // onMovieClick: PropTypes.func.isRequired,
+// };

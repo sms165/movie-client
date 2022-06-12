@@ -19,6 +19,8 @@ import { MovieView } from "../movie-view/movie-view";
 import { ActorCard } from "../actor-card/actor-card";
 import { ActorView } from "../actor-view/actor-view";
 import { GenreCard } from "../genre-card/genre-card";
+import { DirectorCard } from "../director-card/director-card";
+import { DirectorView } from "../director-view/director-view";
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
 // import {GenreView} from "../genre-view";
@@ -257,6 +259,25 @@ export function MainView(props) {
               }
             />
 
+<Route
+              path="/movies/director"
+              element={
+                !user ? (
+                  <Col>
+                    <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                  </Col>
+                ) : (
+                  movies.map((m) => (
+                    <Col md={3} key={m._id}>
+                      <DirectorCard movie={m} />
+                    </Col>
+                  ))
+                )
+              }
+            />
+
+            
+
 {/* <Route
               path="/movies/genre/:genres"
               element={
@@ -270,7 +291,7 @@ export function MainView(props) {
               }
             /> */}
 
-{/* <Route
+<Route
               path="/movies/director/:directorName"
               element={
                 !user ? (
@@ -281,7 +302,7 @@ export function MainView(props) {
                   <DirectorView />
                 )
               }
-            /> */}
+            />
 
 <Route
               path="/register"
