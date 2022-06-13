@@ -220,6 +220,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
+                  
                   genres.map((a) => (
                     <Col md={3} key={a._id}>
                       <GenreCard genres={a} />

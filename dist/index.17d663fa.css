@@ -12,8 +12,14 @@
 .row {
   padding: 1rem;
 }
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
 .login-container {
   background-image: url(movie-theater.d443e8c0.jpg);
+  margin: -1rem;
   min-height: 100vh;
   min-width: 100vw;
   background-size: cover;
@@ -225,9 +231,7 @@
 .wrapper {
   flex: 25%;
 }
-.genre-title {
-  height: 50vh;
-}
+
 * {
   font-family: "Joan", serif;
 }

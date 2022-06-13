@@ -5,7 +5,7 @@ import "./navbar.scss";
 
 export function Navbar ({user}) {
 
-    
+  const activeUser = localStorage.getItem("user");
 
     function onLoggedOut() {
         localStorage.clear();
@@ -30,7 +30,7 @@ export function Navbar ({user}) {
             <li><a href="/actor">ACTORS</a></li>
             <li><a href="/movies/director">DIRECTORS</a></li>
             <li><a href="/genre">GENRES</a></li>
-            <li><a href={`/profile/${user}`}>PROFILE</a></li>
+            <li><a href={`/profile/${activeUser}`}>PROFILE</a></li>
             <li><button
             onClick={() => {
               onLoggedOut();

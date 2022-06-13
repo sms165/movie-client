@@ -14,7 +14,6 @@ export function UserView(props) {
   // let movie = movie.find(movie =>movie.title === {title})
 
   const [user, setUser] = useState("");
-  
 
   const [director, setDirector] = "useState";
 
@@ -23,23 +22,19 @@ export function UserView(props) {
 
   const navigate = useNavigate();
 
- 
-
   const getUser = () => {
-    axios.get(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
-      headers: { Authorization: `Bearer ${accessToken}`}
-    })
-    .then(response => {
-      setUser(response.data);
-      console.log(response.data);
-    
-    })
-    .catch(error => console.error(error))
-  }
-
+    axios
+      .get(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      })
+      .then((response) => {
+        setUser(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => console.error(error));
+  };
 
   useEffect(() => {
-   
     getUser();
   }, []);
 
@@ -47,9 +42,28 @@ export function UserView(props) {
     <Container className="user-detail">
       {user && (
         <div className="user-view">
-            <h1>User Profile</h1>
+          <Row>
             
-            <h2>{user.userName}</h2>
+              <h1>User Profile</h1>
+            </Row>
+            <Row>
+              <h1> {user.userName}</h1>
+          </Row>
+          <Row>
+            <p>Name: {user.name}</p>
+          </Row>
+          <Row>
+            <p>Email: {user.email}</p>
+          </Row>
+          <Row>
+            <p>Birthday: {user.birthday}</p>
+          </Row>
+            <br/>
+            <Row>
+                <div className="Change Password">
+                    Change Password
+                </div>
+            </Row>
         </div>
       )}
     </Container>

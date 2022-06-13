@@ -60,14 +60,14 @@ export function MovieView(props) {
             <br />
 
             <div className="description">
-              <div className="label h5"> Synopsis: </div>
+              <div className="label h2"> Synopsis: </div>
 
               <div className="value">{movie.description}</div>
             </div>
             <br />
 
             <div className="genre">
-              <div className="label h5">Genre: </div>
+              <div className="label h2">Genre: </div>
 
               {movie.genre.map((genre, index) => (
                 <div key={index}>
@@ -84,7 +84,7 @@ export function MovieView(props) {
 
           <Container>
             <div className="director-name">
-              <div className="director h5">Director: </div>
+              <div className="director h2">Director: </div>
 
               <Row>
                 <Col className="director-grid">
@@ -113,7 +113,7 @@ export function MovieView(props) {
 
           <Container>
             <div className="actors">
-              <div className="label h5">Actors: </div>
+              <div className="label h2">Actors: </div>
               <Row>
                 <Col className="actor-grid">
                   {movie.actors.map((actor, index) => (
@@ -142,8 +142,8 @@ export function MovieView(props) {
             </div>
           </Container>
 
-          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-           */}
+          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
+          
           {/* <video width="560" height="315"  src="//v.traileraddict.com/109699"   crossOrigin="anonymous"/> */}
           {/* <link src="https://www.youtube.com/watch?v=hxyp_LkKDdk " /> */}
 

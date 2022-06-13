@@ -4,9 +4,14 @@ $background-color: rgb(13, 26, 37);
 $btn-color: rgb(89, 169, 240);
 
 
+.app-container{
+  margin: 0;
+  padding: 0;
+}
 
 .login-container {
   background-image: url(../assets/movie-theater.jpg);
+margin: -1rem;
 
   min-height: 100vh;
   min-width: 100vw;

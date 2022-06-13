@@ -44,9 +44,14 @@ export function GenreView(props) {
       {genreDetail && (
         <div className="actor-view">
             <Container className="genre-title">
-                <br/>
-                <div className=" mr-4 float-left h1 pb-4">{genreDetail[0].genre[0].name}</div>
+                <Row>
+                  <Col>
+                <div className=" mr-4  h1 pb-4">{genreDetail[0].genre[0].name}</div>
+                </Col>
+                <Col>
+                <div className="h2">Description: </div>
                 <div>{genreDetail[0].genre[0].description}</div>
+                </Col></Row>
             </Container>
 
           <Container>

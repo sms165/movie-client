@@ -38272,7 +38272,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 232
+                                    lineNumber: 233
                                 },
                                 __self: this
                             }),
@@ -38284,7 +38284,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 243
+                                    lineNumber: 244
                                 },
                                 __self: this
                             }),
@@ -38301,7 +38301,7 @@ function MainView(props) {
                                 ),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 254
+                                    lineNumber: 255
                                 },
                                 __self: this
                             }),
@@ -38313,7 +38313,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 269
+                                    lineNumber: 270
                                 },
                                 __self: this
                             }),
@@ -38325,7 +38325,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 280
+                                    lineNumber: 281
                                 },
                                 __self: this
                             }),
@@ -38338,7 +38338,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 291
+                                    lineNumber: 292
                                 },
                                 __self: this
                             })
@@ -44469,7 +44469,7 @@ function MovieView(props) {
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                className: "label h5",
+                                                className: "label h2",
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
                                                     lineNumber: 63
@@ -44504,7 +44504,7 @@ function MovieView(props) {
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                className: "label h5",
+                                                className: "label h2",
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
                                                     lineNumber: 70
@@ -44559,7 +44559,7 @@ function MovieView(props) {
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "director h5",
+                                className: "director h2",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
                                     lineNumber: 87
@@ -44669,7 +44669,7 @@ function MovieView(props) {
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "label h5",
+                                className: "label h2",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
                                     lineNumber: 116
@@ -47518,7 +47518,7 @@ class DirectorCard extends _reactDefault.default.Component {
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Body, {
-                        class: "style-card",
+                        className: "style-card",
                         __source: {
                             fileName: "src/components/director-card/director-card.jsx",
                             lineNumber: 22
@@ -47900,58 +47900,83 @@ function GenreView(props) {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     className: "genre-title",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 46
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("br", {
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 47
-                            },
-                            __self: this
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            className: " mr-4 float-left h1 pb-4",
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 48
-                            },
-                            __self: this,
-                            children: genreDetail[0].genre[0].name
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 49
-                            },
-                            __self: this,
-                            children: genreDetail[0].genre[0].description
-                        })
-                    ]
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 47
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 48
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: " mr-4  h1 pb-4",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 49
+                                    },
+                                    __self: this,
+                                    children: genreDetail[0].genre[0].name
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 51
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                        className: "h2",
+                                        __source: {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 52
+                                        },
+                                        __self: this,
+                                        children: "Description: "
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                        __source: {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 53
+                                        },
+                                        __self: this,
+                                        children: genreDetail[0].genre[0].description
+                                    })
+                                ]
+                            })
+                        ]
+                    })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 52
+                        lineNumber: 57
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "float-none actor-movies",
                         __source: {
                             fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 53
+                            lineNumber: 58
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 54
+                                    lineNumber: 59
                                 },
                                 __self: this,
                                 children: "Movies: "
@@ -47959,26 +47984,26 @@ function GenreView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 55
+                                    lineNumber: 60
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                     className: "movie-grid",
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 56
+                                        lineNumber: 61
                                     },
                                     __self: this,
                                     children: genreDetail.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                             __source: {
                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 58
+                                                lineNumber: 63
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                                 __source: {
                                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                                    lineNumber: 59
+                                                    lineNumber: 64
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
@@ -47986,7 +48011,7 @@ function GenreView(props) {
                                                     md: true,
                                                     __source: {
                                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                                        lineNumber: 60
+                                                        lineNumber: 65
                                                     },
                                                     __self: this,
                                                     children: [
@@ -47994,14 +48019,14 @@ function GenreView(props) {
                                                             className: "movie-image",
                                                             __source: {
                                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 61
+                                                                lineNumber: 66
                                                             },
                                                             __self: this,
                                                             children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
                                                                 href: `/movies/${genre.title}`,
                                                                 __source: {
                                                                     fileName: "src/components/genre-view/genre-view.jsx",
-                                                                    lineNumber: 62
+                                                                    lineNumber: 67
                                                                 },
                                                                 __self: this,
                                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -48011,7 +48036,7 @@ function GenreView(props) {
                                                                     className: "image ",
                                                                     __source: {
                                                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                                                        lineNumber: 63
+                                                                        lineNumber: 68
                                                                     },
                                                                     __self: this
                                                                 })
@@ -48021,7 +48046,7 @@ function GenreView(props) {
                                                             className: "h6 text-center",
                                                             __source: {
                                                                 fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 71
+                                                                lineNumber: 76
                                                             },
                                                             __self: this,
                                                             children: genre.title
@@ -48040,7 +48065,7 @@ function GenreView(props) {
                     className: "backbtn",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 81
+                        lineNumber: 86
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -48050,7 +48075,7 @@ function GenreView(props) {
                         },
                         __source: {
                             fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 82
+                            lineNumber: 87
                         },
                         __self: this,
                         children: "Back"
@@ -48091,6 +48116,7 @@ var _logoWhiteSmallSvg = require("url:../assets/logo-white-small.svg");
 var _logoWhiteSmallSvgDefault = parcelHelpers.interopDefault(_logoWhiteSmallSvg);
 var _navbarScss = require("./navbar.scss");
 function Navbar({ user  }) {
+    const activeUser = localStorage.getItem("user");
     function onLoggedOut() {
         localStorage.clear();
         window.open("/", "_self");
@@ -48235,7 +48261,7 @@ function Navbar({ user  }) {
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                            href: `/profile/${user}`,
+                                            href: `/profile/${activeUser}`,
                                             __source: {
                                                 fileName: "src/components/navbar/navbar.jsx",
                                                 lineNumber: 33
@@ -48333,32 +48359,126 @@ function UserView(props) {
         className: "user-detail",
         __source: {
             fileName: "src/components/user-view/user-view.jsx",
-            lineNumber: 47
+            lineNumber: 42
         },
         __self: this,
         children: user && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "user-view",
             __source: {
                 fileName: "src/components/user-view/user-view.jsx",
-                lineNumber: 49
+                lineNumber: 44
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 50
+                        lineNumber: 45
                     },
                     __self: this,
-                    children: "User Profile"
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 47
+                        },
+                        __self: this,
+                        children: "User Profile"
+                    })
                 }),
-                /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 49
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 50
+                        },
+                        __self: this,
+                        children: [
+                            " ",
+                            user.userName
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
                         lineNumber: 52
                     },
                     __self: this,
-                    children: user.userName
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 53
+                        },
+                        __self: this,
+                        children: [
+                            "Name: ",
+                            user.name
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 55
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 56
+                        },
+                        __self: this,
+                        children: [
+                            "Email: ",
+                            user.email
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 58
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 59
+                        },
+                        __self: this,
+                        children: [
+                            "Birthday: ",
+                            user.birthday
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 61
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 62
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                        className: "Change Password",
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 63
+                        },
+                        __self: this,
+                        children: "Change Password"
+                    })
                 })
             ]
         })
