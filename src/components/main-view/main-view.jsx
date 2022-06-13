@@ -25,6 +25,7 @@ import { GenreView } from "../genre-view/genre-view";
 import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
 import { Navbar } from "../navbar/navbar";
+import { UserView } from "../user-view/user-view";
 
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
@@ -271,8 +272,19 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <DirectorView />
+                  <DirectorView/>
                 )
+              }
+            />
+
+<Route
+              path="/profile/:userName"
+              element={
+                !user ? (
+                  <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
+                ) : 
+                  <UserView />
+                
               }
             />
 

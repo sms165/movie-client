@@ -12,12 +12,6 @@
 .row {
   padding: 1rem;
 }
-
-.card-body {
-  background-color: #122535;
-  color: white;
-  font-family: "Joan", serif;
-}
 .login-container {
   background-image: url(movie-theater.d443e8c0.jpg);
   min-height: 100vh;
@@ -32,6 +26,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  font-family: Helvetica, sans-serif;
 }
 
 .card.login-card {
@@ -83,15 +78,17 @@
   color: white;
   padding-top: 10px;
 }
+
+.style-card {
+  background-color: #122535;
+  color: white;
+  font-family: "Joan", serif;
+}
 .movie-view {
   background-color: #122535;
   padding: 5px;
   color: white;
   font-family: "Joan", serif;
-}
-
-.movie-size {
-  height: 60vh;
 }
 
 .image {
@@ -127,6 +124,12 @@
   color: white;
   padding-top: 10px;
 }
+
+.style-card {
+  background-color: #122535;
+  color: white;
+  font-family: "Joan", serif;
+}
 .genreImg {
   text-decoration: none;
   color: #ffffff;
@@ -146,10 +149,6 @@
   padding: 5px;
   color: white;
   font-family: "Joan", serif;
-}
-
-.actor-size {
-  height: 55vh;
 }
 
 .image {
@@ -185,15 +184,17 @@
   color: white;
   padding-top: 10px;
 }
+
+.style-card {
+  background-color: #122535;
+  color: white;
+  font-family: "Joan", serif;
+}
 .director-view {
   background-color: #122535;
   padding: 5px;
   color: white;
   font-family: "Joan", serif;
-}
-
-.director-size {
-  height: 55vh;
 }
 
 .image {
@@ -251,6 +252,22 @@
 
 .menu ul {
   float: right;
+}
+.user-view {
+  background-color: #122535;
+  padding: 5px;
+  color: white;
+  font-family: "Joan", serif;
+}
+
+.user-title {
+  text-align: center;
+}
+
+.backbtn {
+  margin-left: 50%;
+  margin-right: 50%;
+  padding: 5px;
 }
 .my-flix {
   color: steelblue;

@@ -19,7 +19,7 @@ export class ActorCard extends React.Component {
         <Link to={`/movies/actor/${actors.name}`}>
         <Card.Img variant="top" src={actors.portrait} crossOrigin="anonymous" />
         </Link>
-        <Card.Body>
+        <Card.Body class="style-card">
           <Card.Title>{actors.name}</Card.Title>
           
         </Card.Body>

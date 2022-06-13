@@ -39,7 +39,9 @@ export function ActorView(props) {
       {actorsDetail && (
         <div className="actor-view">
           <Container className="actor-size">
-          <div className="actor-info">
+            <Row>
+            <Col>
+          
             <div className="actor-image">
               <img
                 src={actorsDetail[0].actors[0].portrait}
@@ -47,9 +49,12 @@ export function ActorView(props) {
                 crossOrigin="anonymous"
                 className="image rounded float-left"
               />
-              
+              </div>
+              </Col>
             
+            <Col>
             <h1>{actorsDetail[0].actors[0].name}</h1>
+
             <br/>
             {console.log(actorsDetail[0].actors[0].name)}
           <h2>Biography: </h2>
@@ -58,16 +63,19 @@ export function ActorView(props) {
           <br/>
         <h3>Birthday: </h3>
             {actorsDetail[0].actors[0].birthYear}
-
-            </div>
-        </div>
         < br/>
+        </Col>
+        </Row>
         </Container>
         
-          <Container  >
+        
+          <Container  > 
+            <Row>
+
             <div className="actor-movies">
+             
               <h2>Movies: </h2>
-              <Row>
+              
                 <Col className="movie-grid">
                   {actorsDetail.map((actor, index) => (
                     <div key={actor}>
@@ -90,8 +98,9 @@ export function ActorView(props) {
                     </div>
                   ))}
                 </Col>
+                </div>
               </Row>
-            </div>
+            
           </Container>
 
           <div className="backbtn">

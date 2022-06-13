@@ -31,49 +31,17 @@ export function DirectorView(props) {
       .catch((error) => console.error(error));
   }, []);
 
-  // keypressCallback((event)=>{
-  //   console.log(event.key);
-  // })
-
-  // componentDidMount(() =>{
-  //   document.addEventListener('keypress', this.keypressCallback);
-  // })
-
-  // componentWillUnmount(() =>{
-  //   document.removeEventListener('keypress', this.keypressCallback);
-  // })
 
   return (
     <Container className="movie-detail">
       {directorDetail && (
-        //   <Container className="actor-size">
-        //   <div className="actor-info">
-        //     <div className="actor-image">
-        //       <img
-        //         src={actorsDetail[0].actors[0].portrait}
-        //         alt="actor image"
-        //         crossOrigin="anonymous"
-        //         className="image rounded float-left"
-        //       />
-
-        //     <h1>{actorsDetail[0].actors[0].name}</h1>
-        //     <br/>
-        //     {console.log(actorsDetail[0].actors[0].name)}
-        //   <h2>Biography: </h2>
-        //     {actorsDetail[0].actors[0].bio}
-        //   <br/>
-        //   <br/>
-        // <h3>Birthday: </h3>
-        //     {actorsDetail[0].actors[0].birthYear}
-
-        //     </div>
-        // </div>
-        // < br/>
-        // </Container>
+       
 
         <div className="director-view">
           <Container className="director-size">
-            <div className="actor-info">
+            <Row>
+              <Col>
+            
               <div className="actor-image">
                 <img
                   src={directorDetail[0].director.portrait}
@@ -81,7 +49,10 @@ export function DirectorView(props) {
                   crossOrigin="anonymous"
                   className="image rounded float-left"
                 />
+                </div>
+                </Col>
 
+                <Col>
                 {/* <p className="h6">{directorDetail[0].director.name}</p> */}
                 <h1>{directorDetail[0].director.name}</h1>
                 <br />
@@ -92,15 +63,18 @@ export function DirectorView(props) {
                 <br />
                 <h3>Birthday: </h3>
                 {directorDetail[0].director.birthYear}
-              </div>
-            </div>
+              
+            
             <br />
+            </Col>
+            </Row>
           </Container>
 
           <Container  >
+            <Row>
             <div className="director-movies">
               <h2>Movies: </h2>
-              <Row>
+              
                 <Col className="movie-grid">
                   {directorDetail.map((director, index) => (
                     <div key={director}>
@@ -123,8 +97,9 @@ export function DirectorView(props) {
                     </div>
                   ))}
                 </Col>
-              </Row>
+              
             </div>
+            </Row>
           </Container>
 
 

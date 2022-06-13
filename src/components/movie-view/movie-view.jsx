@@ -42,6 +42,8 @@ export function MovieView(props) {
       {movie && (
         <div className="movie-view">
           <Container className="movie-size">
+            <Row>
+              <Col>
             <div className="movie-image">
               <img
                 src={movie.imageUrl}
@@ -50,7 +52,8 @@ export function MovieView(props) {
                 className="image rounded float-left"
               />
             </div>
-
+            </Col>
+            <Col>
             <div className="movie-title">
               <span className="title h1 ">{movie.title}</span>
             </div>
@@ -75,6 +78,8 @@ export function MovieView(props) {
                 </div>
               ))}
             </div>
+            </Col>
+            </Row>
           </Container>
 
           <Container>

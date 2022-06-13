@@ -30,7 +30,7 @@ export function Navbar ({user}) {
             <li><a href="/actor">ACTORS</a></li>
             <li><a href="/movies/director">DIRECTORS</a></li>
             <li><a href="/genre">GENRES</a></li>
-            <li>PROFILE</li>
+            <li><a href={`/profile/${user}`}>PROFILE</a></li>
             <li><button
             onClick={() => {
               onLoggedOut();
