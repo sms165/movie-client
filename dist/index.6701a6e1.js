@@ -48342,6 +48342,7 @@ function UserView(props) {
     const [password, setPassword] = _react.useState("");
     const [email, setEmail] = _react.useState("");
     const [birthday, setBirthday] = _react.useState("");
+    const [name, setName] = _react.useState("");
     const accessToken = localStorage.getItem("token");
     const activeUser = localStorage.getItem("user");
     const navigate = _reactRouterDom.useNavigate();
@@ -48373,11 +48374,11 @@ function UserView(props) {
         }).catch((error)=>console.error(error)
         );
     };
-    const parseDate = (date)=>{
+    function parseDate(date) {
         console.log(date);
         let newDate = date.split("T");
         return newDate[0];
-    };
+    }
     _react.useEffect(()=>{
         getUser();
     }, []);
@@ -48385,69 +48386,122 @@ function UserView(props) {
         className: "user-detail",
         __source: {
             fileName: "src/components/user-view/user-view.jsx",
-            lineNumber: 63
+            lineNumber: 69
         },
         __self: this,
         children: user && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "user-view",
             __source: {
                 fileName: "src/components/user-view/user-view.jsx",
-                lineNumber: 65
+                lineNumber: 71
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    className: "align-items-center",
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 66
+                        lineNumber: 72
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                            __source: {
-                                fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 67
-                            },
-                            __self: this,
-                            children: "User Profile"
-                        }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            sm: 4,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 69
+                                lineNumber: 73
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 70
+                                    lineNumber: 74
                                 },
                                 __self: this,
-                                children: [
-                                    " ",
-                                    user.userName
-                                ]
+                                children: "User Profile"
                             })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            sm: 4,
+                            __source: {
+                                fileName: "src/components/user-view/user-view.jsx",
+                                lineNumber: 76
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                className: "userNameStyle",
+                                __source: {
+                                    fileName: "src/components/user-view/user-view.jsx",
+                                    lineNumber: 77
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 78
+                                    },
+                                    __self: this,
+                                    children: [
+                                        " ",
+                                        user.userName
+                                    ]
+                                })
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                            sm: 3,
+                            __source: {
+                                fileName: "src/components/user-view/user-view.jsx",
+                                lineNumber: 79
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            sm: 1,
+                            __source: {
+                                fileName: "src/components/user-view/user-view.jsx",
+                                lineNumber: 83
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
+                                    icon: _freeSolidSvgIcons.faTrashCan,
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 84
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                    className: "delete",
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 85
+                                    },
+                                    __self: this,
+                                    children: "Delete Account"
+                                })
+                            ]
                         })
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 73
+                        lineNumber: 88
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 74
+                                lineNumber: 89
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 75
+                                    lineNumber: 90
                                 },
                                 __self: this,
                                 children: "Name:"
@@ -48456,13 +48510,13 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 77
+                                lineNumber: 92
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 78
+                                    lineNumber: 93
                                 },
                                 __self: this,
                                 children: [
@@ -48474,37 +48528,46 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 80
+                                lineNumber: 96
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
-                                icon: _freeSolidSvgIcons.faPenToSquare,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                className: "btnStyle",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 81
+                                    lineNumber: 98
                                 },
-                                __self: this
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
+                                    icon: _freeSolidSvgIcons.faPenToSquare,
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 99
+                                    },
+                                    __self: this
+                                })
                             })
                         })
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    className: "align-items-center",
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 84
+                        lineNumber: 106
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 85
+                                lineNumber: 107
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 86
+                                    lineNumber: 108
                                 },
                                 __self: this,
                                 children: "Email:"
@@ -48513,13 +48576,13 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 88
+                                lineNumber: 110
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 89
+                                    lineNumber: 111
                                 },
                                 __self: this,
                                 children: [
@@ -48531,37 +48594,46 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 91
+                                lineNumber: 113
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
-                                icon: _freeSolidSvgIcons.faPenToSquare,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                className: "btnStyle",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 115
                                 },
-                                __self: this
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
+                                    icon: _freeSolidSvgIcons.faPenToSquare,
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 116
+                                    },
+                                    __self: this
+                                })
                             })
                         })
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    className: "align-items-center",
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 95
+                        lineNumber: 121
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 96
+                                lineNumber: 122
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 97
+                                    lineNumber: 123
                                 },
                                 __self: this,
                                 children: "Birthday:"
@@ -48570,60 +48642,94 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 99
+                                lineNumber: 125
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 100
+                                    lineNumber: 126
                                 },
                                 __self: this,
                                 children: parseDate(user.birthday)
                             })
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            className: "align-middle",
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 102
+                                lineNumber: 128
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
-                                icon: _freeSolidSvgIcons.faPenToSquare,
-                                __source: {
-                                    fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 103
-                                },
-                                __self: this
-                            })
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                    className: "btnStyle",
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 129
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
+                                        icon: _freeSolidSvgIcons.faPenToSquare,
+                                        __source: {
+                                            fileName: "src/components/user-view/user-view.jsx",
+                                            lineNumber: 130
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "birthdayChange",
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 132
+                                    },
+                                    __self: this
+                                })
+                            ]
                         })
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 106
+                        lineNumber: 135
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("hr", {
+                    className: "hrStyle",
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 136
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 137
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                    className: "align-items-center",
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 107
+                        lineNumber: 138
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 108
+                                lineNumber: 139
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                className: "password",
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 109
+                                    lineNumber: 140
                                 },
                                 __self: this,
                                 children: "Change Password"
@@ -48632,32 +48738,49 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 111
+                                lineNumber: 142
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 112
-                                },
-                                __self: this,
-                                children: "********"
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                            __source: {
-                                fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 114
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
-                                icon: _freeSolidSvgIcons.faPenToSquare,
-                                __source: {
-                                    fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 115
+                                    lineNumber: 143
                                 },
                                 __self: this
                             })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                            __source: {
+                                fileName: "src/components/user-view/user-view.jsx",
+                                lineNumber: 145
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                    className: "btnStyle",
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 146
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
+                                        icon: _freeSolidSvgIcons.faPenToSquare,
+                                        __source: {
+                                            fileName: "src/components/user-view/user-view.jsx",
+                                            lineNumber: 147
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: "passwordChange",
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 149
+                                    },
+                                    __self: this
+                                })
+                            ]
                         })
                     ]
                 })
@@ -48665,7 +48788,7 @@ function UserView(props) {
         })
     }));
 }
-_s(UserView, "tzCI/EAcvh1bCN3SpqQYeUuyZwo=", false, function() {
+_s(UserView, "fcZMHmOYYrufFRI4ZFsyzw8OT8g=", false, function() {
     return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
 });
 _c = UserView;

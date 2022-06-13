@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./user-view.scss";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faRegular } from "@fortawesome/free-solid-svg-icons";
+import { faPenToSquare, faRegular, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button, Card, CardGroup } from "react-bootstrap";
@@ -19,6 +19,11 @@ export function UserView(props) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
+  const [name, setName] = useState("");
+
+  
+
+  
 
   const accessToken = localStorage.getItem("token");
   const activeUser = localStorage.getItem("user");
@@ -37,6 +42,7 @@ export function UserView(props) {
       .catch((error) => console.error(error));
   };
 
+
   const updateUser = () => {
     axios
       .put(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,{ userName: userName, name:name, email:email, birthday:birthday, password:password },{
@@ -49,7 +55,7 @@ export function UserView(props) {
       .catch((error) => console.error(error));
   };
 
-  const parseDate = (date) => {
+  function parseDate  (date)  {
     console.log(date);
     let newDate = date.split("T");
     return newDate[0];
@@ -63,56 +69,84 @@ export function UserView(props) {
     <Container className="user-detail">
       {user && (
         <div className="user-view">
-          <Row>
+          <Row className="align-items-center" >
+              <Col sm={4}>
             <h1>User Profile</h1>
-
-            <Col>
-              <h1> {user.userName}</h1>
+</Col>
+            <Col sm={4}>
+                <div className="userNameStyle">
+              <h1> {user.userName}</h1 ></div></Col>
+              <Col sm={3}>
+                 
+              </Col>
+            
+            <Col sm={1} >
+            <FontAwesomeIcon icon={faTrashCan} />
+            <p className="delete">Delete Account</p>
             </Col>
           </Row>
-          <Row>
+          <Row >
             <Col>
-              <div>Name:</div>
+              <p>Name:</p>
             </Col>
             <Col>
               <p> {user.name}</p>
             </Col>
-            <Col>
+            
+            <Col > 
+           
+            <button className="btnStyle" >
               <FontAwesomeIcon icon={faPenToSquare} />
-            </Col>
+              </button> 
+              </Col>
+             
+              
+           
           </Row>
-          <Row>
+          <Row className="align-items-center">
             <Col>
-              <div>Email:</div>
+              <p>Email:</p>
             </Col>
             <Col>
               <p> {user.email}</p>
             </Col>
             <Col>
+           
+            <button   className="btnStyle">
               <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+
             </Col>
           </Row>
-          <Row>
+          <Row className="align-items-center">
             <Col>
-              <div>Birthday:</div>
+              <p>Birthday:</p>
             </Col>
             <Col>
               <p>{parseDate(user.birthday)}</p>
             </Col>
-            <Col>
+            <Col className="align-middle">
+            <button className="btnStyle" > 
               <FontAwesomeIcon icon={faPenToSquare} />
+               </button> 
+              <div className="birthdayChange"></div>
             </Col>
           </Row>
           <br />
-          <Row>
+          <hr className="hrStyle"/>
+          <br />
+          <Row className="align-items-center">
             <Col>
-              <div className="password">Change Password</div>
+              <p>Change Password</p>
             </Col>
             <Col>
-              <p>********</p>
+              <p></p>
             </Col>
             <Col>
+            <button className="btnStyle" >
               <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+              <div className="passwordChange"></div>
             </Col>
           </Row>
         </div>
@@ -120,3 +154,4 @@ export function UserView(props) {
     </Container>
   );
 }
+

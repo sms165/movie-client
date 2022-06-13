@@ -25,4 +25,34 @@ $btn-color: rgb(89, 169, 240);
 
 
      
+.alignBtn{
+    justify-items: center;
+}
 
+.btnStyle{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.btnStyle:hover{
+    color: red;
+}
+
+.hrStyle{
+    border: 4px solid #0d1a25;
+  
+}
+
+.userNameStyle{
+    color: red;
+}
+
+.delete{
+    font-size: xx-small;
+    text-align: center;
+}
