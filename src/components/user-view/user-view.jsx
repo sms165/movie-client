@@ -2,10 +2,29 @@ import React, { useState, useEffect } from "react";
 import "./user-view.scss";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPenToSquare, faRegular, faTrashCan } from "@fortawesome/free-solid-svg-icons";
+import {
+  faPenToSquare,
+  faRegular,
+  faTrashCan,
+  faXmark
+} from "@fortawesome/free-solid-svg-icons";
 
 import { useParams, useNavigate } from "react-router-dom";
-import { Container, Row, Col, Button, Card, CardGroup } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Card,
+  CardGroup,
+  Modal,
+  Form,
+  CloseButton
+} from "react-bootstrap";
+
+
+
+import { DeleteModal } from "./delete-modal";
 
 import ReactPlayer from "react-player/youtube";
 
@@ -16,19 +35,58 @@ export function UserView(props) {
   // let movie = movie.find(movie =>movie.title === {title})
 
   const [user, setUser] = useState("");
+  
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
   const [name, setName] = useState("");
 
-  
+//   change password check if user wrote in old password correctly
+  const [oldPassword, setOldPassword] = useState("");
+  let newPassword;
+//   Validation errors
+  const [passwordErr, setPasswordErr] = useState("");
+  const [emailErr, setEmailErr] = useState("");
+  const [nameErr, setNameErr] = useState("");
+  const [birthdayErr, setBirthdayErr] = useState("");
 
-  
+//   Delete Modal
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+//   Name Change Modal
+  const [showChange, setShowChange] = useState(false);
+
+  const handleCloseChange = () => setShowChange(false);
+  const handleShowChange = () => setShowChange(true);
+
+  //   Email Change Modal
+  const [showChangeEmail, setShowChangeEmail] = useState(false);
+
+  const handleCloseChangeEmail = () => setShowChangeEmail(false);
+  const handleShowChangeEmail = () => setShowChangeEmail(true);
+
+  //   Birthday Change Modal
+  const [showChangeBirthday, setShowChangeBirthday] = useState(false);
+
+  const handleCloseChangeBirthday = () => setShowChangeBirthday(false);
+  const handleShowChangeBirthday = () => setShowChangeBirthday(true);
+
+  //   Password Change Modal
+  const [showChangePassword, setShowChangePassword] = useState(false);
+
+  const handleCloseChangePassword = () => setShowChangePassword(false);
+  const handleShowChangePassword = () => setShowChangePassword(true);
+ 
 
   const accessToken = localStorage.getItem("token");
   const activeUser = localStorage.getItem("user");
 
   const navigate = useNavigate();
+
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const getUser = () => {
     axios
@@ -36,30 +94,123 @@ export function UserView(props) {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
+          
         setUser(response.data);
-        console.log(response.data);
+        setPassword(response.data.password);
+        setEmail(response.data.email);
+        setName(response.data.name);
+        setBirthday(response.data.birthday)
+        // console.log(response.data);
       })
       .catch((error) => console.error(error));
   };
 
+  const validate = () => {
+    let isReq =true;
+
+    if(!name){
+        setNameErr("Name is required");
+        isReq = false;
+    }
+
+    if(!birthday){
+        setBirthdayErr("Date is required");
+        isReq = false;
+    }
+    
+  
+    if(!password){
+      setPasswordErr("Password is required");
+        isReq = false;
+    }else if(password.length <6){
+      setPasswordErr("Password must be at least 6 characters long)");
+        isReq = false;
+    }
+  
+    if(!email){
+      setEmailErr("Email address is required");
+      isReq = false;
+    }else if(!email.match(validRegex)){
+      setEmailErr("Email must be valid");
+      isReq = false;
+    }
+  
+    return isReq;
+  }
+
+  const updatePassword =() =>  {
+    // if ({oldPassword} != user.password) {
+
+    //    console.log("password dont match") ;
+  
+       axios.post(`https://my-flix-careerfoundry.herokuapp.com/login`, {
+        userName: userName,
+         password:oldPassword
+      })
+      .then(response => {
+        const data = response.data;
+        setPassword= newPassword;
+        updateUser()
+
+        
+      })
+      .catch(e=> {
+        console.log('no such user', userName, password, oldPassword)
+      });
+      
+  
+//   }
+  }
 
   const updateUser = () => {
-    axios
-      .put(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,{ userName: userName, name:name, email:email, birthday:birthday, password:password },{
-        headers: { Authorization: `Bearer ${accessToken}`},
-      })
+    const isReq= validate();
+    if(isReq){axios
+      .put(
+        `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
+        {
+          
+          name: name,
+          email: email,
+          birthday: birthday,
+          password: password,
+        },
+        {
+          headers: { Authorization: `Bearer ${accessToken}` },
+        }
+      )
       .then((response) => {
-        alert("Profile has been updated")
+       
+        alert("Profile has been updated");
         console.log(response.data);
+        
+        
+
+       
+       
+
       })
       .catch((error) => console.error(error));
+    }
   };
 
-  function parseDate  (date)  {
-    console.log(date);
-    let newDate = date.split("T");
-    return newDate[0];
-  };
+  const deleteUser = () => {
+
+  }
+
+  function parseDate(date) {
+      console.log(user.birthday)
+      if(user.birthday == null ){
+        return user.birthday;
+      }else{
+        console.log(date);
+        let newDate = date.split("T")[0];
+        let final = newDate.split("-").reverse().join("-");
+        return final;
+      }
+   
+  }
+
+
 
   useEffect(() => {
     getUser();
@@ -67,41 +218,212 @@ export function UserView(props) {
 
   return (
     <Container className="user-detail">
+      {/* Delete Account */}
+      <>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Delete Account</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Are you sure you want to delete your account?</p>
+            <p>All your data will be deleted.</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Delete Account
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+      {/* Change Name */}
+      <>
+        <Modal show={showChange} onHide={handleCloseChange}>
+          <Modal.Header closeButton>
+            <Modal.Title>Change Name</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Current Name: {user.name}</p>
+            <Form>
+                <Form.Group controlId="formName">
+                    <Form.Label>Please enter your new name: </Form.Label>
+                    <Form.Control
+                      type="text"
+                     value={name}
+                      placeholder="New name"
+                      onChange={(e) => setName(e.target.value)}
+                      required
+                    />
+                    <p className="error-mesg">{nameErr}</p>
+                    </Form.Group>
+                    </Form>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseChange}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={updateUser}>
+              Set new Name
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+      
+      {/* Change Email */}
+      <>
+        <Modal show={showChangeEmail} onHide={handleCloseChangeEmail}>
+          <Modal.Header closeButton>
+            <Modal.Title>Change Email</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>Current Name: {user.email}</p>
+            <Form>
+                <Form.Group controlId="formName">
+                    <Form.Label>Please enter your new Email: </Form.Label>
+                    <Form.Control
+                    
+                      type="text"
+                     value={email}
+                      placeholder="New email"
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                    <p className="error-mesg">{emailErr}</p>
+                    </Form.Group>
+                    </Form>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseChangeEmail}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={updateUser}>
+              Set new Email
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+
+       {/* Change Birthday */}
+       <>
+        <Modal show={showChangeBirthday} onHide={handleCloseChangeBirthday}>
+          <Modal.Header closeButton>
+            <Modal.Title>Change Birthday</Modal.Title>
+           
+          </Modal.Header>
+          <Modal.Body>
+            <p>Current Birthday: {parseDate(user.birthday)} </p>
+            <Form>
+                <Form.Group controlId="formBirthday">
+                    <Form.Label>Please enter a date: </Form.Label>
+                    <Form.Control
+                      type="date"
+                     value={birthday}
+                      placeholder="New name"
+                      onChange={(e) => setBirthday(e.target.value)}
+                      required
+                    />
+                    <p className="error-mesg">{birthdayErr}</p>
+                    </Form.Group>
+                    </Form>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseChangeBirthday}>
+              Close
+            </Button>s
+            <Button variant="primary" onClick={updateUser}>
+              Set new Birthday
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+
+
+       {/* Change Password */}
+       <>
+        <Modal show={showChangePassword} onHide={handleCloseChangePassword}>
+          <Modal.Header closeButton>
+            <Modal.Title>Change Password</Modal.Title>
+           
+          </Modal.Header>
+          <Modal.Body>
+            <p>Current Password: {parseDate(user.birthday)} </p>
+            <Form>
+                <Form.Group >
+                <Form.Label>Please enter old password: </Form.Label>
+                    <Form.Control
+                    name="oldPassword"
+                    id="oldPassword"
+                      type="password"
+                     value={oldPassword}
+                      placeholder="Old password"
+                      onChange={(e) => setOldPassword(e.target.value)}
+                      required
+                    />
+                    <Form.Label>Please enter a new password: </Form.Label>
+                    <Form.Control
+                    name="newPassword"
+                    id="newPassword"
+                      type="password"
+                     value= {newPassword}
+                      placeholder="New password"
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                    <p className="error-mesg">{passwordErr}</p>
+                    </Form.Group>
+                    </Form>
+           
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleCloseChangePassword}>
+              Close
+            </Button>s
+            <Button variant="primary" onClick={updatePassword}>
+              Set new Password
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
+
+
       {user && (
         <div className="user-view">
-          <Row className="align-items-center" >
-              <Col sm={4}>
-            <h1>User Profile</h1>
-</Col>
+          <Row className="align-items-center">
             <Col sm={4}>
-                <div className="userNameStyle">
-              <h1> {user.userName}</h1 ></div></Col>
-              <Col sm={3}>
-                 
-              </Col>
-            
-            <Col sm={1} >
-            <FontAwesomeIcon icon={faTrashCan} />
-            <p className="delete">Delete Account</p>
+              <h1>User Profile</h1>
+            </Col>
+            <Col sm={4}>
+              <div className="userNameStyle">
+                <h1> {user.userName}</h1>
+              </div>
+            </Col>
+            <Col sm={3}></Col>
+
+            <Col sm={1}>
+              <button className="btnStyle" onClick={handleShow}>
+                <FontAwesomeIcon icon={faTrashCan} />
+                <p className="delete">Delete Account</p>
+              </button>
             </Col>
           </Row>
-          <Row >
+          <Row>
             <Col>
               <p>Name:</p>
             </Col>
             <Col>
               <p> {user.name}</p>
             </Col>
-            
-            <Col > 
-           
-            <button className="btnStyle" >
-              <FontAwesomeIcon icon={faPenToSquare} />
-              </button> 
-              </Col>
-             
-              
-           
+
+            <Col>
+            <button className="btnStyle" onClick={handleShowChange}>
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
+            </Col>
           </Row>
           <Row className="align-items-center">
             <Col>
@@ -111,11 +433,9 @@ export function UserView(props) {
               <p> {user.email}</p>
             </Col>
             <Col>
-           
-            <button   className="btnStyle">
-              <FontAwesomeIcon icon={faPenToSquare} />
+            <button className="btnStyle" onClick={handleShowChangeEmail}>
+                <FontAwesomeIcon icon={faPenToSquare} />
               </button>
-
             </Col>
           </Row>
           <Row className="align-items-center">
@@ -123,17 +443,23 @@ export function UserView(props) {
               <p>Birthday:</p>
             </Col>
             <Col>
+            {/* {parseDate()} */}
+            {/* {if({birthday} {
+                <p>{parseDate(user.birthday)}</p>
+            }
+            } */}
               <p>{parseDate(user.birthday)}</p>
+              {/* <p>{user.birthday}</p> */}
             </Col>
             <Col className="align-middle">
-            <button className="btnStyle" > 
-              <FontAwesomeIcon icon={faPenToSquare} />
-               </button> 
+            <button className="btnStyle" onClick={handleShowChangeBirthday}>
+                <FontAwesomeIcon icon={faPenToSquare} />
+              </button>
               <div className="birthdayChange"></div>
             </Col>
           </Row>
           <br />
-          <hr className="hrStyle"/>
+          <hr className="hrStyle" />
           <br />
           <Row className="align-items-center">
             <Col>
@@ -143,8 +469,8 @@ export function UserView(props) {
               <p></p>
             </Col>
             <Col>
-            <button className="btnStyle" >
-              <FontAwesomeIcon icon={faPenToSquare} />
+            <button className="btnStyle" onClick={handleShowChangePassword}>
+                <FontAwesomeIcon icon={faPenToSquare} />
               </button>
               <div className="passwordChange"></div>
             </Col>
@@ -154,4 +480,3 @@ export function UserView(props) {
     </Container>
   );
 }
-
