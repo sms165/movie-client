@@ -89,6 +89,7 @@
   background-color: #122535;
   color: white;
   font-family: "Joan", serif;
+  text-align: center;
 }
 .movie-view {
   background-color: #122535;
@@ -264,6 +265,10 @@
   font-family: "Joan", serif;
 }
 
+.trash {
+  justify-content: center !important;
+}
+
 .user-title {
   text-align: center;
 }
@@ -315,6 +320,7 @@
   background-color: #1a354b;
   color: white;
   font-family: "Joan", serif;
+  text-align: center;
 }
 .my-flix {
   color: steelblue;

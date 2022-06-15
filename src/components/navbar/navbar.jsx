@@ -15,13 +15,13 @@ export function Navbar ({user}) {
      
 
   return (
-      <Navbar className="main-nav" sticky="top"  expand="lg" >
+      <Navbar className="main-nav" sticky="top"  expand="lg" variant="dark" >
           <Container>
           
               <Navbar.Brand>
               <img src={Logo} alt="myFlix Logo" height="100px" />
               </Navbar.Brand>
-              <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+              <Navbar.Toggle aria-controls="responsive-navbar-nav"  />
               <Navbar.Collapse id="responsive-navbar-nav">
                   <Nav className="ml-auto">
     <div className='menu'>

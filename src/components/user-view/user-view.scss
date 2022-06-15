@@ -5,8 +5,13 @@ $btn-color: rgb(89, 169, 240);
   padding: 5px;
   color:white;
   font-family: 'Joan', serif;
+  
+  
 }
 
+.trash{
+    justify-content: center !important;
+}
 
 
 
@@ -67,4 +72,5 @@ $btn-color: rgb(89, 169, 240);
     background-color: #1a354b;  
     color:white;
     font-family: 'Joan', serif;
+    text-align: center;
   }

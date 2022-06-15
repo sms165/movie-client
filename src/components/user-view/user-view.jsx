@@ -46,6 +46,8 @@ export function UserView(props) {
   const [name, setName] = useState("");
   const [favorites, setFavorites] = useState([]);
 
+  const [upName, setUpName ] = useState("")
+
   //   change password check if user wrote in old password correctly
   //const [oldPassword, setOldPassword] = useState("");
   let newPassword;
@@ -101,7 +103,7 @@ export function UserView(props) {
       })
       .then((response) => {
         setUser(response.data);
-        // setPassword(response.data.password);
+       setPassword(response.data.password);
         setEmail(response.data.email);
         setName(response.data.name);
         setBirthday(response.data.birthday);
@@ -162,18 +164,16 @@ export function UserView(props) {
     //    console.log("password dont match") ;
 
     axios
-      .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
-        userName: userName,
-        password: password,
+      .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/change_password`, {
+        oldPassword: oldPassword,
+        newPassword: newPassword,
+        userName:userName,
       },
       {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
-        const data = response.data;
-        console.log( userName, password, oldPassword);
-        setPassword = newPassword;
-        updateUser();
+        console.log('password')
       })
       .catch((e) => {
         console.log("no such user", userName, password, oldPassword);
@@ -192,7 +192,7 @@ export function UserView(props) {
             name: name,
             email: email,
             birthday: birthday,
-            password: password,
+             password: password,
           },
           {
             headers: { Authorization: `Bearer ${accessToken}` },
@@ -238,14 +238,14 @@ export function UserView(props) {
  const favMovies =movies.filter((movie)=> favorites.includes(movie._id));
 
  function getFavMov(){
-   console.log(favMovies)
+   //console.log(favMovies)
    let i =0;
     // while (i<favMovies.length ) {
     //   const movie = favMovies[i];
     //   console.log(movie)
     return(
     favMovies.map((movie) => (
-      <Col key={movie._id}>
+      <Col md={4} key={movie._id}>
         
         <Container className="fav-card">
       <Card className="border-0 mb-4">
@@ -255,12 +255,13 @@ export function UserView(props) {
         {/* </Link>  */}
         <Card.Body className="fav-style-card">
           <Card.Title>{movie.title}</Card.Title>
-          
-          
-          {/* <Button onClick={() => onMovieClick(movie)} variant="link">
-            Open
-          </Button> */}
+          <Button onClick={() => {delFavMovies(movie._id)}}  variant="primary">
+            Delete from favorites
+          </Button>
+         
+         
         </Card.Body>
+        
       </Card>
       </Container>
         </Col>
@@ -271,7 +272,21 @@ export function UserView(props) {
         
     }
 
-  
+  function delFavMovies(id){
+    console.log(id);
+    axios.delete( `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/${id}`,
+    {headers: { Authorization: `Bearer ${accessToken}` },
+    })
+    .then((response) => {
+      
+          
+          alert('The movie has been deleted from your favorites.');
+          window.open(`/profile/${activeUser}`, "_self");
+      // console.log(response.data);
+    })
+    .catch((error) => {console.error(error);
+  }); 
+    };
  
    
 
@@ -395,7 +410,7 @@ export function UserView(props) {
             <Button variant="secondary" onClick={handleCloseChangeBirthday}>
               Close
             </Button>
-            s
+            
             <Button variant="primary" onClick={updateUser}>
               Set new Birthday
             </Button>
@@ -441,7 +456,7 @@ export function UserView(props) {
             <Button variant="secondary" onClick={handleCloseChangePassword}>
               Close
             </Button>
-            s
+            
             <Button variant="primary" onClick={updatePassword}>
               Set new Password
             </Button>
@@ -461,9 +476,9 @@ export function UserView(props) {
                 <h1> {user.userName}</h1>
               </div>
             </Col>
-            <Col sm={3}></Col>
+            <Col sm={2}></Col>
 
-            <Col sm={1}>
+            <Col sm={2} className="trash">
               <button className="btnStyle" onClick={handleShow}>
                 <FontAwesomeIcon icon={faTrashCan} />
                 <p className="delete">Delete Account</p>
@@ -538,8 +553,9 @@ export function UserView(props) {
           <hr className="hrStyle" />
           <br />
           <h3>Favourite Movies:</h3>
-          <Row md={3}>
+          <Row >
         {getFavMov()}
+        
           </Row>
 
    
