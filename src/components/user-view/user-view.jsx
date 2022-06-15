@@ -158,29 +158,29 @@ export function UserView(props) {
     return isReq;
   };
 
-  const updatePassword = () => {
-    // if ({oldPassword} != user.password) {
+  // const updatePassword = () => {
+  //   // if ({oldPassword} != user.password) {
 
-    //    console.log("password dont match") ;
+  //   //    console.log("password dont match") ;
 
-    axios
-      .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/change_password`, {
-        oldPassword: oldPassword,
-        newPassword: newPassword,
-        userName:userName,
-      },
-      {
-        headers: { Authorization: `Bearer ${accessToken}` },
-      })
-      .then((response) => {
-        console.log('password')
-      })
-      .catch((e) => {
-        console.log("no such user", userName, password, oldPassword);
-      });
+  //   axios
+  //     .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/change_password`, {
+  //       oldPassword: oldPassword,
+  //       newPassword: newPassword,
+  //       userName:userName,
+  //     },
+  //     {
+  //       headers: { Authorization: `Bearer ${accessToken}` },
+  //     })
+  //     .then((response) => {
+  //       console.log('password')
+  //     })
+  //     .catch((e) => {
+  //       console.log("no such user", userName, password, oldPassword);
+  //     });
 
-    //   }
-  };
+  //   //   }
+  // };
 
   const updateUser = () => {
     const isReq = validate();
@@ -238,7 +238,9 @@ export function UserView(props) {
  const favMovies =movies.filter((movie)=> favorites.includes(movie._id));
 
  function getFavMov(){
-   //console.log(favMovies)
+   console.log(favMovies)
+   console.log(movies)
+   console.log(favorites)
    let i =0;
     // while (i<favMovies.length ) {
     //   const movie = favMovies[i];
@@ -293,6 +295,7 @@ export function UserView(props) {
   useEffect(() => {
     getUser();
     getMovies();
+    
     
   }, []);
 
@@ -457,7 +460,7 @@ export function UserView(props) {
               Close
             </Button>
             
-            <Button variant="primary" onClick={updatePassword}>
+            <Button variant="primary" >
               Set new Password
             </Button>
           </Modal.Footer>

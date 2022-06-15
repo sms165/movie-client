@@ -191,6 +191,7 @@ export function MovieView(props) {
                 </Col>
               </Row>
             </div>
+            {console.log(user)}
           </Container>
 
           {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
