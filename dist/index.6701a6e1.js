@@ -38252,7 +38252,7 @@ function MainView(props) {
                                 element: !user ? /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>onLoggedIn(user1)
                                 }) : genres.map((a)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                        md: 3,
+                                        md: 4,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_genreCard.GenreCard, {
                                             genres: a
                                         })
@@ -38322,6 +38322,7 @@ function MainView(props) {
                                 element: !user ? /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>onLoggedIn(user1)
                                 }) : /*#__PURE__*/ _jsxRuntime.jsx(_userView.UserView, {
+                                    movies: true
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
@@ -38359,7 +38360,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","./main-view.scss":"jyMAr","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../actor-card/actor-card":"glQBx","../genre-card/genre-card":"5A39k","../actor-view/actor-view":"DubPH","../director-card/director-card":"ajTCx","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","../navbar/navbar":"63yS7","../user-view/user-view":"fZtM6"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","./main-view.scss":"jyMAr","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../actor-card/actor-card":"glQBx","../actor-view/actor-view":"DubPH","../genre-card/genre-card":"5A39k","../genre-view/genre-view":"8WCoL","../director-card/director-card":"ajTCx","../director-view/director-view":"ck15y","../navbar/navbar":"63yS7","../user-view/user-view":"fZtM6","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -44211,7 +44212,7 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./registration-view.scss":"fr9ZP","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","axios":"iYoWk","prop-types":"1tgq3","url:../assets/myFlix-white.svg":"bJftO"}],"fr9ZP":[function() {},{}],"6EiBJ":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./registration-view.scss":"fr9ZP","url:../assets/myFlix-white.svg":"bJftO","prop-types":"1tgq3","react-bootstrap":"h2YVd","axios":"iYoWk","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"fr9ZP":[function() {},{}],"6EiBJ":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4249 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44238,14 +44239,14 @@ class MovieCard extends _reactDefault.default.Component {
             className: "movie-card",
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 17
+                lineNumber: 18
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                 className: "border-0 mb-4",
                 __source: {
                     fileName: "src/components/movie-card/movie-card.jsx",
-                    lineNumber: 18
+                    lineNumber: 19
                 },
                 __self: this,
                 children: [
@@ -44253,7 +44254,7 @@ class MovieCard extends _reactDefault.default.Component {
                         to: `/movies/${movie.title}`,
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 20
+                            lineNumber: 21
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
@@ -44262,7 +44263,7 @@ class MovieCard extends _reactDefault.default.Component {
                             crossOrigin: "anonymous",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-                                lineNumber: 21
+                                lineNumber: 22
                             },
                             __self: this
                         })
@@ -44271,14 +44272,14 @@ class MovieCard extends _reactDefault.default.Component {
                         class: "style-card",
                         __source: {
                             fileName: "src/components/movie-card/movie-card.jsx",
-                            lineNumber: 23
+                            lineNumber: 24
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 24
+                                    lineNumber: 25
                                 },
                                 __self: this,
                                 children: movie.title
@@ -44286,7 +44287,7 @@ class MovieCard extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Text, {
                                 __source: {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-                                    lineNumber: 25
+                                    lineNumber: 27
                                 },
                                 __self: this,
                                 children: movie.description
@@ -44330,7 +44331,7 @@ MovieCard.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
+},{"react":"6TuXu","prop-types":"1tgq3","./movie-card.scss":"cF5gT","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react/jsx-runtime":"8xIwr"}],"cF5gT":[function() {},{}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -44351,6 +44352,8 @@ var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 var _youtube = require("react-player/youtube");
 var _youtubeDefault = parcelHelpers.interopDefault(_youtube);
+var _lazy = require("react-player/lazy");
+var _lazyDefault = parcelHelpers.interopDefault(_lazy);
 var _s = $RefreshSig$();
 function MovieView(props) {
     _s();
@@ -44359,11 +44362,46 @@ function MovieView(props) {
     // let movie = movie.find(movie =>movie.title === {title})
     const [user, setUser] = _react.useState("");
     const [movie, setMovie] = _react.useState(null);
+    const [hello, setHello] = _react.useState("hello");
+    const [email, setEmail] = _react.useState("");
+    const [birthday, setBirthday] = _react.useState("");
+    const [name, setName] = _react.useState("");
+    const [id, setId] = _react.useState("");
+    const [favorites, setFavorites] = _react.useState([]);
     const [director, setDirector] = "useState";
     const accessToken = localStorage.getItem("token");
     const activeUser = localStorage.getItem("user");
     const navigate = _reactRouterDom.useNavigate();
+    const getUser = ()=>{
+        _axiosDefault.default.get(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((response)=>{
+            setUser(response.data);
+            // setPassword(response.data.password);
+            setEmail(response.data.email);
+            setName(response.data.name);
+            setBirthday(response.data.birthday);
+        // console.log(response.data);
+        }).catch((error)=>console.error(error)
+        );
+    };
+    const updateUser = ()=>{
+        _axiosDefault.default.post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/${id}`, {
+            favorites: favorites
+        }, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((response)=>{
+            alert("Profile has been updated");
+            console.log(response.data);
+        }).catch((error)=>console.error(error)
+        );
+    };
     _react.useEffect(()=>{
+        getUser();
         _axiosDefault.default.get(baseURL + "movies/" + title, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -44371,6 +44409,7 @@ function MovieView(props) {
         }).then((res)=>{
             console.log(res.data);
             setMovie(res.data);
+            setId(res.data._id);
         }).catch((error)=>console.error(error)
         );
     }, []);
@@ -44378,14 +44417,14 @@ function MovieView(props) {
         className: "movie-detail",
         __source: {
             fileName: "src/components/movie-view/movie-view.jsx",
-            lineNumber: 41
+            lineNumber: 89
         },
         __self: this,
         children: movie && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "movie-view",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
-                lineNumber: 43
+                lineNumber: 91
             },
             __self: this,
             children: [
@@ -44393,27 +44432,27 @@ function MovieView(props) {
                     className: "movie-size",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 44
+                        lineNumber: 92
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 45
+                            lineNumber: 93
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 46
+                                    lineNumber: 94
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "movie-image",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 47
+                                        lineNumber: 95
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -44423,7 +44462,7 @@ function MovieView(props) {
                                         className: "image rounded float-left",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 48
+                                            lineNumber: 96
                                         },
                                         __self: this
                                     })
@@ -44432,31 +44471,49 @@ function MovieView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 56
+                                    lineNumber: 104
                                 },
                                 __self: this,
                                 children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                                         className: "movie-title",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 57
+                                            lineNumber: 105
                                         },
                                         __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                            className: "title h1 ",
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 58
-                                            },
-                                            __self: this,
-                                            children: movie.title
-                                        })
+                                        children: [
+                                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                                className: "title h1 ",
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 106
+                                                },
+                                                __self: this,
+                                                children: movie.title
+                                            }),
+                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 107
+                                                },
+                                                __self: this,
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                                    onClick: updateUser,
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 108
+                                                    },
+                                                    __self: this,
+                                                    children: "Add to favorites"
+                                                })
+                                            })
+                                        ]
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 60
+                                            lineNumber: 111
                                         },
                                         __self: this
                                     }),
@@ -44464,7 +44521,7 @@ function MovieView(props) {
                                         className: "description",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 62
+                                            lineNumber: 113
                                         },
                                         __self: this,
                                         children: [
@@ -44472,7 +44529,7 @@ function MovieView(props) {
                                                 className: "label h2",
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 63
+                                                    lineNumber: 114
                                                 },
                                                 __self: this,
                                                 children: " Synopsis: "
@@ -44481,7 +44538,7 @@ function MovieView(props) {
                                                 className: "value",
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 65
+                                                    lineNumber: 116
                                                 },
                                                 __self: this,
                                                 children: movie.description
@@ -44491,7 +44548,7 @@ function MovieView(props) {
                                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 67
+                                            lineNumber: 118
                                         },
                                         __self: this
                                     }),
@@ -44499,7 +44556,7 @@ function MovieView(props) {
                                         className: "genre",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 69
+                                            lineNumber: 120
                                         },
                                         __self: this,
                                         children: [
@@ -44507,7 +44564,7 @@ function MovieView(props) {
                                                 className: "label h2",
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 70
+                                                    lineNumber: 121
                                                 },
                                                 __self: this,
                                                 children: "Genre: "
@@ -44515,21 +44572,21 @@ function MovieView(props) {
                                             movie.genre.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                     __source: {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 73
+                                                        lineNumber: 124
                                                     },
                                                     __self: this,
                                                     children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
                                                         href: `/movies/genre/${genre.name}`,
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 74
+                                                            lineNumber: 125
                                                         },
                                                         __self: this,
                                                         children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                                             className: "h6",
                                                             __source: {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 75
+                                                                lineNumber: 126
                                                             },
                                                             __self: this,
                                                             children: genre.name
@@ -44547,14 +44604,14 @@ function MovieView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 85
+                        lineNumber: 136
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "director-name",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 86
+                            lineNumber: 137
                         },
                         __self: this,
                         children: [
@@ -44562,7 +44619,7 @@ function MovieView(props) {
                                 className: "director h2",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 87
+                                    lineNumber: 138
                                 },
                                 __self: this,
                                 children: "Director: "
@@ -44570,27 +44627,27 @@ function MovieView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 89
+                                    lineNumber: 140
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                     className: "director-grid",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 90
+                                        lineNumber: 141
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                                         className: "wrapper",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 91
+                                            lineNumber: 142
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 92
+                                                lineNumber: 143
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
@@ -44598,7 +44655,7 @@ function MovieView(props) {
                                                 md: true,
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 93
+                                                    lineNumber: 144
                                                 },
                                                 __self: this,
                                                 children: [
@@ -44606,14 +44663,14 @@ function MovieView(props) {
                                                         className: "director-image",
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 94
+                                                            lineNumber: 145
                                                         },
                                                         __self: this,
                                                         children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
                                                             href: `/movies/director/${movie.director.name}`,
                                                             __source: {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 95
+                                                                lineNumber: 146
                                                             },
                                                             __self: this,
                                                             children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -44623,7 +44680,7 @@ function MovieView(props) {
                                                                 className: "director-image",
                                                                 __source: {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 96
+                                                                    lineNumber: 147
                                                                 },
                                                                 __self: this
                                                             })
@@ -44633,7 +44690,7 @@ function MovieView(props) {
                                                         className: "h6",
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 104
+                                                            lineNumber: 155
                                                         },
                                                         __self: this,
                                                         children: movie.director.name
@@ -44650,21 +44707,21 @@ function MovieView(props) {
                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 112
+                        lineNumber: 163
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 114
+                        lineNumber: 165
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                         className: "actors",
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 115
+                            lineNumber: 166
                         },
                         __self: this,
                         children: [
@@ -44672,7 +44729,7 @@ function MovieView(props) {
                                 className: "label h2",
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 116
+                                    lineNumber: 167
                                 },
                                 __self: this,
                                 children: "Actors: "
@@ -44680,33 +44737,33 @@ function MovieView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                 __source: {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 117
+                                    lineNumber: 168
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                     className: "actor-grid",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 118
+                                        lineNumber: 169
                                     },
                                     __self: this,
                                     children: movie.actors.map((actor, index)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                                             className: "wrapper",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 120
+                                                lineNumber: 171
                                             },
                                             __self: this,
                                             children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 121
+                                                    lineNumber: 172
                                                 },
                                                 __self: this,
                                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                                     __source: {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 122
+                                                        lineNumber: 173
                                                     },
                                                     __self: this,
                                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
@@ -44714,7 +44771,7 @@ function MovieView(props) {
                                                         md: true,
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 123
+                                                            lineNumber: 174
                                                         },
                                                         __self: this,
                                                         children: [
@@ -44722,14 +44779,14 @@ function MovieView(props) {
                                                                 className: "actor-image",
                                                                 __source: {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 124
+                                                                    lineNumber: 175
                                                                 },
                                                                 __self: this,
                                                                 children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
                                                                     href: `/movies/actor/${actor.name}`,
                                                                     __source: {
                                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                                        lineNumber: 125
+                                                                        lineNumber: 176
                                                                     },
                                                                     __self: this,
                                                                     children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -44739,7 +44796,7 @@ function MovieView(props) {
                                                                         className: "actor-image",
                                                                         __source: {
                                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                                            lineNumber: 126
+                                                                            lineNumber: 177
                                                                         },
                                                                         __self: this
                                                                     })
@@ -44749,7 +44806,7 @@ function MovieView(props) {
                                                                 className: "h6",
                                                                 __source: {
                                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 134
+                                                                    lineNumber: 185
                                                                 },
                                                                 __self: this,
                                                                 children: actor.name
@@ -44769,7 +44826,7 @@ function MovieView(props) {
                     className: "backbtn",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 154
+                        lineNumber: 207
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -44779,7 +44836,7 @@ function MovieView(props) {
                         },
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 155
+                            lineNumber: 208
                         },
                         __self: this,
                         children: "Back"
@@ -44789,7 +44846,7 @@ function MovieView(props) {
         })
     }));
 }
-_s(MovieView, "IwrxOhn7rQpWIpEsSSG9oJaTWZs=", false, function() {
+_s(MovieView, "MsUW+H6zKPZ+Vq1qexOF+kgUIi4=", false, function() {
     return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
 });
 _c = MovieView;
@@ -44801,7 +44858,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./movie-view.scss":"kvL93","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","react-player/youtube":"8dR8M","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"kvL93":[function() {},{}],"8dR8M":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./movie-view.scss":"kvL93","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","react-player/youtube":"8dR8M","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react-player/lazy":"dQFPP"}],"kvL93":[function() {},{}],"8dR8M":[function(require,module,exports) {
 var createReactPlayer = require('./lib/ReactPlayer').createReactPlayer;
 var Player = require('./lib/players/YouTube').default;
 module.exports = createReactPlayer([
@@ -46979,7 +47036,1615 @@ var canPlay = {
 };
 exports.canPlay = canPlay;
 
-},{"./utils":"dBiMp"}],"glQBx":[function(require,module,exports) {
+},{"./utils":"dBiMp"}],"dQFPP":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _players = _interopRequireDefault(require("./players"));
+var _ReactPlayer = require("./ReactPlayer");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+// Fall back to FilePlayer if nothing else can play the URL
+var fallback = _players["default"][_players["default"].length - 1];
+var _default = _ReactPlayer.createReactPlayer(_players["default"], fallback);
+exports["default"] = _default;
+
+},{"./players":"faGBF","./ReactPlayer":"WTgSr"}],"faGBF":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _react = require("react");
+var _utils = require("../utils");
+var _patterns = require("../patterns");
+var _default = [
+    {
+        key: 'youtube',
+        name: 'YouTube',
+        canPlay: _patterns.canPlay.youtube,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerYouTube' */ "253182e1700cdd8a");
+        })
+    },
+    {
+        key: 'soundcloud',
+        name: 'SoundCloud',
+        canPlay: _patterns.canPlay.soundcloud,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerSoundCloud' */ "9c4b1ab0c1310d20");
+        })
+    },
+    {
+        key: 'vimeo',
+        name: 'Vimeo',
+        canPlay: _patterns.canPlay.vimeo,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerVimeo' */ "1fa7f47aecb60f11");
+        })
+    },
+    {
+        key: 'facebook',
+        name: 'Facebook',
+        canPlay: _patterns.canPlay.facebook,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerFacebook' */ "b0f7d2081bb20ca3");
+        })
+    },
+    {
+        key: 'streamable',
+        name: 'Streamable',
+        canPlay: _patterns.canPlay.streamable,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerStreamable' */ "72348aad896ba378");
+        })
+    },
+    {
+        key: 'wistia',
+        name: 'Wistia',
+        canPlay: _patterns.canPlay.wistia,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerWistia' */ "3aa8fb63cd11a13f");
+        })
+    },
+    {
+        key: 'twitch',
+        name: 'Twitch',
+        canPlay: _patterns.canPlay.twitch,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerTwitch' */ "122266ff845e68e2");
+        })
+    },
+    {
+        key: 'dailymotion',
+        name: 'DailyMotion',
+        canPlay: _patterns.canPlay.dailymotion,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerDailyMotion' */ "bb9684f1a35fd4bf");
+        })
+    },
+    {
+        key: 'mixcloud',
+        name: 'Mixcloud',
+        canPlay: _patterns.canPlay.mixcloud,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerMixcloud' */ "61adf0775941aacb");
+        })
+    },
+    {
+        key: 'vidyard',
+        name: 'Vidyard',
+        canPlay: _patterns.canPlay.vidyard,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerVidyard' */ "bc1728b7932b80b1");
+        })
+    },
+    {
+        key: 'kaltura',
+        name: 'Kaltura',
+        canPlay: _patterns.canPlay.kaltura,
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerKaltura' */ "114e5ece3cc03fb");
+        })
+    },
+    {
+        key: 'file',
+        name: 'FilePlayer',
+        canPlay: _patterns.canPlay.file,
+        canEnablePIP: function canEnablePIP(url) {
+            return _patterns.canPlay.file(url) && (document.pictureInPictureEnabled || _utils.supportsWebKitPresentationMode()) && !_patterns.AUDIO_EXTENSIONS.test(url);
+        },
+        lazyPlayer: /*#__PURE__*/ _react.lazy(function() {
+            return require(/* webpackChunkName: 'reactPlayerFilePlayer' */ "7ff905010a16438a");
+        })
+    }
+];
+exports["default"] = _default;
+
+},{"react":"6TuXu","../utils":"baCpc","../patterns":"jZYIs","253182e1700cdd8a":"14cCt","9c4b1ab0c1310d20":"dqaN6","1fa7f47aecb60f11":"h5lkN","b0f7d2081bb20ca3":"1uVgg","72348aad896ba378":"7JLqV","3aa8fb63cd11a13f":"7gS5r","122266ff845e68e2":"hrItx","bb9684f1a35fd4bf":"9bRDg","61adf0775941aacb":"hWzcy","bc1728b7932b80b1":"hFQve","114e5ece3cc03fb":"lTG7T","7ff905010a16438a":"i1fYl"}],"baCpc":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.parseStartTime = parseStartTime;
+exports.parseEndTime = parseEndTime;
+exports.randomString = randomString;
+exports.queryString = queryString;
+exports.getSDK = getSDK;
+exports.getConfig = getConfig;
+exports.omit = omit;
+exports.callPlayer = callPlayer;
+exports.isMediaStream = isMediaStream;
+exports.isBlobUrl = isBlobUrl;
+exports.supportsWebKitPresentationMode = supportsWebKitPresentationMode;
+var _loadScript = _interopRequireDefault(require("load-script"));
+var _deepmerge = _interopRequireDefault(require("deepmerge"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _slicedToArray(arr, i) {
+    return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _iterableToArrayLimit(arr, i) {
+    if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _e = undefined;
+    try {
+        for(var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+var MATCH_START_QUERY = /[?&#](?:start|t)=([0-9hms]+)/;
+var MATCH_END_QUERY = /[?&#]end=([0-9hms]+)/;
+var MATCH_START_STAMP = /(\d+)(h|m|s)/g;
+var MATCH_NUMERIC = /^\d+$/; // Parse YouTube URL for a start time param, ie ?t=1h14m30s
+// and return the start time in seconds
+function parseTimeParam(url, pattern) {
+    if (url instanceof Array) return undefined;
+    var match = url.match(pattern);
+    if (match) {
+        var stamp = match[1];
+        if (stamp.match(MATCH_START_STAMP)) return parseTimeString(stamp);
+        if (MATCH_NUMERIC.test(stamp)) return parseInt(stamp);
+    }
+    return undefined;
+}
+function parseTimeString(stamp) {
+    var seconds = 0;
+    var array = MATCH_START_STAMP.exec(stamp);
+    while(array !== null){
+        var _array = array, _array2 = _slicedToArray(_array, 3), count = _array2[1], period = _array2[2];
+        if (period === 'h') seconds += parseInt(count, 10) * 3600;
+        if (period === 'm') seconds += parseInt(count, 10) * 60;
+        if (period === 's') seconds += parseInt(count, 10);
+        array = MATCH_START_STAMP.exec(stamp);
+    }
+    return seconds;
+}
+function parseStartTime(url) {
+    return parseTimeParam(url, MATCH_START_QUERY);
+}
+function parseEndTime(url) {
+    return parseTimeParam(url, MATCH_END_QUERY);
+} // http://stackoverflow.com/a/38622545
+function randomString() {
+    return Math.random().toString(36).substr(2, 5);
+}
+function queryString(object) {
+    return Object.keys(object).map(function(key) {
+        return "".concat(key, "=").concat(object[key]);
+    }).join('&');
+}
+function getGlobal(key) {
+    if (window[key]) return window[key];
+    if (window.exports && window.exports[key]) return window.exports[key];
+    if (window.module && window.module.exports && window.module.exports[key]) return window.module.exports[key];
+    return null;
+} // Util function to load an external SDK
+// or return the SDK if it is already loaded
+var requests = {
+};
+function getSDK(url, sdkGlobal) {
+    var sdkReady = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
+    var isLoaded = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : function() {
+        return true;
+    };
+    var fetchScript = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : _loadScript["default"];
+    var existingGlobal = getGlobal(sdkGlobal);
+    if (existingGlobal && isLoaded(existingGlobal)) return Promise.resolve(existingGlobal);
+    return new Promise(function(resolve, reject) {
+        // If we are already loading the SDK, add the resolve and reject
+        // functions to the existing array of requests
+        if (requests[url]) {
+            requests[url].push({
+                resolve: resolve,
+                reject: reject
+            });
+            return;
+        }
+        requests[url] = [
+            {
+                resolve: resolve,
+                reject: reject
+            }
+        ];
+        var onLoaded = function onLoaded1(sdk) {
+            // When loaded, resolve all pending request promises
+            requests[url].forEach(function(request) {
+                return request.resolve(sdk);
+            });
+        };
+        if (sdkReady) {
+            var previousOnReady = window[sdkReady];
+            window[sdkReady] = function() {
+                if (previousOnReady) previousOnReady();
+                onLoaded(getGlobal(sdkGlobal));
+            };
+        }
+        fetchScript(url, function(err) {
+            if (err) {
+                // Loading the SDK failed – reject all requests and
+                // reset the array of requests for this SDK
+                requests[url].forEach(function(request) {
+                    return request.reject(err);
+                });
+                requests[url] = null;
+            } else if (!sdkReady) onLoaded(getGlobal(sdkGlobal));
+        });
+    });
+}
+function getConfig(props, defaultProps) {
+    return _deepmerge["default"](defaultProps.config, props.config);
+}
+function omit(object) {
+    var _ref;
+    for(var _len = arguments.length, arrays = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++)arrays[_key - 1] = arguments[_key];
+    var omitKeys = (_ref = []).concat.apply(_ref, arrays);
+    var output = {
+    };
+    var keys = Object.keys(object);
+    for(var _i2 = 0, _keys = keys; _i2 < _keys.length; _i2++){
+        var key = _keys[_i2];
+        if (omitKeys.indexOf(key) === -1) output[key] = object[key];
+    }
+    return output;
+}
+function callPlayer(method) {
+    var _this$player;
+    // Util method for calling a method on this.player
+    // but guard against errors and console.warn instead
+    if (!this.player || !this.player[method]) {
+        var message = "ReactPlayer: ".concat(this.constructor.displayName, " player could not call %c").concat(method, "%c \u2013 ");
+        if (!this.player) message += 'The player was not available';
+        else if (!this.player[method]) message += 'The method was not available';
+        console.warn(message, 'font-weight: bold', '');
+        return null;
+    }
+    for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
+    return (_this$player = this.player)[method].apply(_this$player, args);
+}
+function isMediaStream(url) {
+    return typeof window !== 'undefined' && typeof window.MediaStream !== 'undefined' && url instanceof window.MediaStream;
+}
+function isBlobUrl(url) {
+    return /^blob:/.test(url);
+}
+function supportsWebKitPresentationMode() {
+    var video = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.createElement('video');
+    // Check if Safari supports PiP, and is not on mobile (other than iPad)
+    // iPhone safari appears to "support" PiP through the check, however PiP does not function
+    var notMobile = /iPhone|iPod/.test(navigator.userAgent) === false;
+    return video.webkitSupportsPresentationMode && typeof video.webkitSetPresentationMode === 'function' && notMobile;
+}
+
+},{"load-script":"2GhFj","deepmerge":"1omL9"}],"jZYIs":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.canPlay = exports.FLV_EXTENSIONS = exports.DASH_EXTENSIONS = exports.HLS_EXTENSIONS = exports.VIDEO_EXTENSIONS = exports.AUDIO_EXTENSIONS = exports.MATCH_URL_KALTURA = exports.MATCH_URL_VIDYARD = exports.MATCH_URL_MIXCLOUD = exports.MATCH_URL_DAILYMOTION = exports.MATCH_URL_TWITCH_CHANNEL = exports.MATCH_URL_TWITCH_VIDEO = exports.MATCH_URL_WISTIA = exports.MATCH_URL_STREAMABLE = exports.MATCH_URL_FACEBOOK_WATCH = exports.MATCH_URL_FACEBOOK = exports.MATCH_URL_VIMEO = exports.MATCH_URL_SOUNDCLOUD = exports.MATCH_URL_YOUTUBE = void 0;
+var _utils = require("./utils");
+function _createForOfIteratorHelper(o, allowArrayLike) {
+    var it;
+    if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+        if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+            if (it) o = it;
+            var i = 0;
+            var F = function F1() {
+            };
+            return {
+                s: F,
+                n: function n() {
+                    if (i >= o.length) return {
+                        done: true
+                    };
+                    return {
+                        done: false,
+                        value: o[i++]
+                    };
+                },
+                e: function e(_e) {
+                    throw _e;
+                },
+                f: F
+            };
+        }
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+    }
+    var normalCompletion = true, didErr = false, err;
+    return {
+        s: function s() {
+            it = o[Symbol.iterator]();
+        },
+        n: function n() {
+            var step = it.next();
+            normalCompletion = step.done;
+            return step;
+        },
+        e: function e(_e2) {
+            didErr = true;
+            err = _e2;
+        },
+        f: function f() {
+            try {
+                if (!normalCompletion && it["return"] != null) it["return"]();
+            } finally{
+                if (didErr) throw err;
+            }
+        }
+    };
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+var MATCH_URL_YOUTUBE = /(?:youtu\.be\/|youtube(?:-nocookie)?\.com\/(?:embed\/|v\/|watch\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})|youtube\.com\/playlist\?list=|youtube\.com\/user\//;
+exports.MATCH_URL_YOUTUBE = MATCH_URL_YOUTUBE;
+var MATCH_URL_SOUNDCLOUD = /(?:soundcloud\.com|snd\.sc)\/[^.]+$/;
+exports.MATCH_URL_SOUNDCLOUD = MATCH_URL_SOUNDCLOUD;
+var MATCH_URL_VIMEO = /vimeo\.com\/(?!progressive_redirect).+/;
+exports.MATCH_URL_VIMEO = MATCH_URL_VIMEO;
+var MATCH_URL_FACEBOOK = /^https?:\/\/(www\.)?facebook\.com.*\/(video(s)?|watch|story)(\.php?|\/).+$/;
+exports.MATCH_URL_FACEBOOK = MATCH_URL_FACEBOOK;
+var MATCH_URL_FACEBOOK_WATCH = /^https?:\/\/fb\.watch\/.+$/;
+exports.MATCH_URL_FACEBOOK_WATCH = MATCH_URL_FACEBOOK_WATCH;
+var MATCH_URL_STREAMABLE = /streamable\.com\/([a-z0-9]+)$/;
+exports.MATCH_URL_STREAMABLE = MATCH_URL_STREAMABLE;
+var MATCH_URL_WISTIA = /(?:wistia\.(?:com|net)|wi\.st)\/(?:medias|embed)\/(?:iframe\/)?(.*)$/;
+exports.MATCH_URL_WISTIA = MATCH_URL_WISTIA;
+var MATCH_URL_TWITCH_VIDEO = /(?:www\.|go\.)?twitch\.tv\/videos\/(\d+)($|\?)/;
+exports.MATCH_URL_TWITCH_VIDEO = MATCH_URL_TWITCH_VIDEO;
+var MATCH_URL_TWITCH_CHANNEL = /(?:www\.|go\.)?twitch\.tv\/([a-zA-Z0-9_]+)($|\?)/;
+exports.MATCH_URL_TWITCH_CHANNEL = MATCH_URL_TWITCH_CHANNEL;
+var MATCH_URL_DAILYMOTION = /^(?:(?:https?):)?(?:\/\/)?(?:www\.)?(?:(?:dailymotion\.com(?:\/embed)?\/video)|dai\.ly)\/([a-zA-Z0-9]+)(?:_[\w_-]+)?$/;
+exports.MATCH_URL_DAILYMOTION = MATCH_URL_DAILYMOTION;
+var MATCH_URL_MIXCLOUD = /mixcloud\.com\/([^/]+\/[^/]+)/;
+exports.MATCH_URL_MIXCLOUD = MATCH_URL_MIXCLOUD;
+var MATCH_URL_VIDYARD = /vidyard.com\/(?:watch\/)?([a-zA-Z0-9-_]+)/;
+exports.MATCH_URL_VIDYARD = MATCH_URL_VIDYARD;
+var MATCH_URL_KALTURA = /^https?:\/\/[a-zA-Z]+\.kaltura.(com|org)\/p\/([0-9]+)\/sp\/([0-9]+)00\/embedIframeJs\/uiconf_id\/([0-9]+)\/partner_id\/([0-9]+)(.*)entry_id.([a-zA-Z0-9-_].*)$/;
+exports.MATCH_URL_KALTURA = MATCH_URL_KALTURA;
+var AUDIO_EXTENSIONS = /\.(m4a|m4b|mp4a|mpga|mp2|mp2a|mp3|m2a|m3a|wav|weba|aac|oga|spx)($|\?)/i;
+exports.AUDIO_EXTENSIONS = AUDIO_EXTENSIONS;
+var VIDEO_EXTENSIONS = /\.(mp4|og[gv]|webm|mov|m4v)(#t=[,\d+]+)?($|\?)/i;
+exports.VIDEO_EXTENSIONS = VIDEO_EXTENSIONS;
+var HLS_EXTENSIONS = /\.(m3u8)($|\?)/i;
+exports.HLS_EXTENSIONS = HLS_EXTENSIONS;
+var DASH_EXTENSIONS = /\.(mpd)($|\?)/i;
+exports.DASH_EXTENSIONS = DASH_EXTENSIONS;
+var FLV_EXTENSIONS = /\.(flv)($|\?)/i;
+exports.FLV_EXTENSIONS = FLV_EXTENSIONS;
+var canPlayFile = function canPlayFile1(url) {
+    if (url instanceof Array) {
+        var _iterator = _createForOfIteratorHelper(url), _step;
+        try {
+            for(_iterator.s(); !(_step = _iterator.n()).done;){
+                var item = _step.value;
+                if (typeof item === 'string' && canPlayFile1(item)) return true;
+                if (canPlayFile1(item.src)) return true;
+            }
+        } catch (err) {
+            _iterator.e(err);
+        } finally{
+            _iterator.f();
+        }
+        return false;
+    }
+    if (_utils.isMediaStream(url) || _utils.isBlobUrl(url)) return true;
+    return AUDIO_EXTENSIONS.test(url) || VIDEO_EXTENSIONS.test(url) || HLS_EXTENSIONS.test(url) || DASH_EXTENSIONS.test(url) || FLV_EXTENSIONS.test(url);
+};
+var canPlay = {
+    youtube: function youtube(url) {
+        if (url instanceof Array) return url.every(function(item) {
+            return MATCH_URL_YOUTUBE.test(item);
+        });
+        return MATCH_URL_YOUTUBE.test(url);
+    },
+    soundcloud: function soundcloud(url) {
+        return MATCH_URL_SOUNDCLOUD.test(url) && !AUDIO_EXTENSIONS.test(url);
+    },
+    vimeo: function vimeo(url) {
+        return MATCH_URL_VIMEO.test(url) && !VIDEO_EXTENSIONS.test(url) && !HLS_EXTENSIONS.test(url);
+    },
+    facebook: function facebook(url) {
+        return MATCH_URL_FACEBOOK.test(url) || MATCH_URL_FACEBOOK_WATCH.test(url);
+    },
+    streamable: function streamable(url) {
+        return MATCH_URL_STREAMABLE.test(url);
+    },
+    wistia: function wistia(url) {
+        return MATCH_URL_WISTIA.test(url);
+    },
+    twitch: function twitch(url) {
+        return MATCH_URL_TWITCH_VIDEO.test(url) || MATCH_URL_TWITCH_CHANNEL.test(url);
+    },
+    dailymotion: function dailymotion(url) {
+        return MATCH_URL_DAILYMOTION.test(url);
+    },
+    mixcloud: function mixcloud(url) {
+        return MATCH_URL_MIXCLOUD.test(url);
+    },
+    vidyard: function vidyard(url) {
+        return MATCH_URL_VIDYARD.test(url);
+    },
+    kaltura: function kaltura(url) {
+        return MATCH_URL_KALTURA.test(url);
+    },
+    file: canPlayFile
+};
+exports.canPlay = canPlay;
+
+},{"./utils":"baCpc"}],"14cCt":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "YouTube.38e15e92.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('8NvwB')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"dqaN6":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "SoundCloud.3bf33137.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('13iqN')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"h5lkN":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Vimeo.e063a006.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('hferr')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"1uVgg":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Facebook.22419583.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('8UlqB')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"7JLqV":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Streamable.dd53fddb.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('ruCjn')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"7gS5r":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Wistia.9774d66d.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('dRuDJ')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"hrItx":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Twitch.17539276.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('9n53y')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"9bRDg":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "DailyMotion.84d54bee.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('3K57b')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"hWzcy":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Mixcloud.bfc08e2b.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('bhB1U')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"hFQve":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Vidyard.e7f2c796.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('iSrgj')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"lTG7T":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Kaltura.d4ccd1b4.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('gGihs')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"i1fYl":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "FilePlayer.3106022c.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('fdzy6')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"WTgSr":[function(require,module,exports) {
+var global = arguments[3];
+"use strict";
+function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") _typeof = function _typeof1(obj1) {
+        return typeof obj1;
+    };
+    else _typeof = function _typeof2(obj1) {
+        return obj1 && typeof Symbol === "function" && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
+    };
+    return _typeof(obj);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.createReactPlayer = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _deepmerge = _interopRequireDefault(require("deepmerge"));
+var _memoizeOne = _interopRequireDefault(require("memoize-one"));
+var _reactFastCompare = _interopRequireDefault(require("react-fast-compare"));
+var _props = require("./props");
+var _utils = require("./utils");
+var _Player3 = _interopRequireDefault(require("./Player"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache1() {
+        return cache;
+    };
+    return cache;
+}
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function ownKeys(object, enumerableOnly) {
+    var keys = Object.keys(object);
+    if (Object.getOwnPropertySymbols) {
+        var symbols = Object.getOwnPropertySymbols(object);
+        if (enumerableOnly) symbols = symbols.filter(function(sym) {
+            return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+        });
+        keys.push.apply(keys, symbols);
+    }
+    return keys;
+}
+function _objectSpread(target) {
+    for(var i = 1; i < arguments.length; i++){
+        var source = arguments[i] != null ? arguments[i] : {
+        };
+        if (i % 2) ownKeys(Object(source), true).forEach(function(key) {
+            _defineProperty(target, key, source[key]);
+        });
+        else if (Object.getOwnPropertyDescriptors) Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+        else ownKeys(Object(source)).forEach(function(key) {
+            Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+        });
+    }
+    return target;
+}
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function");
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+}
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf1(o1, p1) {
+        o1.__proto__ = p1;
+        return o1;
+    };
+    return _setPrototypeOf(o, p);
+}
+function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
+        var Super = _getPrototypeOf(Derived), result;
+        if (hasNativeReflectConstruct) {
+            var NewTarget = _getPrototypeOf(this).constructor;
+            result = Reflect.construct(Super, arguments, NewTarget);
+        } else result = Super.apply(this, arguments);
+        return _possibleConstructorReturn(this, result);
+    };
+}
+function _possibleConstructorReturn(self, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) return call;
+    return _assertThisInitialized(self);
+}
+function _assertThisInitialized(self) {
+    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return self;
+}
+function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+        Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+        }));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf1(o1) {
+        return o1.__proto__ || Object.getPrototypeOf(o1);
+    };
+    return _getPrototypeOf(o);
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+var Preview = /*#__PURE__*/ _react.lazy(function() {
+    return require(/* webpackChunkName: 'reactPlayerPreview' */ "afe2f4821d07a2b3");
+});
+var IS_BROWSER = typeof window !== 'undefined' && window.document;
+var IS_GLOBAL = typeof global !== 'undefined' && global.window && global.window.document;
+var SUPPORTED_PROPS = Object.keys(_props.propTypes); // Return null when rendering on the server
+// as Suspense is not supported yet
+var UniversalSuspense = IS_BROWSER || IS_GLOBAL ? _react.Suspense : function() {
+    return null;
+};
+var customPlayers = [];
+var createReactPlayer = function createReactPlayer1(players, fallback) {
+    var _class, _temp;
+    return _temp = _class = /*#__PURE__*/ (function(_Component) {
+        _inherits(ReactPlayer, _Component);
+        var _super = _createSuper(ReactPlayer);
+        function ReactPlayer() {
+            var _this;
+            _classCallCheck(this, ReactPlayer);
+            for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++)args[_key] = arguments[_key];
+            _this = _super.call.apply(_super, [
+                this
+            ].concat(args));
+            _defineProperty(_assertThisInitialized(_this), "state", {
+                showPreview: !!_this.props.light
+            });
+            _defineProperty(_assertThisInitialized(_this), "references", {
+                wrapper: function wrapper(_wrapper) {
+                    _this.wrapper = _wrapper;
+                },
+                player: function player(_player) {
+                    _this.player = _player;
+                }
+            });
+            _defineProperty(_assertThisInitialized(_this), "handleClickPreview", function(e) {
+                _this.setState({
+                    showPreview: false
+                });
+                _this.props.onClickPreview(e);
+            });
+            _defineProperty(_assertThisInitialized(_this), "showPreview", function() {
+                _this.setState({
+                    showPreview: true
+                });
+            });
+            _defineProperty(_assertThisInitialized(_this), "getDuration", function() {
+                if (!_this.player) return null;
+                return _this.player.getDuration();
+            });
+            _defineProperty(_assertThisInitialized(_this), "getCurrentTime", function() {
+                if (!_this.player) return null;
+                return _this.player.getCurrentTime();
+            });
+            _defineProperty(_assertThisInitialized(_this), "getSecondsLoaded", function() {
+                if (!_this.player) return null;
+                return _this.player.getSecondsLoaded();
+            });
+            _defineProperty(_assertThisInitialized(_this), "getInternalPlayer", function() {
+                var key = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'player';
+                if (!_this.player) return null;
+                return _this.player.getInternalPlayer(key);
+            });
+            _defineProperty(_assertThisInitialized(_this), "seekTo", function(fraction, type) {
+                if (!_this.player) return null;
+                _this.player.seekTo(fraction, type);
+            });
+            _defineProperty(_assertThisInitialized(_this), "handleReady", function() {
+                _this.props.onReady(_assertThisInitialized(_this));
+            });
+            _defineProperty(_assertThisInitialized(_this), "getActivePlayer", _memoizeOne["default"](function(url) {
+                for(var _i = 0, _arr = [].concat(customPlayers, _toConsumableArray(players)); _i < _arr.length; _i++){
+                    var player = _arr[_i];
+                    if (player.canPlay(url)) return player;
+                }
+                if (fallback) return fallback;
+                return null;
+            }));
+            _defineProperty(_assertThisInitialized(_this), "getConfig", _memoizeOne["default"](function(url, key) {
+                var config = _this.props.config;
+                return _deepmerge["default"].all([
+                    _props.defaultProps.config,
+                    _props.defaultProps.config[key] || {
+                    },
+                    config,
+                    config[key] || {
+                    }
+                ]);
+            }));
+            _defineProperty(_assertThisInitialized(_this), "getAttributes", _memoizeOne["default"](function(url) {
+                return _utils.omit(_this.props, SUPPORTED_PROPS);
+            }));
+            _defineProperty(_assertThisInitialized(_this), "renderActivePlayer", function(url) {
+                if (!url) return null;
+                var player = _this.getActivePlayer(url);
+                if (!player) return null;
+                var config = _this.getConfig(url, player.key);
+                return(/*#__PURE__*/ _react["default"].createElement(_Player3["default"], _extends({
+                }, _this.props, {
+                    key: player.key,
+                    ref: _this.references.player,
+                    config: config,
+                    activePlayer: player.lazyPlayer || player,
+                    onReady: _this.handleReady
+                })));
+            });
+            return _this;
+        }
+        _createClass(ReactPlayer, [
+            {
+                key: "shouldComponentUpdate",
+                value: function shouldComponentUpdate(nextProps, nextState) {
+                    return !_reactFastCompare["default"](this.props, nextProps) || !_reactFastCompare["default"](this.state, nextState);
+                }
+            },
+            {
+                key: "componentDidUpdate",
+                value: function componentDidUpdate(prevProps) {
+                    var light = this.props.light;
+                    if (!prevProps.light && light) this.setState({
+                        showPreview: true
+                    });
+                    if (prevProps.light && !light) this.setState({
+                        showPreview: false
+                    });
+                }
+            },
+            {
+                key: "renderPreview",
+                value: function renderPreview(url) {
+                    if (!url) return null;
+                    var _this$props = this.props, light = _this$props.light, playIcon = _this$props.playIcon, previewTabIndex = _this$props.previewTabIndex, oEmbedUrl = _this$props.oEmbedUrl;
+                    return(/*#__PURE__*/ _react["default"].createElement(Preview, {
+                        url: url,
+                        light: light,
+                        playIcon: playIcon,
+                        previewTabIndex: previewTabIndex,
+                        oEmbedUrl: oEmbedUrl,
+                        onClick: this.handleClickPreview
+                    }));
+                }
+            },
+            {
+                key: "render",
+                value: function render() {
+                    var _this$props2 = this.props, url = _this$props2.url, style = _this$props2.style, width = _this$props2.width, height = _this$props2.height, fallback1 = _this$props2.fallback, Wrapper = _this$props2.wrapper;
+                    var showPreview = this.state.showPreview;
+                    var attributes = this.getAttributes(url);
+                    return(/*#__PURE__*/ _react["default"].createElement(Wrapper, _extends({
+                        ref: this.references.wrapper,
+                        style: _objectSpread(_objectSpread({
+                        }, style), {
+                        }, {
+                            width: width,
+                            height: height
+                        })
+                    }, attributes), /*#__PURE__*/ _react["default"].createElement(UniversalSuspense, {
+                        fallback: fallback1
+                    }, showPreview ? this.renderPreview(url) : this.renderActivePlayer(url))));
+                }
+            }
+        ]);
+        return ReactPlayer;
+    })(_react.Component), _defineProperty(_class, "displayName", 'ReactPlayer'), _defineProperty(_class, "propTypes", _props.propTypes), _defineProperty(_class, "defaultProps", _props.defaultProps), _defineProperty(_class, "addCustomPlayer", function(player) {
+        customPlayers.push(player);
+    }), _defineProperty(_class, "removeCustomPlayers", function() {
+        customPlayers.length = 0;
+    }), _defineProperty(_class, "canPlay", function(url) {
+        for(var _i2 = 0, _arr2 = [].concat(customPlayers, _toConsumableArray(players)); _i2 < _arr2.length; _i2++){
+            var _Player = _arr2[_i2];
+            if (_Player.canPlay(url)) return true;
+        }
+        return false;
+    }), _defineProperty(_class, "canEnablePIP", function(url) {
+        for(var _i3 = 0, _arr3 = [].concat(customPlayers, _toConsumableArray(players)); _i3 < _arr3.length; _i3++){
+            var _Player2 = _arr3[_i3];
+            if (_Player2.canEnablePIP && _Player2.canEnablePIP(url)) return true;
+        }
+        return false;
+    }), _temp;
+};
+exports.createReactPlayer = createReactPlayer;
+
+},{"react":"6TuXu","deepmerge":"1omL9","memoize-one":"aUd3c","react-fast-compare":"26f2a","./props":"f4lxJ","./utils":"baCpc","./Player":"b5PKk","afe2f4821d07a2b3":"1EkCV"}],"f4lxJ":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.defaultProps = exports.propTypes = void 0;
+var _propTypes = _interopRequireDefault(require("prop-types"));
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+var string = _propTypes["default"].string, bool = _propTypes["default"].bool, number = _propTypes["default"].number, array = _propTypes["default"].array, oneOfType = _propTypes["default"].oneOfType, shape = _propTypes["default"].shape, object = _propTypes["default"].object, func = _propTypes["default"].func, node = _propTypes["default"].node;
+var propTypes = {
+    url: oneOfType([
+        string,
+        array,
+        object
+    ]),
+    playing: bool,
+    loop: bool,
+    controls: bool,
+    volume: number,
+    muted: bool,
+    playbackRate: number,
+    width: oneOfType([
+        string,
+        number
+    ]),
+    height: oneOfType([
+        string,
+        number
+    ]),
+    style: object,
+    progressInterval: number,
+    playsinline: bool,
+    pip: bool,
+    stopOnUnmount: bool,
+    light: oneOfType([
+        bool,
+        string
+    ]),
+    playIcon: node,
+    previewTabIndex: number,
+    fallback: node,
+    oEmbedUrl: string,
+    wrapper: oneOfType([
+        string,
+        func,
+        shape({
+            render: func.isRequired
+        })
+    ]),
+    config: shape({
+        soundcloud: shape({
+            options: object
+        }),
+        youtube: shape({
+            playerVars: object,
+            embedOptions: object,
+            onUnstarted: func
+        }),
+        facebook: shape({
+            appId: string,
+            version: string,
+            playerId: string,
+            attributes: object
+        }),
+        dailymotion: shape({
+            params: object
+        }),
+        vimeo: shape({
+            playerOptions: object,
+            title: string
+        }),
+        file: shape({
+            attributes: object,
+            tracks: array,
+            forceVideo: bool,
+            forceAudio: bool,
+            forceHLS: bool,
+            forceDASH: bool,
+            forceFLV: bool,
+            hlsOptions: object,
+            hlsVersion: string,
+            dashVersion: string,
+            flvVersion: string
+        }),
+        wistia: shape({
+            options: object,
+            playerId: string,
+            customControls: array
+        }),
+        mixcloud: shape({
+            options: object
+        }),
+        twitch: shape({
+            options: object,
+            playerId: string
+        }),
+        vidyard: shape({
+            options: object
+        })
+    }),
+    onReady: func,
+    onStart: func,
+    onPlay: func,
+    onPause: func,
+    onBuffer: func,
+    onBufferEnd: func,
+    onEnded: func,
+    onError: func,
+    onDuration: func,
+    onSeek: func,
+    onPlaybackRateChange: func,
+    onProgress: func,
+    onClickPreview: func,
+    onEnablePIP: func,
+    onDisablePIP: func
+};
+exports.propTypes = propTypes;
+var noop = function noop1() {
+};
+var defaultProps = {
+    playing: false,
+    loop: false,
+    controls: false,
+    volume: null,
+    muted: false,
+    playbackRate: 1,
+    width: '640px',
+    height: '360px',
+    style: {
+    },
+    progressInterval: 1000,
+    playsinline: false,
+    pip: false,
+    stopOnUnmount: true,
+    light: false,
+    fallback: null,
+    wrapper: 'div',
+    previewTabIndex: 0,
+    oEmbedUrl: 'https://noembed.com/embed?url={url}',
+    config: {
+        soundcloud: {
+            options: {
+                visual: true,
+                // Undocumented, but makes player fill container and look better
+                buying: false,
+                liking: false,
+                download: false,
+                sharing: false,
+                show_comments: false,
+                show_playcount: false
+            }
+        },
+        youtube: {
+            playerVars: {
+                playsinline: 1,
+                showinfo: 0,
+                rel: 0,
+                iv_load_policy: 3,
+                modestbranding: 1
+            },
+            embedOptions: {
+            },
+            onUnstarted: noop
+        },
+        facebook: {
+            appId: '1309697205772819',
+            version: 'v3.3',
+            playerId: null,
+            attributes: {
+            }
+        },
+        dailymotion: {
+            params: {
+                api: 1,
+                'endscreen-enable': false
+            }
+        },
+        vimeo: {
+            playerOptions: {
+                autopause: false,
+                byline: false,
+                portrait: false,
+                title: false
+            },
+            title: null
+        },
+        file: {
+            attributes: {
+            },
+            tracks: [],
+            forceVideo: false,
+            forceAudio: false,
+            forceHLS: false,
+            forceDASH: false,
+            forceFLV: false,
+            hlsOptions: {
+            },
+            hlsVersion: '1.1.4',
+            dashVersion: '3.1.3',
+            flvVersion: '1.5.0'
+        },
+        wistia: {
+            options: {
+            },
+            playerId: null,
+            customControls: null
+        },
+        mixcloud: {
+            options: {
+                hide_cover: 1
+            }
+        },
+        twitch: {
+            options: {
+            },
+            playerId: null
+        },
+        vidyard: {
+            options: {
+            }
+        }
+    },
+    onReady: noop,
+    onStart: noop,
+    onPlay: noop,
+    onPause: noop,
+    onBuffer: noop,
+    onBufferEnd: noop,
+    onEnded: noop,
+    onError: noop,
+    onDuration: noop,
+    onSeek: noop,
+    onPlaybackRateChange: noop,
+    onProgress: noop,
+    onClickPreview: noop,
+    onEnablePIP: noop,
+    onDisablePIP: noop
+};
+exports.defaultProps = defaultProps;
+
+},{"prop-types":"1tgq3"}],"b5PKk":[function(require,module,exports) {
+"use strict";
+function _typeof(obj) {
+    if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") _typeof = function _typeof1(obj1) {
+        return typeof obj1;
+    };
+    else _typeof = function _typeof2(obj1) {
+        return obj1 && typeof Symbol === "function" && obj1.constructor === Symbol && obj1 !== Symbol.prototype ? "symbol" : typeof obj1;
+    };
+    return _typeof(obj);
+}
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _reactFastCompare = _interopRequireDefault(require("react-fast-compare"));
+var _props = require("./props");
+var _utils = require("./utils");
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        "default": obj
+    };
+}
+function _getRequireWildcardCache() {
+    if (typeof WeakMap !== "function") return null;
+    var cache = new WeakMap();
+    _getRequireWildcardCache = function _getRequireWildcardCache1() {
+        return cache;
+    };
+    return cache;
+}
+function _interopRequireWildcard(obj) {
+    if (obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache();
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function _classCallCheck(instance, Constructor) {
+    if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(target, props) {
+    for(var i = 0; i < props.length; i++){
+        var descriptor = props[i];
+        descriptor.enumerable = descriptor.enumerable || false;
+        descriptor.configurable = true;
+        if ("value" in descriptor) descriptor.writable = true;
+        Object.defineProperty(target, descriptor.key, descriptor);
+    }
+}
+function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+}
+function _inherits(subClass, superClass) {
+    if (typeof superClass !== "function" && superClass !== null) throw new TypeError("Super expression must either be null or a function");
+    subClass.prototype = Object.create(superClass && superClass.prototype, {
+        constructor: {
+            value: subClass,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) _setPrototypeOf(subClass, superClass);
+}
+function _setPrototypeOf(o, p) {
+    _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf1(o1, p1) {
+        o1.__proto__ = p1;
+        return o1;
+    };
+    return _setPrototypeOf(o, p);
+}
+function _createSuper(Derived) {
+    var hasNativeReflectConstruct = _isNativeReflectConstruct();
+    return function _createSuperInternal() {
+        var Super = _getPrototypeOf(Derived), result;
+        if (hasNativeReflectConstruct) {
+            var NewTarget = _getPrototypeOf(this).constructor;
+            result = Reflect.construct(Super, arguments, NewTarget);
+        } else result = Super.apply(this, arguments);
+        return _possibleConstructorReturn(this, result);
+    };
+}
+function _possibleConstructorReturn(self, call) {
+    if (call && (_typeof(call) === "object" || typeof call === "function")) return call;
+    return _assertThisInitialized(self);
+}
+function _assertThisInitialized(self) {
+    if (self === void 0) throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+    return self;
+}
+function _isNativeReflectConstruct() {
+    if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+    if (Reflect.construct.sham) return false;
+    if (typeof Proxy === "function") return true;
+    try {
+        Date.prototype.toString.call(Reflect.construct(Date, [], function() {
+        }));
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+function _getPrototypeOf(o) {
+    _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf1(o1) {
+        return o1.__proto__ || Object.getPrototypeOf(o1);
+    };
+    return _getPrototypeOf(o);
+}
+function _defineProperty(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+}
+var SEEK_ON_PLAY_EXPIRY = 5000;
+var Player1 = /*#__PURE__*/ function(_Component) {
+    _inherits(Player2, _Component);
+    var _super = _createSuper(Player2);
+    function Player2() {
+        var _this;
+        _classCallCheck(this, Player2);
+        for(var _len = arguments.length, _args = new Array(_len), _key = 0; _key < _len; _key++)_args[_key] = arguments[_key];
+        _this = _super.call.apply(_super, [
+            this
+        ].concat(_args));
+        _defineProperty(_assertThisInitialized(_this), "mounted", false);
+        _defineProperty(_assertThisInitialized(_this), "isReady", false);
+        _defineProperty(_assertThisInitialized(_this), "isPlaying", false);
+        _defineProperty(_assertThisInitialized(_this), "isLoading", true);
+        _defineProperty(_assertThisInitialized(_this), "loadOnReady", null);
+        _defineProperty(_assertThisInitialized(_this), "startOnPlay", true);
+        _defineProperty(_assertThisInitialized(_this), "seekOnPlay", null);
+        _defineProperty(_assertThisInitialized(_this), "onDurationCalled", false);
+        _defineProperty(_assertThisInitialized(_this), "handlePlayerMount", function(player) {
+            if (_this.player) return; // Prevent loading twice in strict mode
+            _this.player = player;
+            _this.player.load(_this.props.url);
+            _this.progress();
+        });
+        _defineProperty(_assertThisInitialized(_this), "getInternalPlayer", function(key) {
+            if (!_this.player) return null;
+            return _this.player[key];
+        });
+        _defineProperty(_assertThisInitialized(_this), "progress", function() {
+            if (_this.props.url && _this.player && _this.isReady) {
+                var playedSeconds = _this.getCurrentTime() || 0;
+                var loadedSeconds = _this.getSecondsLoaded();
+                var duration = _this.getDuration();
+                if (duration) {
+                    var progress = {
+                        playedSeconds: playedSeconds,
+                        played: playedSeconds / duration
+                    };
+                    if (loadedSeconds !== null) {
+                        progress.loadedSeconds = loadedSeconds;
+                        progress.loaded = loadedSeconds / duration;
+                    } // Only call onProgress if values have changed
+                    if (progress.playedSeconds !== _this.prevPlayed || progress.loadedSeconds !== _this.prevLoaded) _this.props.onProgress(progress);
+                    _this.prevPlayed = progress.playedSeconds;
+                    _this.prevLoaded = progress.loadedSeconds;
+                }
+            }
+            _this.progressTimeout = setTimeout(_this.progress, _this.props.progressFrequency || _this.props.progressInterval);
+        });
+        _defineProperty(_assertThisInitialized(_this), "handleReady", function() {
+            if (!_this.mounted) return;
+            _this.isReady = true;
+            _this.isLoading = false;
+            var _this$props = _this.props, onReady = _this$props.onReady, playing = _this$props.playing, volume = _this$props.volume, muted = _this$props.muted;
+            onReady();
+            if (!muted && volume !== null) _this.player.setVolume(volume);
+            if (_this.loadOnReady) {
+                _this.player.load(_this.loadOnReady, true);
+                _this.loadOnReady = null;
+            } else if (playing) _this.player.play();
+            _this.handleDurationCheck();
+        });
+        _defineProperty(_assertThisInitialized(_this), "handlePlay", function() {
+            _this.isPlaying = true;
+            _this.isLoading = false;
+            var _this$props2 = _this.props, onStart = _this$props2.onStart, onPlay = _this$props2.onPlay, playbackRate = _this$props2.playbackRate;
+            if (_this.startOnPlay) {
+                if (_this.player.setPlaybackRate && playbackRate !== 1) _this.player.setPlaybackRate(playbackRate);
+                onStart();
+                _this.startOnPlay = false;
+            }
+            onPlay();
+            if (_this.seekOnPlay) {
+                _this.seekTo(_this.seekOnPlay);
+                _this.seekOnPlay = null;
+            }
+            _this.handleDurationCheck();
+        });
+        _defineProperty(_assertThisInitialized(_this), "handlePause", function(e) {
+            _this.isPlaying = false;
+            if (!_this.isLoading) _this.props.onPause(e);
+        });
+        _defineProperty(_assertThisInitialized(_this), "handleEnded", function() {
+            var _this$props3 = _this.props, activePlayer = _this$props3.activePlayer, loop = _this$props3.loop, onEnded = _this$props3.onEnded;
+            if (activePlayer.loopOnEnded && loop) _this.seekTo(0);
+            if (!loop) {
+                _this.isPlaying = false;
+                onEnded();
+            }
+        });
+        _defineProperty(_assertThisInitialized(_this), "handleError", function() {
+            var _this$props4;
+            _this.isLoading = false;
+            (_this$props4 = _this.props).onError.apply(_this$props4, arguments);
+        });
+        _defineProperty(_assertThisInitialized(_this), "handleDurationCheck", function() {
+            clearTimeout(_this.durationCheckTimeout);
+            var duration = _this.getDuration();
+            if (duration) {
+                if (!_this.onDurationCalled) {
+                    _this.props.onDuration(duration);
+                    _this.onDurationCalled = true;
+                }
+            } else _this.durationCheckTimeout = setTimeout(_this.handleDurationCheck, 100);
+        });
+        _defineProperty(_assertThisInitialized(_this), "handleLoaded", function() {
+            // Sometimes we know loading has stopped but onReady/onPlay are never called
+            // so this provides a way for players to avoid getting stuck
+            _this.isLoading = false;
+        });
+        return _this;
+    }
+    _createClass(Player2, [
+        {
+            key: "componentDidMount",
+            value: function componentDidMount() {
+                this.mounted = true;
+            }
+        },
+        {
+            key: "componentWillUnmount",
+            value: function componentWillUnmount() {
+                clearTimeout(this.progressTimeout);
+                clearTimeout(this.durationCheckTimeout);
+                if (this.isReady && this.props.stopOnUnmount) {
+                    this.player.stop();
+                    if (this.player.disablePIP) this.player.disablePIP();
+                }
+                this.mounted = false;
+            }
+        },
+        {
+            key: "componentDidUpdate",
+            value: function componentDidUpdate(prevProps) {
+                var _this2 = this;
+                // If there isn’t a player available, don’t do anything
+                if (!this.player) return;
+                 // Invoke player methods based on changed props
+                var _this$props5 = this.props, url = _this$props5.url, playing = _this$props5.playing, volume = _this$props5.volume, muted = _this$props5.muted, playbackRate = _this$props5.playbackRate, pip = _this$props5.pip, loop = _this$props5.loop, activePlayer = _this$props5.activePlayer, disableDeferredLoading = _this$props5.disableDeferredLoading;
+                if (!_reactFastCompare["default"](prevProps.url, url)) {
+                    if (this.isLoading && !activePlayer.forceLoad && !disableDeferredLoading && !_utils.isMediaStream(url)) {
+                        console.warn("ReactPlayer: the attempt to load ".concat(url, " is being deferred until the player has loaded"));
+                        this.loadOnReady = url;
+                        return;
+                    }
+                    this.isLoading = true;
+                    this.startOnPlay = true;
+                    this.onDurationCalled = false;
+                    this.player.load(url, this.isReady);
+                }
+                if (!prevProps.playing && playing && !this.isPlaying) this.player.play();
+                if (prevProps.playing && !playing && this.isPlaying) this.player.pause();
+                if (!prevProps.pip && pip && this.player.enablePIP) this.player.enablePIP();
+                if (prevProps.pip && !pip && this.player.disablePIP) this.player.disablePIP();
+                if (prevProps.volume !== volume && volume !== null) this.player.setVolume(volume);
+                if (prevProps.muted !== muted) {
+                    if (muted) this.player.mute();
+                    else {
+                        this.player.unmute();
+                        if (volume !== null) // Set volume next tick to fix a bug with DailyMotion
+                        setTimeout(function() {
+                            return _this2.player.setVolume(volume);
+                        });
+                    }
+                }
+                if (prevProps.playbackRate !== playbackRate && this.player.setPlaybackRate) this.player.setPlaybackRate(playbackRate);
+                if (prevProps.loop !== loop && this.player.setLoop) this.player.setLoop(loop);
+            }
+        },
+        {
+            key: "getDuration",
+            value: function getDuration() {
+                if (!this.isReady) return null;
+                return this.player.getDuration();
+            }
+        },
+        {
+            key: "getCurrentTime",
+            value: function getCurrentTime() {
+                if (!this.isReady) return null;
+                return this.player.getCurrentTime();
+            }
+        },
+        {
+            key: "getSecondsLoaded",
+            value: function getSecondsLoaded() {
+                if (!this.isReady) return null;
+                return this.player.getSecondsLoaded();
+            }
+        },
+        {
+            key: "seekTo",
+            value: function seekTo(amount, type) {
+                var _this3 = this;
+                // When seeking before player is ready, store value and seek later
+                if (!this.isReady) {
+                    if (amount !== 0) {
+                        this.seekOnPlay = amount;
+                        setTimeout(function() {
+                            _this3.seekOnPlay = null;
+                        }, SEEK_ON_PLAY_EXPIRY);
+                    }
+                    return;
+                }
+                var isFraction = !type ? amount > 0 && amount < 1 : type === 'fraction';
+                if (isFraction) {
+                    // Convert fraction to seconds based on duration
+                    var duration = this.player.getDuration();
+                    if (!duration) {
+                        console.warn('ReactPlayer: could not seek using fraction – duration not yet available');
+                        return;
+                    }
+                    this.player.seekTo(duration * amount);
+                    return;
+                }
+                this.player.seekTo(amount);
+            }
+        },
+        {
+            key: "render",
+            value: function render() {
+                var Player3 = this.props.activePlayer;
+                if (!Player3) return null;
+                return(/*#__PURE__*/ _react["default"].createElement(Player3, _extends({
+                }, this.props, {
+                    onMount: this.handlePlayerMount,
+                    onReady: this.handleReady,
+                    onPlay: this.handlePlay,
+                    onPause: this.handlePause,
+                    onEnded: this.handleEnded,
+                    onLoaded: this.handleLoaded,
+                    onError: this.handleError
+                })));
+            }
+        }
+    ]);
+    return Player2;
+}(_react.Component);
+exports["default"] = Player1;
+_defineProperty(Player1, "displayName", 'Player');
+_defineProperty(Player1, "propTypes", _props.propTypes);
+_defineProperty(Player1, "defaultProps", _props.defaultProps);
+
+},{"react":"6TuXu","react-fast-compare":"26f2a","./props":"f4lxJ","./utils":"baCpc"}],"1EkCV":[function(require,module,exports) {
+module.exports = require("./helpers/browser/js-loader")(require('./helpers/bundle-url').getBundleURL('3VpAv') + "Preview.6ecd720b.js").catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root('VvsFG')
+);
+
+},{"./helpers/browser/js-loader":"fIkgp","./helpers/bundle-url":"7B0nW"}],"glQBx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$466a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47072,76 +48737,7 @@ class ActorCard extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./actor-card.scss":"eatEo","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eatEo":[function() {},{}],"5A39k":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$d015 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$d015.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreCard", ()=>GenreCard
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _genreCardScss = require("./genre-card.scss");
-var _reactRouterDom = require("react-router-dom");
-// bootstrap
-var _reactBootstrap = require("react-bootstrap");
-class GenreCard extends _reactDefault.default.Component {
-    render() {
-        const { genres  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-            __source: {
-                fileName: "src/components/genre-card/genre-card.jsx",
-                lineNumber: 16
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
-                className: "border-0 mb-4",
-                __source: {
-                    fileName: "src/components/genre-card/genre-card.jsx",
-                    lineNumber: 17
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                    className: "genreImg",
-                    to: `/movies/genre/${genres.name}`,
-                    __source: {
-                        fileName: "src/components/genre-card/genre-card.jsx",
-                        lineNumber: 19
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
-                        __source: {
-                            fileName: "src/components/genre-card/genre-card.jsx",
-                            lineNumber: 20
-                        },
-                        __self: this,
-                        children: genres.name
-                    })
-                })
-            })
-        }));
-    }
-}
-GenreCard.propTypes = {
-    genres: _propTypesDefault.default.shape({
-        name: _propTypesDefault.default.string.isRequired,
-        description: _propTypesDefault.default.string.isRequired
-    }).isRequired
-};
-
-  $parcel$ReactRefreshHelpers$d015.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./genre-card.scss":"fR8nT","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"fR8nT":[function() {},{}],"DubPH":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./actor-card.scss":"eatEo","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eatEo":[function() {},{}],"DubPH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b386 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47443,7 +49039,329 @@ $RefreshReg$(_c, "ActorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"6TuXu","./actor-view.scss":"3tOfo","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react/jsx-runtime":"8xIwr"}],"3tOfo":[function() {},{}],"ajTCx":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./actor-view.scss":"3tOfo","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"3tOfo":[function() {},{}],"5A39k":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$d015 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$d015.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreCard", ()=>GenreCard
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _genreCardScss = require("./genre-card.scss");
+var _reactRouterDom = require("react-router-dom");
+// bootstrap
+var _reactBootstrap = require("react-bootstrap");
+class GenreCard extends _reactDefault.default.Component {
+    render() {
+        const { genres  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+            __source: {
+                fileName: "src/components/genre-card/genre-card.jsx",
+                lineNumber: 16
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card, {
+                className: "border-0 mb-4",
+                __source: {
+                    fileName: "src/components/genre-card/genre-card.jsx",
+                    lineNumber: 17
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                    className: "genreImg",
+                    to: `/movies/genre/${genres.name}`,
+                    __source: {
+                        fileName: "src/components/genre-card/genre-card.jsx",
+                        lineNumber: 19
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        __source: {
+                            fileName: "src/components/genre-card/genre-card.jsx",
+                            lineNumber: 20
+                        },
+                        __self: this,
+                        children: genres.name
+                    })
+                })
+            })
+        }));
+    }
+}
+GenreCard.propTypes = {
+    genres: _propTypesDefault.default.shape({
+        name: _propTypesDefault.default.string.isRequired,
+        description: _propTypesDefault.default.string.isRequired
+    }).isRequired
+};
+
+  $parcel$ReactRefreshHelpers$d015.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./genre-card.scss":"fR8nT","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"fR8nT":[function() {},{}],"8WCoL":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5f0a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenreView", ()=>GenreView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _genreViewScss = require("./genre-view.scss");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _reactRouterDom = require("react-router-dom");
+var _reactBootstrap = require("react-bootstrap");
+var _s = $RefreshSig$();
+function GenreView(props) {
+    _s();
+    const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
+    const { genres  } = _reactRouterDom.useParams();
+    // let movie = movie.find(movie =>movie.title === {title})
+    const [user, setUser] = _react.useState("");
+    const [genreDetail, setGenreDetail] = _react.useState(null);
+    const accessToken = localStorage.getItem("token");
+    const activeUser = localStorage.getItem("user");
+    const navigate = _reactRouterDom.useNavigate();
+    _react.useEffect(()=>{
+        _axiosDefault.default.get(baseURL + "movies/genre/" + genres, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((res)=>{
+            console.log(res.data);
+            setGenreDetail(res.data);
+        }).catch((error)=>console.error(error)
+        );
+    }, []);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+        className: "actor-detail",
+        __source: {
+            fileName: "src/components/genre-view/genre-view.jsx",
+            lineNumber: 43
+        },
+        __self: this,
+        children: genreDetail && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            className: "actor-view",
+            __source: {
+                fileName: "src/components/genre-view/genre-view.jsx",
+                lineNumber: 45
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+                    className: "genre-title",
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 46
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 47
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 48
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                    className: " mr-4  h1 pb-4",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 49
+                                    },
+                                    __self: this,
+                                    children: genreDetail[0].genre[0].name
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 51
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                        className: "h2",
+                                        __source: {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 52
+                                        },
+                                        __self: this,
+                                        children: "Description: "
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                        __source: {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 53
+                                        },
+                                        __self: this,
+                                        children: genreDetail[0].genre[0].description
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 57
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                        className: "float-none actor-movies",
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 58
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 59
+                                },
+                                __self: this,
+                                children: "Movies: "
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 60
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                    className: "movie-grid",
+                                    __source: {
+                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                        lineNumber: 61
+                                    },
+                                    __self: this,
+                                    children: genreDetail.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                            __source: {
+                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                lineNumber: 63
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                                __source: {
+                                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                                    lineNumber: 64
+                                                },
+                                                __self: this,
+                                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                                                    xs: true,
+                                                    md: true,
+                                                    __source: {
+                                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                                        lineNumber: 65
+                                                    },
+                                                    __self: this,
+                                                    children: [
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                            className: "movie-image",
+                                                            __source: {
+                                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                                lineNumber: 66
+                                                            },
+                                                            __self: this,
+                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                                                href: `/movies/${genre.title}`,
+                                                                __source: {
+                                                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                                                    lineNumber: 67
+                                                                },
+                                                                __self: this,
+                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                                                    src: genre.imageUrl,
+                                                                    alt: "movie poster",
+                                                                    crossOrigin: "anonymous",
+                                                                    className: "image ",
+                                                                    __source: {
+                                                                        fileName: "src/components/genre-view/genre-view.jsx",
+                                                                        lineNumber: 68
+                                                                    },
+                                                                    __self: this
+                                                                })
+                                                            })
+                                                        }),
+                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                            className: "h6 text-center",
+                                                            __source: {
+                                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                                lineNumber: 76
+                                                            },
+                                                            __self: this,
+                                                            children: genre.title
+                                                        })
+                                                    ]
+                                                })
+                                            })
+                                        }, genre)
+                                    )
+                                })
+                            })
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                    className: "backbtn",
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 86
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                        variant: "custom",
+                        onClick: ()=>{
+                            navigate("/actor");
+                        },
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 87
+                        },
+                        __self: this,
+                        children: "Back"
+                    })
+                })
+            ]
+        })
+    }));
+}
+_s(GenreView, "Dhen9MuYF2qAMKSDqhmqrbNnRQ8=", false, function() {
+    return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
+});
+_c = GenreView;
+var _c;
+$RefreshReg$(_c, "GenreView");
+
+  $parcel$ReactRefreshHelpers$5f0a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./genre-view.scss":"3BqnD","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"3BqnD":[function() {},{}],"ajTCx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$72bd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47544,7 +49462,7 @@ class DirectorCard extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./director-card.scss":"cBEVw"}],"cBEVw":[function() {},{}],"ck15y":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","./director-card.scss":"cBEVw","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"cBEVw":[function() {},{}],"ck15y":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f8cc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -47844,260 +49762,7 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./director-view.scss":"hWS1b","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hWS1b":[function() {},{}],"8WCoL":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$5f0a.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "GenreView", ()=>GenreView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _genreViewScss = require("./genre-view.scss");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _reactRouterDom = require("react-router-dom");
-var _reactBootstrap = require("react-bootstrap");
-var _s = $RefreshSig$();
-function GenreView(props) {
-    _s();
-    const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
-    const { genres  } = _reactRouterDom.useParams();
-    // let movie = movie.find(movie =>movie.title === {title})
-    const [user, setUser] = _react.useState("");
-    const [genreDetail, setGenreDetail] = _react.useState(null);
-    const accessToken = localStorage.getItem("token");
-    const activeUser = localStorage.getItem("user");
-    const navigate = _reactRouterDom.useNavigate();
-    _react.useEffect(()=>{
-        _axiosDefault.default.get(baseURL + "movies/genre/" + genres, {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        }).then((res)=>{
-            console.log(res.data);
-            setGenreDetail(res.data);
-        }).catch((error)=>console.error(error)
-        );
-    }, []);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-        className: "actor-detail",
-        __source: {
-            fileName: "src/components/genre-view/genre-view.jsx",
-            lineNumber: 43
-        },
-        __self: this,
-        children: genreDetail && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            className: "actor-view",
-            __source: {
-                fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 45
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                    className: "genre-title",
-                    __source: {
-                        fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 46
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
-                        __source: {
-                            fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 47
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 48
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                    className: " mr-4  h1 pb-4",
-                                    __source: {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 49
-                                    },
-                                    __self: this,
-                                    children: genreDetail[0].genre[0].name
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 51
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                        className: "h2",
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 52
-                                        },
-                                        __self: this,
-                                        children: "Description: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                        __source: {
-                                            fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 53
-                                        },
-                                        __self: this,
-                                        children: genreDetail[0].genre[0].description
-                                    })
-                                ]
-                            })
-                        ]
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                    __source: {
-                        fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 57
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                        className: "float-none actor-movies",
-                        __source: {
-                            fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 58
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 59
-                                },
-                                __self: this,
-                                children: "Movies: "
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 60
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
-                                    className: "movie-grid",
-                                    __source: {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 61
-                                    },
-                                    __self: this,
-                                    children: genreDetail.map((genre, index)=>/*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                            __source: {
-                                                fileName: "src/components/genre-view/genre-view.jsx",
-                                                lineNumber: 63
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
-                                                __source: {
-                                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                                    lineNumber: 64
-                                                },
-                                                __self: this,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                                    xs: true,
-                                                    md: true,
-                                                    __source: {
-                                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                                        lineNumber: 65
-                                                    },
-                                                    __self: this,
-                                                    children: [
-                                                        /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                            className: "movie-image",
-                                                            __source: {
-                                                                fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 66
-                                                            },
-                                                            __self: this,
-                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                                                href: `/movies/${genre.title}`,
-                                                                __source: {
-                                                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                                                    lineNumber: 67
-                                                                },
-                                                                __self: this,
-                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                                    src: genre.imageUrl,
-                                                                    alt: "movie poster",
-                                                                    crossOrigin: "anonymous",
-                                                                    className: "image ",
-                                                                    __source: {
-                                                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                                                        lineNumber: 68
-                                                                    },
-                                                                    __self: this
-                                                                })
-                                                            })
-                                                        }),
-                                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                            className: "h6 text-center",
-                                                            __source: {
-                                                                fileName: "src/components/genre-view/genre-view.jsx",
-                                                                lineNumber: 76
-                                                            },
-                                                            __self: this,
-                                                            children: genre.title
-                                                        })
-                                                    ]
-                                                })
-                                            })
-                                        }, genre)
-                                    )
-                                })
-                            })
-                        ]
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                    className: "backbtn",
-                    __source: {
-                        fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 86
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                        variant: "custom",
-                        onClick: ()=>{
-                            navigate("/actor");
-                        },
-                        __source: {
-                            fileName: "src/components/genre-view/genre-view.jsx",
-                            lineNumber: 87
-                        },
-                        __self: this,
-                        children: "Back"
-                    })
-                })
-            ]
-        })
-    }));
-}
-_s(GenreView, "Dhen9MuYF2qAMKSDqhmqrbNnRQ8=", false, function() {
-    return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
-});
-_c = GenreView;
-var _c;
-$RefreshReg$(_c, "GenreView");
-
-  $parcel$ReactRefreshHelpers$5f0a.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./genre-view.scss":"3BqnD"}],"3BqnD":[function() {},{}],"63yS7":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./director-view.scss":"hWS1b","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hWS1b":[function() {},{}],"63yS7":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -48306,10 +49971,10 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./navbar.scss":"eqSoH","url:../assets/logo-white-small.svg":"hyMo9"}],"eqSoH":[function() {},{}],"hyMo9":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","url:../assets/logo-white-small.svg":"hyMo9","./navbar.scss":"eqSoH","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hyMo9":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo-white-small.ec888b18.svg";
 
-},{"./helpers/bundle-url":"7B0nW"}],"fZtM6":[function(require,module,exports) {
+},{"./helpers/bundle-url":"7B0nW"}],"eqSoH":[function() {},{}],"fZtM6":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f47c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -48324,6 +49989,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _userViewScss = require("./user-view.scss");
+var _movieCard = require("../movie-card/movie-card");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactFontawesome = require("@fortawesome/react-fontawesome");
@@ -48339,14 +50005,17 @@ function UserView(props) {
     const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
     const { userName  } = _reactRouterDom.useParams();
     // let movie = movie.find(movie =>movie.title === {title})
+    const [movies, setMovies] = _react.useState([]);
     const [user, setUser] = _react.useState("");
     const [password, setPassword] = _react.useState("");
     const [email, setEmail] = _react.useState("");
     const [birthday, setBirthday] = _react.useState("");
     const [name, setName] = _react.useState("");
+    const [favorites, setFavorites] = _react.useState([]);
     //   change password check if user wrote in old password correctly
-    const [oldPassword, setOldPassword] = _react.useState("");
+    //const [oldPassword, setOldPassword] = useState("");
     let newPassword;
+    let oldPassword;
     //   Validation errors
     const [passwordErr, setPasswordErr] = _react.useState("");
     const [emailErr, setEmailErr] = _react.useState("");
@@ -48393,13 +50062,25 @@ function UserView(props) {
             }
         }).then((response)=>{
             setUser(response.data);
-            setPassword(response.data.password);
+            // setPassword(response.data.password);
             setEmail(response.data.email);
             setName(response.data.name);
             setBirthday(response.data.birthday);
+            setFavorites(response.data.favorites);
         // console.log(response.data);
         }).catch((error)=>console.error(error)
         );
+    };
+    const getMovies = ()=>{
+        _axiosDefault.default.get("https://my-flix-careerfoundry.herokuapp.com/movies", {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((response)=>{
+            setMovies(response.data);
+        }).catch(function(error) {
+            console.log(error);
+        });
     };
     const validate = ()=>{
         let isReq = true;
@@ -48430,15 +50111,20 @@ function UserView(props) {
     const updatePassword = ()=>{
         // if ({oldPassword} != user.password) {
         //    console.log("password dont match") ;
-        _axiosDefault.default.post(`https://my-flix-careerfoundry.herokuapp.com/login`, {
+        _axiosDefault.default.post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
             userName: userName,
-            password: oldPassword
+            password: password
+        }, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
         }).then((response)=>{
             const data = response.data;
+            console.log(userName, password, oldPassword);
             setPassword = newPassword;
             updateUser();
         }).catch((e)=>{
-            console.log('no such user', userName, password, oldPassword);
+            console.log("no such user", userName, password, oldPassword);
         });
     //   }
     };
@@ -48456,29 +50142,105 @@ function UserView(props) {
         }).then((response)=>{
             alert("Profile has been updated");
             console.log(response.data);
+            window.open(`/profile/${activeUser}`, "_self");
         }).catch((error)=>console.error(error)
         );
     };
     const deleteUser = ()=>{
+        _axiosDefault.default.delete(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((response)=>{
+            localStorage.removeItem('user');
+            localStorage.removeItem('token');
+            alert('Your profile has been deleted');
+            window.open("/", "_self");
+        // console.log(response.data);
+        }).catch((error)=>{
+            console.error(error);
+        });
     };
     function parseDate(date) {
-        console.log(user.birthday);
+        // console.log(user.birthday);
         if (user.birthday == null) return user.birthday;
         else {
-            console.log(date);
+            // console.log(date);
             let newDate = date.split("T")[0];
             let final = newDate.split("-").reverse().join("-");
             return final;
         }
     }
+    const favMovies = movies.filter((movie)=>favorites.includes(movie._id)
+    );
+    function getFavMov() {
+        console.log(favMovies);
+        let i = 0;
+        // while (i<favMovies.length ) {
+        //   const movie = favMovies[i];
+        //   console.log(movie)
+        return favMovies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                __source: {
+                    fileName: "src/components/user-view/user-view.jsx",
+                    lineNumber: 248
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
+                    className: "fav-card",
+                    __source: {
+                        fileName: "src/components/user-view/user-view.jsx",
+                        lineNumber: 250
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
+                        className: "border-0 mb-4",
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 251
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
+                                variant: "top",
+                                src: movie.imageUrl,
+                                crossOrigin: "anonymous",
+                                __source: {
+                                    fileName: "src/components/user-view/user-view.jsx",
+                                    lineNumber: 254
+                                },
+                                __self: this
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Body, {
+                                className: "fav-style-card",
+                                __source: {
+                                    fileName: "src/components/user-view/user-view.jsx",
+                                    lineNumber: 256
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Title, {
+                                    __source: {
+                                        fileName: "src/components/user-view/user-view.jsx",
+                                        lineNumber: 257
+                                    },
+                                    __self: this,
+                                    children: movie.title
+                                })
+                            })
+                        ]
+                    })
+                })
+            }, movie._id)
+        );
+    }
     _react.useEffect(()=>{
         getUser();
+        getMovies();
     }, []);
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
         className: "user-detail",
         __source: {
             fileName: "src/components/user-view/user-view.jsx",
-            lineNumber: 220
+            lineNumber: 285
         },
         __self: this,
         children: [
@@ -48488,7 +50250,7 @@ function UserView(props) {
                     onHide: handleClose,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 223
+                        lineNumber: 288
                     },
                     __self: this,
                     children: [
@@ -48496,13 +50258,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 224
+                                lineNumber: 289
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 225
+                                    lineNumber: 290
                                 },
                                 __self: this,
                                 children: "Delete Account"
@@ -48511,14 +50273,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 227
+                                lineNumber: 292
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 228
+                                        lineNumber: 293
                                     },
                                     __self: this,
                                     children: "Are you sure you want to delete your account?"
@@ -48526,7 +50288,7 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 229
+                                        lineNumber: 294
                                     },
                                     __self: this,
                                     children: "All your data will be deleted."
@@ -48536,7 +50298,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 231
+                                lineNumber: 296
                             },
                             __self: this,
                             children: [
@@ -48545,17 +50307,17 @@ function UserView(props) {
                                     onClick: handleClose,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 232
+                                        lineNumber: 297
                                     },
                                     __self: this,
                                     children: "Close"
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                     variant: "primary",
-                                    onClick: handleClose,
+                                    onClick: deleteUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 235
+                                        lineNumber: 300
                                     },
                                     __self: this,
                                     children: "Delete Account"
@@ -48571,7 +50333,7 @@ function UserView(props) {
                     onHide: handleCloseChange,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 243
+                        lineNumber: 308
                     },
                     __self: this,
                     children: [
@@ -48579,13 +50341,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 244
+                                lineNumber: 309
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 245
+                                    lineNumber: 310
                                 },
                                 __self: this,
                                 children: "Change Name"
@@ -48594,14 +50356,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 247
+                                lineNumber: 312
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 248
+                                        lineNumber: 313
                                     },
                                     __self: this,
                                     children: [
@@ -48612,21 +50374,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 249
+                                        lineNumber: 314
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formName",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 250
+                                            lineNumber: 315
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 251
+                                                    lineNumber: 316
                                                 },
                                                 __self: this,
                                                 children: "Please enter your new name: "
@@ -48640,7 +50402,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 252
+                                                    lineNumber: 317
                                                 },
                                                 __self: this
                                             }),
@@ -48648,7 +50410,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 259
+                                                    lineNumber: 324
                                                 },
                                                 __self: this,
                                                 children: nameErr
@@ -48661,7 +50423,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 264
+                                lineNumber: 328
                             },
                             __self: this,
                             children: [
@@ -48670,7 +50432,7 @@ function UserView(props) {
                                     onClick: handleCloseChange,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 265
+                                        lineNumber: 329
                                     },
                                     __self: this,
                                     children: "Close"
@@ -48680,7 +50442,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 268
+                                        lineNumber: 332
                                     },
                                     __self: this,
                                     children: "Set new Name"
@@ -48696,7 +50458,7 @@ function UserView(props) {
                     onHide: handleCloseChangeEmail,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 277
+                        lineNumber: 341
                     },
                     __self: this,
                     children: [
@@ -48704,13 +50466,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 278
+                                lineNumber: 342
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 279
+                                    lineNumber: 343
                                 },
                                 __self: this,
                                 children: "Change Email"
@@ -48719,14 +50481,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 281
+                                lineNumber: 345
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 282
+                                        lineNumber: 346
                                     },
                                     __self: this,
                                     children: [
@@ -48737,21 +50499,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 283
+                                        lineNumber: 347
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formName",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 284
+                                            lineNumber: 348
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 285
+                                                    lineNumber: 349
                                                 },
                                                 __self: this,
                                                 children: "Please enter your new Email: "
@@ -48765,7 +50527,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 286
+                                                    lineNumber: 350
                                                 },
                                                 __self: this
                                             }),
@@ -48773,7 +50535,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 294
+                                                    lineNumber: 357
                                                 },
                                                 __self: this,
                                                 children: emailErr
@@ -48786,7 +50548,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 299
+                                lineNumber: 361
                             },
                             __self: this,
                             children: [
@@ -48795,7 +50557,7 @@ function UserView(props) {
                                     onClick: handleCloseChangeEmail,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 300
+                                        lineNumber: 362
                                     },
                                     __self: this,
                                     children: "Close"
@@ -48805,7 +50567,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 303
+                                        lineNumber: 365
                                     },
                                     __self: this,
                                     children: "Set new Email"
@@ -48821,7 +50583,7 @@ function UserView(props) {
                     onHide: handleCloseChangeBirthday,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 312
+                        lineNumber: 374
                     },
                     __self: this,
                     children: [
@@ -48829,13 +50591,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 313
+                                lineNumber: 375
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 314
+                                    lineNumber: 376
                                 },
                                 __self: this,
                                 children: "Change Birthday"
@@ -48844,14 +50606,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 317
+                                lineNumber: 378
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 318
+                                        lineNumber: 379
                                     },
                                     __self: this,
                                     children: [
@@ -48863,21 +50625,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 319
+                                        lineNumber: 380
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formBirthday",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 320
+                                            lineNumber: 381
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 321
+                                                    lineNumber: 382
                                                 },
                                                 __self: this,
                                                 children: "Please enter a date: "
@@ -48891,7 +50653,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 322
+                                                    lineNumber: 383
                                                 },
                                                 __self: this
                                             }),
@@ -48899,7 +50661,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 329
+                                                    lineNumber: 390
                                                 },
                                                 __self: this,
                                                 children: birthdayErr
@@ -48912,7 +50674,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 334
+                                lineNumber: 394
                             },
                             __self: this,
                             children: [
@@ -48921,7 +50683,7 @@ function UserView(props) {
                                     onClick: handleCloseChangeBirthday,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 335
+                                        lineNumber: 395
                                     },
                                     __self: this,
                                     children: "Close"
@@ -48932,7 +50694,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 338
+                                        lineNumber: 399
                                     },
                                     __self: this,
                                     children: "Set new Birthday"
@@ -48948,7 +50710,7 @@ function UserView(props) {
                     onHide: handleCloseChangePassword,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 348
+                        lineNumber: 408
                     },
                     __self: this,
                     children: [
@@ -48956,13 +50718,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 349
+                                lineNumber: 409
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 350
+                                    lineNumber: 410
                                 },
                                 __self: this,
                                 children: "Change Password"
@@ -48971,14 +50733,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 353
+                                lineNumber: 412
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 354
+                                        lineNumber: 413
                                     },
                                     __self: this,
                                     children: [
@@ -48990,20 +50752,20 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 355
+                                        lineNumber: 414
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 356
+                                            lineNumber: 415
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 357
+                                                    lineNumber: 416
                                                 },
                                                 __self: this,
                                                 children: "Please enter old password: "
@@ -49014,19 +50776,19 @@ function UserView(props) {
                                                 type: "password",
                                                 value: oldPassword,
                                                 placeholder: "Old password",
-                                                onChange: (e)=>setOldPassword(e.target.value)
+                                                onChange: (e)=>setPassword(e.target.value)
                                                 ,
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 358
+                                                    lineNumber: 417
                                                 },
                                                 __self: this
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 367
+                                                    lineNumber: 426
                                                 },
                                                 __self: this,
                                                 children: "Please enter a new password: "
@@ -49042,7 +50804,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 368
+                                                    lineNumber: 427
                                                 },
                                                 __self: this
                                             }),
@@ -49050,7 +50812,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 377
+                                                    lineNumber: 436
                                                 },
                                                 __self: this,
                                                 children: passwordErr
@@ -49063,7 +50825,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 382
+                                lineNumber: 440
                             },
                             __self: this,
                             children: [
@@ -49072,7 +50834,7 @@ function UserView(props) {
                                     onClick: handleCloseChangePassword,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 383
+                                        lineNumber: 441
                                     },
                                     __self: this,
                                     children: "Close"
@@ -49083,7 +50845,7 @@ function UserView(props) {
                                     onClick: updatePassword,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 386
+                                        lineNumber: 445
                                     },
                                     __self: this,
                                     children: "Set new Password"
@@ -49097,7 +50859,7 @@ function UserView(props) {
                 className: "user-view",
                 __source: {
                     fileName: "src/components/user-view/user-view.jsx",
-                    lineNumber: 395
+                    lineNumber: 453
                 },
                 __self: this,
                 children: [
@@ -49105,7 +50867,7 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 396
+                            lineNumber: 454
                         },
                         __self: this,
                         children: [
@@ -49113,13 +50875,13 @@ function UserView(props) {
                                 sm: 4,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 397
+                                    lineNumber: 456
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 398
+                                        lineNumber: 457
                                     },
                                     __self: this,
                                     children: "User Profile"
@@ -49129,20 +50891,20 @@ function UserView(props) {
                                 sm: 4,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 400
+                                    lineNumber: 459
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "userNameStyle",
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 401
+                                        lineNumber: 460
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 402
+                                            lineNumber: 461
                                         },
                                         __self: this,
                                         children: [
@@ -49156,7 +50918,7 @@ function UserView(props) {
                                 sm: 3,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 405
+                                    lineNumber: 464
                                 },
                                 __self: this
                             }),
@@ -49164,7 +50926,7 @@ function UserView(props) {
                                 sm: 1,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 407
+                                    lineNumber: 466
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("button", {
@@ -49172,7 +50934,7 @@ function UserView(props) {
                                     onClick: handleShow,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 408
+                                        lineNumber: 467
                                     },
                                     __self: this,
                                     children: [
@@ -49180,7 +50942,7 @@ function UserView(props) {
                                             icon: _freeSolidSvgIcons.faTrashCan,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 409
+                                                lineNumber: 468
                                             },
                                             __self: this
                                         }),
@@ -49188,7 +50950,7 @@ function UserView(props) {
                                             className: "delete",
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 410
+                                                lineNumber: 469
                                             },
                                             __self: this,
                                             children: "Delete Account"
@@ -49201,20 +50963,20 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 414
+                            lineNumber: 473
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 415
+                                    lineNumber: 474
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 416
+                                        lineNumber: 475
                                     },
                                     __self: this,
                                     children: "Name:"
@@ -49223,13 +50985,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 418
+                                    lineNumber: 477
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 419
+                                        lineNumber: 478
                                     },
                                     __self: this,
                                     children: [
@@ -49241,7 +51003,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 422
+                                    lineNumber: 481
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -49249,14 +51011,14 @@ function UserView(props) {
                                     onClick: handleShowChange,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 423
+                                        lineNumber: 482
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                         icon: _freeSolidSvgIcons.faPenToSquare,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 424
+                                            lineNumber: 483
                                         },
                                         __self: this
                                     })
@@ -49268,20 +51030,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 428
+                            lineNumber: 487
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 429
+                                    lineNumber: 488
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 430
+                                        lineNumber: 489
                                     },
                                     __self: this,
                                     children: "Email:"
@@ -49290,13 +51052,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 432
+                                    lineNumber: 491
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 433
+                                        lineNumber: 492
                                     },
                                     __self: this,
                                     children: [
@@ -49308,7 +51070,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 435
+                                    lineNumber: 494
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -49316,14 +51078,14 @@ function UserView(props) {
                                     onClick: handleShowChangeEmail,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 436
+                                        lineNumber: 495
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                         icon: _freeSolidSvgIcons.faPenToSquare,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 437
+                                            lineNumber: 496
                                         },
                                         __self: this
                                     })
@@ -49335,20 +51097,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 441
+                            lineNumber: 500
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 442
+                                    lineNumber: 501
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 443
+                                        lineNumber: 502
                                     },
                                     __self: this,
                                     children: "Birthday:"
@@ -49357,13 +51119,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 445
+                                    lineNumber: 504
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 451
+                                        lineNumber: 510
                                     },
                                     __self: this,
                                     children: parseDate(user.birthday)
@@ -49373,7 +51135,7 @@ function UserView(props) {
                                 className: "align-middle",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 454
+                                    lineNumber: 513
                                 },
                                 __self: this,
                                 children: [
@@ -49382,14 +51144,14 @@ function UserView(props) {
                                         onClick: handleShowChangeBirthday,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 455
+                                            lineNumber: 514
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                             icon: _freeSolidSvgIcons.faPenToSquare,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 456
+                                                lineNumber: 515
                                             },
                                             __self: this
                                         })
@@ -49398,7 +51160,7 @@ function UserView(props) {
                                         className: "birthdayChange",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 458
+                                            lineNumber: 517
                                         },
                                         __self: this
                                     })
@@ -49409,7 +51171,7 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 461
+                            lineNumber: 520
                         },
                         __self: this
                     }),
@@ -49417,14 +51179,14 @@ function UserView(props) {
                         className: "hrStyle",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 462
+                            lineNumber: 521
                         },
                         __self: this
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 463
+                            lineNumber: 522
                         },
                         __self: this
                     }),
@@ -49432,20 +51194,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 464
+                            lineNumber: 523
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 465
+                                    lineNumber: 524
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 466
+                                        lineNumber: 525
                                     },
                                     __self: this,
                                     children: "Change Password"
@@ -49454,13 +51216,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 468
+                                    lineNumber: 527
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 469
+                                        lineNumber: 528
                                     },
                                     __self: this
                                 })
@@ -49468,7 +51230,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 471
+                                    lineNumber: 530
                                 },
                                 __self: this,
                                 children: [
@@ -49477,14 +51239,14 @@ function UserView(props) {
                                         onClick: handleShowChangePassword,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 472
+                                            lineNumber: 531
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                             icon: _freeSolidSvgIcons.faPenToSquare,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 473
+                                                lineNumber: 532
                                             },
                                             __self: this
                                         })
@@ -49493,20 +51255,59 @@ function UserView(props) {
                                         className: "passwordChange",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 475
+                                            lineNumber: 534
                                         },
                                         __self: this
                                     })
                                 ]
                             })
                         ]
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 537
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("hr", {
+                        className: "hrStyle",
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 538
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 539
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 540
+                        },
+                        __self: this,
+                        children: "Favourite Movies:"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                        md: 3,
+                        __source: {
+                            fileName: "src/components/user-view/user-view.jsx",
+                            lineNumber: 541
+                        },
+                        __self: this,
+                        children: getFavMov()
                     })
                 ]
             })
         ]
     }));
 }
-_s(UserView, "7fdJSY3okezOKc6GGmRPEsO8xm8=", false, function() {
+_s(UserView, "hvr8Ci8+ewLR/dqelVfMPpiF01I=", false, function() {
     return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
 });
 _c = UserView;
@@ -49518,7 +51319,7 @@ $RefreshReg$(_c, "UserView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./user-view.scss":"e7l6L","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","react-player/youtube":"8dR8M","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","@fortawesome/react-fontawesome":"lkb0J","@fortawesome/free-solid-svg-icons":"6OAoj","./delete-modal":"fhbja"}],"e7l6L":[function() {},{}],"lkb0J":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./user-view.scss":"e7l6L","axios":"iYoWk","@fortawesome/react-fontawesome":"lkb0J","@fortawesome/free-solid-svg-icons":"6OAoj","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","./delete-modal":"fhbja","react-player/youtube":"8dR8M","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../movie-card/movie-card":"6EiBJ"}],"e7l6L":[function() {},{}],"lkb0J":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FontAwesomeIcon", ()=>FontAwesomeIcon

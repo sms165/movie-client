@@ -136,20 +136,6 @@
   color: white;
   font-family: "Joan", serif;
 }
-.genreImg {
-  text-decoration: none;
-  color: #ffffff;
-  background-color: #122535;
-  font-family: "Joan", serif;
-  text-align: center;
-  padding: 30px;
-  padding-bottom: 60px;
-  padding-top: 60px;
-}
-
-.genreImg:hover {
-  text-decoration: none;
-}
 .actor-view {
   background-color: #122535;
   padding: 5px;
@@ -185,6 +171,21 @@
 .wrapper {
   flex: 25%;
 }
+.genreImg {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #122535;
+  font-family: "Joan", serif;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 60px;
+  padding-top: 60px;
+}
+
+.genreImg:hover {
+  text-decoration: none;
+}
+
 .director-card {
   background-color: #122535;
   color: white;
@@ -231,7 +232,6 @@
 .wrapper {
   flex: 25%;
 }
-
 * {
   font-family: "Joan", serif;
 }
@@ -303,6 +303,18 @@
 .delete {
   font-size: xx-small;
   text-align: center;
+}
+
+.fav-card {
+  background-color: #1a354b;
+  color: white;
+  padding-top: 10px;
+}
+
+.fav-style-card {
+  background-color: #1a354b;
+  color: white;
+  font-family: "Joan", serif;
 }
 .my-flix {
   color: steelblue;

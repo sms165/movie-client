@@ -11,6 +11,7 @@ import {Button} from "react-bootstrap";
 export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
+    
 
     return (
       
@@ -22,6 +23,7 @@ export class MovieCard extends React.Component {
         </Link>
         <Card.Body class="style-card">
           <Card.Title>{movie.title}</Card.Title>
+          
           <Card.Text>{movie.description}</Card.Text>
           {/* <Button onClick={() => onMovieClick(movie)} variant="link">
             Open

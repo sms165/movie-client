@@ -222,7 +222,7 @@ export function MainView(props) {
                 ) : (
                   
                   genres.map((a) => (
-                    <Col md={3} key={a._id}>
+                    <Col md={4} key={a._id}>
                       <GenreCard genres={a} />
                     </Col>
                   ))
@@ -284,7 +284,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : 
-                  <UserView />
+                  <UserView movies />
                 
               }
             />

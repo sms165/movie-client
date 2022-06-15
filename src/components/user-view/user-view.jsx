@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./user-view.scss";
+
+import { MovieCard } from "../movie-card/movie-card";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPenToSquare,
   faRegular,
   faTrashCan,
-  faXmark
+  faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { useParams, useNavigate } from "react-router-dom";
@@ -19,10 +21,9 @@ import {
   CardGroup,
   Modal,
   Form,
-  CloseButton
+  CloseButton,
+  Link
 } from "react-bootstrap";
-
-
 
 import { DeleteModal } from "./delete-modal";
 
@@ -31,32 +32,37 @@ import ReactPlayer from "react-player/youtube";
 export function UserView(props) {
   const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
 
-  const { userName } = useParams();
+   const { userName } = useParams();
   // let movie = movie.find(movie =>movie.title === {title})
-
+  const [movies, setMovies ] = useState([]);
   const [user, setUser] = useState("");
+
+ 
   
+
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
   const [name, setName] = useState("");
+  const [favorites, setFavorites] = useState([]);
 
-//   change password check if user wrote in old password correctly
-  const [oldPassword, setOldPassword] = useState("");
+  //   change password check if user wrote in old password correctly
+  //const [oldPassword, setOldPassword] = useState("");
   let newPassword;
-//   Validation errors
+  let oldPassword;
+  //   Validation errors
   const [passwordErr, setPasswordErr] = useState("");
   const [emailErr, setEmailErr] = useState("");
   const [nameErr, setNameErr] = useState("");
   const [birthdayErr, setBirthdayErr] = useState("");
 
-//   Delete Modal
+  //   Delete Modal
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-//   Name Change Modal
+  //   Name Change Modal
   const [showChange, setShowChange] = useState(false);
 
   const handleCloseChange = () => setShowChange(false);
@@ -79,14 +85,14 @@ export function UserView(props) {
 
   const handleCloseChangePassword = () => setShowChangePassword(false);
   const handleShowChangePassword = () => setShowChangePassword(true);
- 
 
   const accessToken = localStorage.getItem("token");
   const activeUser = localStorage.getItem("user");
 
   const navigate = useNavigate();
 
-  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  var validRegex =
+    /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const getUser = () => {
     axios
@@ -94,126 +100,185 @@ export function UserView(props) {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
-          
         setUser(response.data);
-        setPassword(response.data.password);
+        // setPassword(response.data.password);
         setEmail(response.data.email);
         setName(response.data.name);
-        setBirthday(response.data.birthday)
+        setBirthday(response.data.birthday);
+        setFavorites(response.data.favorites)
         // console.log(response.data);
       })
       .catch((error) => console.error(error));
   };
 
+  const getMovies= () => {
+    axios
+      .get("https://my-flix-careerfoundry.herokuapp.com/movies", {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      })
+      .then((response) => {
+        setMovies(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   const validate = () => {
-    let isReq =true;
+    let isReq = true;
 
-    if(!name){
-        setNameErr("Name is required");
-        isReq = false;
+    if (!name) {
+      setNameErr("Name is required");
+      isReq = false;
     }
 
-    if(!birthday){
-        setBirthdayErr("Date is required");
-        isReq = false;
+    if (!birthday) {
+      setBirthdayErr("Date is required");
+      isReq = false;
     }
-    
-  
-    if(!password){
+
+    if (!password) {
       setPasswordErr("Password is required");
-        isReq = false;
-    }else if(password.length <6){
+      isReq = false;
+    } else if (password.length < 6) {
       setPasswordErr("Password must be at least 6 characters long)");
-        isReq = false;
+      isReq = false;
     }
-  
-    if(!email){
+
+    if (!email) {
       setEmailErr("Email address is required");
       isReq = false;
-    }else if(!email.match(validRegex)){
+    } else if (!email.match(validRegex)) {
       setEmailErr("Email must be valid");
       isReq = false;
     }
-  
-    return isReq;
-  }
 
-  const updatePassword =() =>  {
+    return isReq;
+  };
+
+  const updatePassword = () => {
     // if ({oldPassword} != user.password) {
 
     //    console.log("password dont match") ;
-  
-       axios.post(`https://my-flix-careerfoundry.herokuapp.com/login`, {
-        userName: userName,
-         password:oldPassword
-      })
-      .then(response => {
-        const data = response.data;
-        setPassword= newPassword;
-        updateUser()
 
-        
+    axios
+      .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+        userName: userName,
+        password: password,
+      },
+      {
+        headers: { Authorization: `Bearer ${accessToken}` },
       })
-      .catch(e=> {
-        console.log('no such user', userName, password, oldPassword)
+      .then((response) => {
+        const data = response.data;
+        console.log( userName, password, oldPassword);
+        setPassword = newPassword;
+        updateUser();
+      })
+      .catch((e) => {
+        console.log("no such user", userName, password, oldPassword);
       });
-      
-  
-//   }
-  }
+
+    //   }
+  };
 
   const updateUser = () => {
-    const isReq= validate();
-    if(isReq){axios
-      .put(
-        `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
-        {
-          
-          name: name,
-          email: email,
-          birthday: birthday,
-          password: password,
-        },
-        {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        }
-      )
-      .then((response) => {
-       
-        alert("Profile has been updated");
-        console.log(response.data);
-        
-        
-
-       
-       
-
-      })
-      .catch((error) => console.error(error));
+    const isReq = validate();
+    if (isReq) {
+      axios
+        .put(
+          `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
+          {
+            name: name,
+            email: email,
+            birthday: birthday,
+            password: password,
+          },
+          {
+            headers: { Authorization: `Bearer ${accessToken}` },
+          }
+        )
+        .then((response) => {
+          alert("Profile has been updated");
+          console.log(response.data);
+          window.open(`/profile/${activeUser}`, "_self");
+        })
+        .catch((error) => console.error(error));
     }
   };
 
   const deleteUser = () => {
-
-  }
+    axios.delete( `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
+  {headers: { Authorization: `Bearer ${accessToken}` },
+  })
+  .then((response) => {
+    
+    localStorage.removeItem('user');
+        localStorage.removeItem('token');
+        alert('Your profile has been deleted');
+        window.open("/", "_self");
+    // console.log(response.data);
+  })
+  .catch((error) => {console.error(error);
+}); 
+  };
 
   function parseDate(date) {
-      console.log(user.birthday)
-      if(user.birthday == null ){
-        return user.birthday;
-      }else{
-        console.log(date);
-        let newDate = date.split("T")[0];
-        let final = newDate.split("-").reverse().join("-");
-        return final;
-      }
-   
+    // console.log(user.birthday);
+    if (user.birthday == null) {
+      return user.birthday;
+    } else {
+      // console.log(date);
+      let newDate = date.split("T")[0];
+      let final = newDate.split("-").reverse().join("-");
+      return final;
+    }
   }
 
+ const favMovies =movies.filter((movie)=> favorites.includes(movie._id));
 
+ function getFavMov(){
+   console.log(favMovies)
+   let i =0;
+    // while (i<favMovies.length ) {
+    //   const movie = favMovies[i];
+    //   console.log(movie)
+    return(
+    favMovies.map((movie) => (
+      <Col key={movie._id}>
+        
+        <Container className="fav-card">
+      <Card className="border-0 mb-4">
+        {/* <Link to={`/actor`}>Actors</Link> */}
+        {/* <Link to={`/movies/${movie.title}`}> */}
+         <Card.Img variant="top" src={movie.imageUrl} crossOrigin="anonymous" />
+        {/* </Link>  */}
+        <Card.Body className="fav-style-card">
+          <Card.Title>{movie.title}</Card.Title>
+          
+          
+          {/* <Button onClick={() => onMovieClick(movie)} variant="link">
+            Open
+          </Button> */}
+        </Card.Body>
+      </Card>
+      </Container>
+        </Col>
+      
+    ))
+     
+    )
+        
+    }
+
+  
+ 
+   
 
   useEffect(() => {
     getUser();
+    getMovies();
+    
   }, []);
 
   return (
@@ -232,7 +297,7 @@ export function UserView(props) {
             <Button variant="secondary" onClick={handleClose}>
               Close
             </Button>
-            <Button variant="primary" onClick={handleClose}>
+            <Button variant="primary" onClick={deleteUser}>
               Delete Account
             </Button>
           </Modal.Footer>
@@ -247,19 +312,18 @@ export function UserView(props) {
           <Modal.Body>
             <p>Current Name: {user.name}</p>
             <Form>
-                <Form.Group controlId="formName">
-                    <Form.Label>Please enter your new name: </Form.Label>
-                    <Form.Control
-                      type="text"
-                     value={name}
-                      placeholder="New name"
-                      onChange={(e) => setName(e.target.value)}
-                      required
-                    />
-                    <p className="error-mesg">{nameErr}</p>
-                    </Form.Group>
-                    </Form>
-           
+              <Form.Group controlId="formName">
+                <Form.Label>Please enter your new name: </Form.Label>
+                <Form.Control
+                  type="text"
+                  value={name}
+                  placeholder="New name"
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                <p className="error-mesg">{nameErr}</p>
+              </Form.Group>
+            </Form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseChange}>
@@ -271,7 +335,7 @@ export function UserView(props) {
           </Modal.Footer>
         </Modal>
       </>
-      
+
       {/* Change Email */}
       <>
         <Modal show={showChangeEmail} onHide={handleCloseChangeEmail}>
@@ -281,20 +345,18 @@ export function UserView(props) {
           <Modal.Body>
             <p>Current Name: {user.email}</p>
             <Form>
-                <Form.Group controlId="formName">
-                    <Form.Label>Please enter your new Email: </Form.Label>
-                    <Form.Control
-                    
-                      type="text"
-                     value={email}
-                      placeholder="New email"
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                    <p className="error-mesg">{emailErr}</p>
-                    </Form.Group>
-                    </Form>
-           
+              <Form.Group controlId="formName">
+                <Form.Label>Please enter your new Email: </Form.Label>
+                <Form.Control
+                  type="text"
+                  value={email}
+                  placeholder="New email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <p className="error-mesg">{emailErr}</p>
+              </Form.Group>
+            </Form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseChangeEmail}>
@@ -307,34 +369,33 @@ export function UserView(props) {
         </Modal>
       </>
 
-       {/* Change Birthday */}
-       <>
+      {/* Change Birthday */}
+      <>
         <Modal show={showChangeBirthday} onHide={handleCloseChangeBirthday}>
           <Modal.Header closeButton>
             <Modal.Title>Change Birthday</Modal.Title>
-           
           </Modal.Header>
           <Modal.Body>
             <p>Current Birthday: {parseDate(user.birthday)} </p>
             <Form>
-                <Form.Group controlId="formBirthday">
-                    <Form.Label>Please enter a date: </Form.Label>
-                    <Form.Control
-                      type="date"
-                     value={birthday}
-                      placeholder="New name"
-                      onChange={(e) => setBirthday(e.target.value)}
-                      required
-                    />
-                    <p className="error-mesg">{birthdayErr}</p>
-                    </Form.Group>
-                    </Form>
-           
+              <Form.Group controlId="formBirthday">
+                <Form.Label>Please enter a date: </Form.Label>
+                <Form.Control
+                  type="date"
+                  value={birthday}
+                  placeholder="New name"
+                  onChange={(e) => setBirthday(e.target.value)}
+                  required
+                />
+                <p className="error-mesg">{birthdayErr}</p>
+              </Form.Group>
+            </Form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseChangeBirthday}>
               Close
-            </Button>s
+            </Button>
+            s
             <Button variant="primary" onClick={updateUser}>
               Set new Birthday
             </Button>
@@ -342,47 +403,45 @@ export function UserView(props) {
         </Modal>
       </>
 
-
-       {/* Change Password */}
-       <>
+      {/* Change Password */}
+      <>
         <Modal show={showChangePassword} onHide={handleCloseChangePassword}>
           <Modal.Header closeButton>
             <Modal.Title>Change Password</Modal.Title>
-           
           </Modal.Header>
           <Modal.Body>
             <p>Current Password: {parseDate(user.birthday)} </p>
             <Form>
-                <Form.Group >
+              <Form.Group>
                 <Form.Label>Please enter old password: </Form.Label>
-                    <Form.Control
-                    name="oldPassword"
-                    id="oldPassword"
-                      type="password"
-                     value={oldPassword}
-                      placeholder="Old password"
-                      onChange={(e) => setOldPassword(e.target.value)}
-                      required
-                    />
-                    <Form.Label>Please enter a new password: </Form.Label>
-                    <Form.Control
-                    name="newPassword"
-                    id="newPassword"
-                      type="password"
-                     value= {newPassword}
-                      placeholder="New password"
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                    <p className="error-mesg">{passwordErr}</p>
-                    </Form.Group>
-                    </Form>
-           
+                <Form.Control
+                  name="oldPassword"
+                  id="oldPassword"
+                  type="password"
+                  value={oldPassword}
+                  placeholder="Old password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <Form.Label>Please enter a new password: </Form.Label>
+                <Form.Control
+                  name="newPassword"
+                  id="newPassword"
+                  type="password"
+                  value={newPassword}
+                  placeholder="New password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <p className="error-mesg">{passwordErr}</p>
+              </Form.Group>
+            </Form>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={handleCloseChangePassword}>
               Close
-            </Button>s
+            </Button>
+            s
             <Button variant="primary" onClick={updatePassword}>
               Set new Password
             </Button>
@@ -390,10 +449,10 @@ export function UserView(props) {
         </Modal>
       </>
 
-
       {user && (
         <div className="user-view">
           <Row className="align-items-center">
+          
             <Col sm={4}>
               <h1>User Profile</h1>
             </Col>
@@ -420,7 +479,7 @@ export function UserView(props) {
             </Col>
 
             <Col>
-            <button className="btnStyle" onClick={handleShowChange}>
+              <button className="btnStyle" onClick={handleShowChange}>
                 <FontAwesomeIcon icon={faPenToSquare} />
               </button>
             </Col>
@@ -433,7 +492,7 @@ export function UserView(props) {
               <p> {user.email}</p>
             </Col>
             <Col>
-            <button className="btnStyle" onClick={handleShowChangeEmail}>
+              <button className="btnStyle" onClick={handleShowChangeEmail}>
                 <FontAwesomeIcon icon={faPenToSquare} />
               </button>
             </Col>
@@ -443,8 +502,8 @@ export function UserView(props) {
               <p>Birthday:</p>
             </Col>
             <Col>
-            {/* {parseDate()} */}
-            {/* {if({birthday} {
+              {/* {parseDate()} */}
+              {/* {if({birthday} {
                 <p>{parseDate(user.birthday)}</p>
             }
             } */}
@@ -452,7 +511,7 @@ export function UserView(props) {
               {/* <p>{user.birthday}</p> */}
             </Col>
             <Col className="align-middle">
-            <button className="btnStyle" onClick={handleShowChangeBirthday}>
+              <button className="btnStyle" onClick={handleShowChangeBirthday}>
                 <FontAwesomeIcon icon={faPenToSquare} />
               </button>
               <div className="birthdayChange"></div>
@@ -469,14 +528,27 @@ export function UserView(props) {
               <p></p>
             </Col>
             <Col>
-            <button className="btnStyle" onClick={handleShowChangePassword}>
+              <button className="btnStyle" onClick={handleShowChangePassword}>
                 <FontAwesomeIcon icon={faPenToSquare} />
               </button>
               <div className="passwordChange"></div>
             </Col>
           </Row>
+          <br />
+          <hr className="hrStyle" />
+          <br />
+          <h3>Favourite Movies:</h3>
+          <Row md={3}>
+        {getFavMov()}
+          </Row>
+
+   
+
+  
+         
         </div>
       )}
     </Container>
+
   );
 }
