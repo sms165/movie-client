@@ -235,12 +235,13 @@ export function UserView(props) {
     }
   }
 
- const favMovies =movies.filter((movie)=> favorites.includes(movie._id));
+ const favMovies =movies.filter((movie) => favorites.includes(movie._id));
 
  function getFavMov(){
    console.log(favMovies)
    console.log(movies)
    console.log(favorites)
+   console.log(user)
    let i =0;
     // while (i<favMovies.length ) {
     //   const movie = favMovies[i];
@@ -295,6 +296,7 @@ export function UserView(props) {
   useEffect(() => {
     getUser();
     getMovies();
+    
     
     
   }, []);
