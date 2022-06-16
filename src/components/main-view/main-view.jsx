@@ -128,6 +128,24 @@ export function MainView(props) {
       });
   }
 
+  // remove dulicates in object array by key
+  function removeDuplicates(array, key) {
+    return array.filter((obj, pos, arr) => {
+      return arr.map((mapObj) => mapObj[key]).indexOf(obj[key]) === pos;
+    });
+  }
+
+  // get unqiue directors from movies
+  function getDirectors(movies) {
+    let directors = [];
+    movies.forEach((movie) => {
+      if (!directors.includes(movie.director)) {
+        directors.push(movie.director);
+      }
+    });    
+    return removeDuplicates(directors, "name");
+  }
+
   // onRegister(registered) {
   //   this.setState({
   //     registered,
@@ -258,9 +276,9 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  movies.map((m) => (
+                  getDirectors(movies).map((m) => (
                     <Col md={3} key={m._id}>
-                      <DirectorCard movie={m} />
+                      <DirectorCard director={m} />
                     </Col>
                   ))
                 )

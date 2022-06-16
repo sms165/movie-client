@@ -38142,6 +38142,21 @@ function MainView(props) {
             console.log(error);
         });
     }
+    // remove dulicates in object array by key
+    function removeDuplicates(array, key) {
+        return array.filter((obj, pos, arr)=>{
+            return arr.map((mapObj)=>mapObj[key]
+            ).indexOf(obj[key]) === pos;
+        });
+    }
+    // get unqiue directors from movies
+    function getDirectors(movies1) {
+        let directors = [];
+        movies1.forEach((movie)=>{
+            if (!directors.includes(movie.director)) directors.push(movie.director);
+        });
+        return removeDuplicates(directors, "name");
+    }
     // onRegister(registered) {
     //   this.setState({
     //     registered,
@@ -38166,21 +38181,21 @@ function MainView(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
         __source: {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 159
+            lineNumber: 177
         },
         __self: this,
         children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 160
+                lineNumber: 178
             },
             __self: this,
             children: [
                 user && /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 161
+                        lineNumber: 179
                     },
                     __self: this
                 }),
@@ -38188,13 +38203,13 @@ function MainView(props) {
                     className: "justify-content-md-left",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 172
+                        lineNumber: 190
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Routes, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 173
+                            lineNumber: 191
                         },
                         __self: this,
                         children: [
@@ -38212,7 +38227,7 @@ function MainView(props) {
                                 ),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 174
+                                    lineNumber: 192
                                 },
                                 __self: this
                             }),
@@ -38224,7 +38239,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 190
+                                    lineNumber: 208
                                 },
                                 __self: this
                             }),
@@ -38242,7 +38257,7 @@ function MainView(props) {
                                 ),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 201
+                                    lineNumber: 219
                                 },
                                 __self: this
                             }),
@@ -38260,7 +38275,7 @@ function MainView(props) {
                                 ),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 216
+                                    lineNumber: 234
                                 },
                                 __self: this
                             }),
@@ -38272,7 +38287,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 233
+                                    lineNumber: 251
                                 },
                                 __self: this
                             }),
@@ -38284,7 +38299,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 244
+                                    lineNumber: 262
                                 },
                                 __self: this
                             }),
@@ -38292,16 +38307,16 @@ function MainView(props) {
                                 path: "/movies/director",
                                 element: !user ? /*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                     onLoggedIn: (user1)=>onLoggedIn(user1)
-                                }) : movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
+                                }) : getDirectors(movies).map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                         md: 3,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_directorCard.DirectorCard, {
-                                            movie: m
+                                            director: m
                                         })
                                     }, m._id)
                                 ),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 255
+                                    lineNumber: 273
                                 },
                                 __self: this
                             }),
@@ -38313,7 +38328,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 270
+                                    lineNumber: 288
                                 },
                                 __self: this
                             }),
@@ -38326,7 +38341,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 281
+                                    lineNumber: 299
                                 },
                                 __self: this
                             }),
@@ -38339,7 +38354,7 @@ function MainView(props) {
                                 }),
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 292
+                                    lineNumber: 310
                                 },
                                 __self: this
                             })
@@ -49407,7 +49422,7 @@ var _reactRouterDom = require("react-router-dom");
 var _reactBootstrap = require("react-bootstrap");
 class DirectorCard extends _reactDefault.default.Component {
     render() {
-        const { movie  } = this.props;
+        const { director  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
             className: "director-card",
             __source: {
@@ -49424,7 +49439,7 @@ class DirectorCard extends _reactDefault.default.Component {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                        to: `/movies/director/${movie.director.name}`,
+                        to: `/movies/director/${director.name}`,
                         __source: {
                             fileName: "src/components/director-card/director-card.jsx",
                             lineNumber: 19
@@ -49432,7 +49447,7 @@ class DirectorCard extends _reactDefault.default.Component {
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Card.Img, {
                             variant: "top",
-                            src: movie.director.portrait,
+                            src: director.portrait,
                             crossOrigin: "anonymous",
                             __source: {
                                 fileName: "src/components/director-card/director-card.jsx",
@@ -49454,7 +49469,7 @@ class DirectorCard extends _reactDefault.default.Component {
                                 lineNumber: 23
                             },
                             __self: this,
-                            children: movie.director.name
+                            children: director.name
                         })
                     })
                 ]
