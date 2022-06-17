@@ -279,6 +279,60 @@
   font-family: "Joan", serif;
   text-align: center;
 }
+* {
+  font-family: "Joan", serif;
+}
+
+.navbar {
+  color: #ffffff;
+  background-color: #122535;
+}
+
+@media (max-width: 992px) {
+  .nav-item {
+    list-style-type: none;
+  }
+}
+@media (min-width: 992px) {
+  .nav-item {
+    display: inline;
+    list-style-type: none;
+    padding-right: 8px;
+  }
+}
+
+.navbar-nav {
+  float: right !important;
+}
+
+.menu {
+  float: right;
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
+  color: #F90606 !important;
+  text-decoration: none !important;
+}
+
+a:active {
+  color: #F90606 !important;
+}
+
+.logout {
+  background-color: #F90606 !important;
+  border: 0;
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background-color: white !important;
+}
 .my-flix {
   color: steelblue;
 }
