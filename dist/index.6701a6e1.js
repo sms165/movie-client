@@ -44655,66 +44655,58 @@ function MovieView(props) {
                                         lineNumber: 142
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                                        className: "wrapper",
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 143
+                                            lineNumber: 144
                                         },
                                         __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                                            xs: true,
+                                            md: true,
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 144
+                                                lineNumber: 145
                                             },
                                             __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                                xs: true,
-                                                md: true,
-                                                __source: {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 145
-                                                },
-                                                __self: this,
-                                                children: [
-                                                    /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                        className: "director-image",
+                                            children: [
+                                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                    className: "director-image",
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 146
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                                        href: `/movies/director/${movie.director.name}`,
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 146
+                                                            lineNumber: 147
                                                         },
                                                         __self: this,
-                                                        children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                                            href: `/movies/director/${movie.director.name}`,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                                            src: movie.director.portrait,
+                                                            alt: "director image",
+                                                            crossOrigin: "anonymous",
+                                                            className: "director-image",
                                                             __source: {
                                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 147
+                                                                lineNumber: 148
                                                             },
-                                                            __self: this,
-                                                            children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                                src: movie.director.portrait,
-                                                                alt: "director image",
-                                                                crossOrigin: "anonymous",
-                                                                className: "director-image",
-                                                                __source: {
-                                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                                    lineNumber: 148
-                                                                },
-                                                                __self: this
-                                                            })
+                                                            __self: this
                                                         })
-                                                    }),
-                                                    /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                        className: "h6",
-                                                        __source: {
-                                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 156
-                                                        },
-                                                        __self: this,
-                                                        children: movie.director.name
                                                     })
-                                                ]
-                                            })
+                                                }),
+                                                /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                    className: "h6 text-center",
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 156
+                                                    },
+                                                    __self: this,
+                                                    children: movie.director.name
+                                                })
+                                            ]
                                         })
                                     })
                                 })
@@ -44740,7 +44732,7 @@ function MovieView(props) {
                             className: "actors",
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 167
+                                lineNumber: 168
                             },
                             __self: this,
                             children: [
@@ -44748,7 +44740,7 @@ function MovieView(props) {
                                     className: "label h2",
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 168
+                                        lineNumber: 169
                                     },
                                     __self: this,
                                     children: "Actors: "
@@ -44756,85 +44748,78 @@ function MovieView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 169
+                                        lineNumber: 170
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                         className: "actor-grid",
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 170
+                                            lineNumber: 171
                                         },
                                         __self: this,
-                                        children: movie.actors.map((actor, index)=>/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
-                                                className: "wrapper",
+                                        children: movie.actors.map((actor, index)=>// <Container className="wrapper">
+                                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 172
+                                                    lineNumber: 174
                                                 },
                                                 __self: this,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                                                     __source: {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                        lineNumber: 173
+                                                        lineNumber: 175
                                                     },
                                                     __self: this,
-                                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
+                                                        xs: true,
+                                                        md: true,
                                                         __source: {
                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                            lineNumber: 174
+                                                            lineNumber: 176
                                                         },
                                                         __self: this,
-                                                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
-                                                            xs: true,
-                                                            md: true,
-                                                            __source: {
-                                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                                lineNumber: 175
-                                                            },
-                                                            __self: this,
-                                                            children: [
-                                                                /*#__PURE__*/ _jsxRuntime.jsx("div", {
-                                                                    className: "actor-image",
+                                                        children: [
+                                                            /*#__PURE__*/ _jsxRuntime.jsx("div", {
+                                                                className: "actor-image",
+                                                                __source: {
+                                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                                    lineNumber: 177
+                                                                },
+                                                                __self: this,
+                                                                children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                                                    href: `/movies/actor/${actor.name}`,
                                                                     __source: {
                                                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                                                        lineNumber: 176
+                                                                        lineNumber: 178
                                                                     },
                                                                     __self: this,
-                                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("a", {
-                                                                        href: `/movies/actor/${actor.name}`,
+                                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                                                        src: actor.portrait,
+                                                                        alt: "actor image",
+                                                                        crossOrigin: "anonymous",
+                                                                        className: "actor-image",
                                                                         __source: {
                                                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                                                            lineNumber: 177
+                                                                            lineNumber: 179
                                                                         },
-                                                                        __self: this,
-                                                                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                                                                            src: actor.portrait,
-                                                                            alt: "actor image",
-                                                                            crossOrigin: "anonymous",
-                                                                            className: "actor-image",
-                                                                            __source: {
-                                                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                                                lineNumber: 178
-                                                                            },
-                                                                            __self: this
-                                                                        })
+                                                                        __self: this
                                                                     })
-                                                                }),
-                                                                /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                                    className: "h6",
-                                                                    __source: {
-                                                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                                                        lineNumber: 186
-                                                                    },
-                                                                    __self: this,
-                                                                    children: actor.name
                                                                 })
-                                                            ]
-                                                        })
+                                                            }),
+                                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                                                className: "h6 text-center",
+                                                                __source: {
+                                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                                    lineNumber: 187
+                                                                },
+                                                                __self: this,
+                                                                children: actor.name
+                                                            })
+                                                        ]
                                                     })
-                                                }, index)
-                                            })
+                                                })
+                                            }, index)
                                         )
                                     })
                                 })
@@ -44847,7 +44832,7 @@ function MovieView(props) {
                     className: "backbtn",
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 209
+                        lineNumber: 210
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -44857,7 +44842,7 @@ function MovieView(props) {
                         },
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 210
+                            lineNumber: 211
                         },
                         __self: this,
                         children: "Movie directory"

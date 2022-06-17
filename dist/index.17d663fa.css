@@ -120,10 +120,6 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-
-.wrapper {
-  flex: 25%;
-}
 .actor-card {
   background-color: #122535;
   color: white;

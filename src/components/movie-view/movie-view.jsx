@@ -140,7 +140,7 @@ export function MovieView(props) {
 
               <Row>
                 <Col className="director-grid">
-                  <Container className="wrapper">
+                  {/* <Container className="wrapper"> */}
                     <Row>
                       <Col xs={true} md={true}>
                         <div className="director-image">
@@ -153,10 +153,10 @@ export function MovieView(props) {
                             />
                           </a>
                         </div>
-                        <p className="h6">{movie.director.name}</p>
+                        <p className="h6 text-center">{movie.director.name}</p>
                       </Col>
                     </Row>
-                  </Container>
+                  {/* </Container> */}
                 </Col>
               </Row>
             </div>
@@ -164,12 +164,13 @@ export function MovieView(props) {
           <br />
 
           <Container>
+            
             <div className="actors">
               <div className="label h2">Actors: </div>
               <Row>
                 <Col className="actor-grid">
                   {movie.actors.map((actor, index) => (
-                    <Container className="wrapper">
+                    // <Container className="wrapper">
                       <div key={index}>
                         <Row>
                           <Col xs={true} md={true}>
@@ -183,11 +184,11 @@ export function MovieView(props) {
                                 />
                               </a>
                             </div>
-                            <p className="h6">{actor.name}</p>
+                            <p className="h6 text-center">{actor.name}</p>
                           </Col>
                         </Row>
                       </div>
-                    </Container>
+                    // </Container>
                   ))}
                 </Col>
               </Row>
