@@ -24,7 +24,7 @@ import { GenreCard } from "../genre-card/genre-card";
 import { GenreView } from "../genre-view/genre-view";
 import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
-import { Navbar } from "../navbar/navbar";
+
 import { UserView } from "../user-view/user-view";
 
 // import {DirectorView} from "../director-view";
