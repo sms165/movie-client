@@ -66,6 +66,8 @@ export function LoginView(props) {
     e.preventDefault();
     props.onRegister(true);
   };
+  
+  
 
   return (
      <div className="login">
