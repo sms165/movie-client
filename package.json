@@ -7,7 +7,9 @@
     "start": "parcel",
     "watch": "parcel watch",
     "build": "parcel build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/sms165/movie-client/issues"
   },
-  "homepage": "https://github.com/sms165/movie-client#readme",
+  "homepage": "https://sms165.github.io/movie-client",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
