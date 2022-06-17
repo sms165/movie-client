@@ -38375,7 +38375,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","./main-view.scss":"jyMAr","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../actor-card/actor-card":"glQBx","../actor-view/actor-view":"DubPH","../genre-card/genre-card":"5A39k","../genre-view/genre-view":"8WCoL","../director-card/director-card":"ajTCx","../director-view/director-view":"ck15y","../user-view/user-view":"fZtM6","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../navbar/navbar":"63yS7"}],"iYoWk":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","axios":"iYoWk","./main-view.scss":"jyMAr","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","../login-view/login-view":"054li","../registration-view/registration-view":"aP2YV","../movie-card/movie-card":"6EiBJ","../movie-view/movie-view":"ikZdr","../actor-card/actor-card":"glQBx","../actor-view/actor-view":"DubPH","../genre-card/genre-card":"5A39k","../genre-view/genre-view":"8WCoL","../director-card/director-card":"ajTCx","../director-view/director-view":"ck15y","../navbar/navbar":"63yS7","../user-view/user-view":"fZtM6","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"iYoWk":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"3QmO2"}],"3QmO2":[function(require,module,exports) {
@@ -49768,7 +49768,236 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./director-view.scss":"hWS1b","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hWS1b":[function() {},{}],"fZtM6":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","./director-view.scss":"hWS1b","axios":"iYoWk","react-router-dom":"kjA5T","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hWS1b":[function() {},{}],"63yS7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1bb2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navbar", ()=>Navbar
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactBootstrap = require("react-bootstrap");
+var _logoWhiteSmallSvg = require("url:../assets/logo-white-small.svg");
+var _logoWhiteSmallSvgDefault = parcelHelpers.interopDefault(_logoWhiteSmallSvg);
+var _navbarScss = require("./navbar.scss");
+var _reactRouterDom = require("react-router-dom");
+var _reactRouter = require("react-router");
+var _nav = require("react-bootstrap/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _s = $RefreshSig$();
+function Navbar({ user  }) {
+    _s();
+    const activeUser = localStorage.getItem("user");
+    const [active, setActive] = _react.useState("default");
+    function onLoggedOut() {
+        localStorage.clear();
+        window.open("/", "_self");
+    }
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
+        className: "main-nav ",
+        sticky: "top",
+        expand: "lg",
+        variant: "dark",
+        __source: {
+            fileName: "src/components/navbar/navbar.jsx",
+            lineNumber: 21
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            __source: {
+                fileName: "src/components/navbar/navbar.jsx",
+                lineNumber: 22
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 23
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                        src: _logoWhiteSmallSvgDefault.default,
+                        alt: "myFlix Logo",
+                        height: "100px",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 24
+                        },
+                        __self: this
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
+                    "aria-controls": "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 26
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
+                    id: "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 27
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
+                        className: "ml-auto justify-content-end  ",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 28
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                            className: "menu",
+                            __source: {
+                                fileName: "src/components/navbar/navbar.jsx",
+                                lineNumber: 29
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 30
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: "/",
+                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 32
+                                        },
+                                        __self: this,
+                                        children: "MOVIES"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 42
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: "/actor",
+                                        tabIndex: "1",
+                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 43
+                                        },
+                                        __self: this,
+                                        children: "ACTORS"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 53
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: "/movies/director",
+                                        tabIndex: "2",
+                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 54
+                                        },
+                                        __self: this,
+                                        children: "DIRECTORS"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 64
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: "/genre",
+                                        tabIndex: "3",
+                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 65
+                                        },
+                                        __self: this,
+                                        children: "GENRES"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 75
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                        to: `/profile/${activeUser}`,
+                                        tabIndex: "4",
+                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 76
+                                        },
+                                        __self: this,
+                                        children: "PROFILE"
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 93
+                                    },
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
+                                        className: "  logout",
+                                        onClick: ()=>{
+                                            onLoggedOut();
+                                        },
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 94
+                                        },
+                                        __self: this,
+                                        children: "LOGOUT"
+                                    })
+                                })
+                            ]
+                        })
+                    })
+                })
+            ]
+        })
+    }));
+}
+_s(_reactBootstrap.Navbar, "Hn0ag3G3WCNlgaSQ7kdRx7IPaPE=");
+_c = _reactBootstrap.Navbar;
+var _c;
+$RefreshReg$(_c, "Navbar");
+
+  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","url:../assets/logo-white-small.svg":"hyMo9","./navbar.scss":"eqSoH","react-router-dom":"kjA5T","react-router":"7kx4R","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hyMo9":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo-white-small.ec888b18.svg";
+
+},{"./helpers/bundle-url":"7B0nW"}],"eqSoH":[function() {},{}],"fZtM6":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f47c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -77798,235 +78027,6 @@ $RefreshReg$(_c, "DeleteModal");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"63yS7":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1bb2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactBootstrap = require("react-bootstrap");
-var _logoWhiteSmallSvg = require("url:../assets/logo-white-small.svg");
-var _logoWhiteSmallSvgDefault = parcelHelpers.interopDefault(_logoWhiteSmallSvg);
-var _navbarScss = require("./navbar.scss");
-var _reactRouterDom = require("react-router-dom");
-var _reactRouter = require("react-router");
-var _nav = require("react-bootstrap/Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-var _s = $RefreshSig$();
-function Navbar({ user  }) {
-    _s();
-    const activeUser = localStorage.getItem("user");
-    const [active, setActive] = _react.useState("default");
-    function onLoggedOut() {
-        localStorage.clear();
-        window.open("/", "_self");
-    }
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
-        className: "main-nav ",
-        sticky: "top",
-        expand: "lg",
-        variant: "dark",
-        __source: {
-            fileName: "src/components/navbar/navbar.jsx",
-            lineNumber: 21
-        },
-        __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
-            __source: {
-                fileName: "src/components/navbar/navbar.jsx",
-                lineNumber: 22
-            },
-            __self: this,
-            children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
-                    __source: {
-                        fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 23
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                        src: _logoWhiteSmallSvgDefault.default,
-                        alt: "myFlix Logo",
-                        height: "100px",
-                        __source: {
-                            fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 24
-                        },
-                        __self: this
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
-                    "aria-controls": "responsive-navbar-nav",
-                    __source: {
-                        fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 26
-                    },
-                    __self: this
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
-                    id: "responsive-navbar-nav",
-                    __source: {
-                        fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 27
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
-                        className: "ml-auto justify-content-end  ",
-                        __source: {
-                            fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 28
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs("div", {
-                            className: "menu",
-                            __source: {
-                                fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 29
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 30
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: "/",
-                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 32
-                                        },
-                                        __self: this,
-                                        children: "MOVIES"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 42
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: "/actor",
-                                        tabIndex: "1",
-                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 43
-                                        },
-                                        __self: this,
-                                        children: "ACTORS"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 53
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: "/movies/director",
-                                        tabIndex: "2",
-                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 54
-                                        },
-                                        __self: this,
-                                        children: "DIRECTORS"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 64
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: "/genre",
-                                        tabIndex: "3",
-                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 65
-                                        },
-                                        __self: this,
-                                        children: "GENRES"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 75
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                        to: `/profile/${activeUser}`,
-                                        tabIndex: "4",
-                                        className: ({ isActive  })=>isActive ? "lactive-class" : "not-active-class"
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 76
-                                        },
-                                        __self: this,
-                                        children: "PROFILE"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Item, {
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 93
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
-                                        className: "  logout",
-                                        onClick: ()=>{
-                                            onLoggedOut();
-                                        },
-                                        __source: {
-                                            fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 94
-                                        },
-                                        __self: this,
-                                        children: "LOGOUT"
-                                    })
-                                })
-                            ]
-                        })
-                    })
-                })
-            ]
-        })
-    }));
-}
-_s(_reactBootstrap.Navbar, "Hn0ag3G3WCNlgaSQ7kdRx7IPaPE=");
-_c = _reactBootstrap.Navbar;
-var _c;
-$RefreshReg$(_c, "Navbar");
-
-  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","url:../assets/logo-white-small.svg":"hyMo9","./navbar.scss":"eqSoH","react-router-dom":"kjA5T","react-router":"7kx4R","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hyMo9":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo-white-small.ec888b18.svg";
-
-},{"./helpers/bundle-url":"7B0nW"}],"eqSoH":[function() {},{}],"jUTZ8":[function() {},{}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"jUTZ8":[function() {},{}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
 
 //# sourceMappingURL=index.6701a6e1.js.map
