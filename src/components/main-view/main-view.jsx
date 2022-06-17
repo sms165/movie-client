@@ -240,7 +240,7 @@ export function MainView(props) {
                 ) : (
                   
                   genres.map((a) => (
-                    <Col md={4} key={a._id}>
+                    <Col md={5}  key={a._id}>
                       <GenreCard genres={a} />
                     </Col>
                   ))

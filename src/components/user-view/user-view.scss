@@ -1,4 +1,5 @@
 $btn-color: rgb(89, 169, 240);
+$logo-red: #F90606;
 
 .user-view {
   background-color: #122535;
@@ -22,12 +23,10 @@ $btn-color: rgb(89, 169, 240);
 }
 
 .backbtn{
-    margin-left: 50%;
-    margin-right: 50%;
+    margin-left: 40%;
+    margin-right: 40%;
     padding: 5px;
 }
-
-
 
      
 .alignBtn{
@@ -45,7 +44,7 @@ $btn-color: rgb(89, 169, 240);
 }
 
 .btnStyle:hover{
-    color: red;
+    color: $logo-red;
 }
 
 .hrStyle{
@@ -54,7 +53,7 @@ $btn-color: rgb(89, 169, 240);
 }
 
 .userNameStyle{
-    color: red;
+    color: $logo-red;
 }
 
 .delete{

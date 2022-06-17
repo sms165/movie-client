@@ -110,7 +110,7 @@ export function ActorView(props) {
                 navigate("/actor");
               }}
             >
-              Back
+              Actor directory
             </Button>
           </div>
         </div>

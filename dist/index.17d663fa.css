@@ -108,8 +108,6 @@
 }
 
 .backbtn {
-  margin-left: 50%;
-  margin-right: 50%;
   padding: 5px;
 }
 
@@ -151,12 +149,6 @@
 
 .movie-title {
   text-align: center;
-}
-
-.backbtn {
-  margin-left: 50%;
-  margin-right: 50%;
-  padding: 5px;
 }
 
 .actor-image {
@@ -214,12 +206,6 @@
   text-align: center;
 }
 
-.backbtn {
-  margin-left: 50%;
-  margin-right: 50%;
-  padding: 5px;
-}
-
 .actor-image {
   height: 30vh;
 }
@@ -243,20 +229,49 @@
 }
 
 @media (max-width: 992px) {
-  .menu li {
+  .nav-item {
     list-style-type: none;
   }
 }
 @media (min-width: 992px) {
-  .menu li {
+  .nav-item {
     display: inline;
     list-style-type: none;
     padding-right: 8px;
   }
 }
 
-.menu ul {
+.navbar-nav {
+  float: right !important;
+}
+
+.menu {
   float: right;
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
+  color: #F90606 !important;
+  text-decoration: none !important;
+}
+
+a:active {
+  color: #F90606 !important;
+}
+
+.logout {
+  background-color: #F90606 !important;
+  border: 0;
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background-color: white !important;
 }
 .user-view {
   background-color: #122535;
@@ -274,8 +289,8 @@
 }
 
 .backbtn {
-  margin-left: 50%;
-  margin-right: 50%;
+  margin-left: 40%;
+  margin-right: 40%;
   padding: 5px;
 }
 
@@ -294,7 +309,7 @@
 }
 
 .btnStyle:hover {
-  color: red;
+  color: #F90606;
 }
 
 .hrStyle {
@@ -302,7 +317,7 @@
 }
 
 .userNameStyle {
-  color: red;
+  color: #F90606;
 }
 
 .delete {

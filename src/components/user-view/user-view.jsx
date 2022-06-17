@@ -11,7 +11,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import {
   Container,
   Row,
@@ -22,7 +22,7 @@ import {
   Modal,
   Form,
   CloseButton,
-  Link,
+  
 } from "react-bootstrap";
 
 import { DeleteModal } from "./delete-modal";
@@ -47,7 +47,9 @@ export function UserView(props) {
 
   //   change password check if user wrote in old password correctly
   //const [oldPassword, setOldPassword] = useState("");
+
   const [newPassword, setNewPassword] = useState("");
+  const [newPasswordTwo, setNewPasswordTwo] = useState("");
   const [oldPassword, setOldPassword] = useState("");
   //   Validation errors
   const [passwordErr, setPasswordErr] = useState("");
@@ -144,6 +146,14 @@ export function UserView(props) {
     //   isReq = false;
     // }
 
+    if (!newPassword) {
+      setPasswordErr("Password is requiredddd");
+      isReq = false;
+    } else if (newPassword.length < 6) {
+      setPasswordErr("Password must be at least 6 characters long)");
+      isReq = false;
+    }
+
     if (!email) {
       setEmailErr("Email address is required");
       isReq = false;
@@ -156,6 +166,12 @@ export function UserView(props) {
   };
 
   const changePassword = () => {
+    const isReq = validate();
+    // if(isReq){
+    //   console.log(newPassword, newPasswordTwo)
+      if(newPassword == newPasswordTwo){
+        if(isReq){
+
     axios
       .put(
         `https://my-flix-careerfoundry.herokuapp.com/users/${userName}/change_password`,
@@ -171,11 +187,13 @@ export function UserView(props) {
       .then((response) => {
         alert("Profile has been updated");
         console.log("password");
+        window.open(`/profile/${activeUser}`, "_self");
       })
       .catch((error) => console.error(error));
-      
-
-    
+    }}
+   else{
+    setPasswordErr("Passwords don't match");
+  }
   };
 
   const updateUser = () => {
@@ -236,26 +254,28 @@ export function UserView(props) {
   const favMovies = movies.filter((movie) => favorites.includes(movie._id));
 
   function getFavMov() {
-    console.log(favMovies);
-    console.log(movies);
-    console.log(favorites);
-    console.log(user);
+    // console.log(favMovies);
+    // console.log(movies);
+    // console.log(favorites);
+    // console.log(user);
     let i = 0;
-    // while (i<favMovies.length ) {
-    //   const movie = favMovies[i];
-    //   console.log(movie)
+    
     return favMovies.map((movie) => (
       <Col md={4} key={movie._id}>
         <Container className="fav-card">
           <Card className="border-0 mb-4">
             {/* <Link to={`/actor`}>Actors</Link> */}
-            {/* <Link to={`/movies/${movie.title}`}> */}
+            
+            <Link to={`/movies/${movie.title}`}>
+            {/* <a href={`/movies/${movie.title}`}> */}
             <Card.Img
               variant="top"
               src={movie.imageUrl}
               crossOrigin="anonymous"
             />
-            {/* </Link>  */}
+            {/* </a> */}
+            </Link> 
+
             <Card.Body className="fav-style-card">
               <Card.Title>{movie.title}</Card.Title>
               <Button
@@ -447,6 +467,16 @@ export function UserView(props) {
                   required
                 />
                 <p className="error-mesg">{passwordErr}</p>
+                <Form.Label>Please enter the new password again: </Form.Label>
+                <Form.Control
+                  name="newPasswordTwo"
+                  id="newPasswordTwo"
+                  type="password"
+                  value={newPasswordTwo}
+                  placeholder="New password again"
+                  onChange={(e) => setNewPasswordTwo(e.target.value)}
+                  required
+                />
               </Form.Group>
             </Form>
           </Modal.Body>
@@ -455,7 +485,9 @@ export function UserView(props) {
               Close
             </Button>
 
-            <Button variant="primary" onClick={changePassword}>Set new Password</Button>
+            <Button variant="primary" onClick={changePassword}>
+              Set new Password
+            </Button>
           </Modal.Footer>
         </Modal>
       </>
@@ -482,7 +514,7 @@ export function UserView(props) {
           </Row>
           <Row>
             <Col>
-              <p>Name:</p>
+              <h5>Name:</h5>
             </Col>
             <Col>
               <p> {user.name}</p>
@@ -496,7 +528,7 @@ export function UserView(props) {
           </Row>
           <Row className="align-items-center">
             <Col>
-              <p>Email:</p>
+              <h5>Email:</h5>
             </Col>
             <Col>
               <p> {user.email}</p>
@@ -509,7 +541,7 @@ export function UserView(props) {
           </Row>
           <Row className="align-items-center">
             <Col>
-              <p>Birthday:</p>
+              <h5>Birthday:</h5>
             </Col>
             <Col>
               {/* {parseDate()} */}
@@ -532,19 +564,16 @@ export function UserView(props) {
           <br />
           <Row className="align-items-center">
             <Col>
-              <p>Change Password</p>
+              <h5>Change Password:</h5>
             </Col>
             <Col>
-              <p></p>
+              <p>******</p>
             </Col>
             <Col>
               <button className="btnStyle" onClick={handleShowChangePassword}>
                 <FontAwesomeIcon icon={faPenToSquare} />
               </button>
-              <div
-                className="passwordChange"
-                
-              ></div>
+              <div className="passwordChange"></div>
             </Col>
           </Row>
           <br />

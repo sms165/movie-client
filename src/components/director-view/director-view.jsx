@@ -110,7 +110,7 @@ export function DirectorView(props) {
                 navigate("/movies/director");
               }}
             >
-              Back
+              Director directory
             </Button>
           </div>
         </div>

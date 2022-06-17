@@ -82,15 +82,15 @@ export function GenreView(props) {
               </Row>
             </div>
           </Container>
-
+           
           <div className="backbtn">
             <Button
               variant="custom"
               onClick={() => {
-                navigate("/actor");
+                navigate("/genre");
               }}
             >
-              Back
+              Genre directory
             </Button>
           </div>
         </div>

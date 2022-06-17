@@ -213,7 +213,7 @@ export function MovieView(props) {
                 navigate("/");
               }}
             >
-              Back
+              Movie directory
             </Button>
           </div>
         </div>
