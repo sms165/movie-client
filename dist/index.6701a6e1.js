@@ -50037,8 +50037,8 @@ function UserView(props) {
     const [upName, setUpName] = _react.useState("");
     //   change password check if user wrote in old password correctly
     //const [oldPassword, setOldPassword] = useState("");
-    let newPassword;
-    let oldPassword;
+    const [newPassword, setNewPassword] = _react.useState("");
+    const [oldPassword, setOldPassword] = _react.useState("");
     //   Validation errors
     const [passwordErr, setPasswordErr] = _react.useState("");
     const [emailErr, setEmailErr] = _react.useState("");
@@ -50085,7 +50085,7 @@ function UserView(props) {
             }
         }).then((response)=>{
             setUser(response.data);
-            setPassword(response.data.password);
+            // setPassword(response.data.password);
             setEmail(response.data.email);
             setName(response.data.name);
             setBirthday(response.data.birthday);
@@ -50115,13 +50115,13 @@ function UserView(props) {
             setBirthdayErr("Date is required");
             isReq = false;
         }
-        if (!password) {
-            setPasswordErr("Password is required");
-            isReq = false;
-        } else if (password.length < 6) {
-            setPasswordErr("Password must be at least 6 characters long)");
-            isReq = false;
-        }
+        // if (!password) {
+        //   setPasswordErr("Password is required");
+        //   isReq = false;
+        // } else if (password.length < 6) {
+        //   setPasswordErr("Password must be at least 6 characters long)");
+        //   isReq = false;
+        // }
         if (!email) {
             setEmailErr("Email address is required");
             isReq = false;
@@ -50131,33 +50131,26 @@ function UserView(props) {
         }
         return isReq;
     };
-    // const updatePassword = () => {
-    //   // if ({oldPassword} != user.password) {
-    //   //    console.log("password dont match") ;
-    //   axios
-    //     .post(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/change_password`, {
-    //       oldPassword: oldPassword,
-    //       newPassword: newPassword,
-    //       userName:userName,
-    //     },
-    //     {
-    //       headers: { Authorization: `Bearer ${accessToken}` },
-    //     })
-    //     .then((response) => {
-    //       console.log('password')
-    //     })
-    //     .catch((e) => {
-    //       console.log("no such user", userName, password, oldPassword);
-    //     });
-    //   //   }
-    // };
+    const changePassword = ()=>{
+        _axiosDefault.default.put(`https://my-flix-careerfoundry.herokuapp.com/users/${userName}/change_password`, {
+            oldPassword: oldPassword,
+            newPassword: newPassword
+        }, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        }).then((response)=>{
+            alert("Profile has been updated");
+            console.log("password");
+        }).catch((error)=>console.error(error)
+        );
+    };
     const updateUser = ()=>{
         const isReq = validate();
         if (isReq) _axiosDefault.default.put(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
             name: name,
             email: email,
-            birthday: birthday,
-            password: password
+            birthday: birthday
         }, {
             headers: {
                 Authorization: `Bearer ${accessToken}`
@@ -50175,9 +50168,9 @@ function UserView(props) {
                 Authorization: `Bearer ${accessToken}`
             }
         }).then((response)=>{
-            localStorage.removeItem('user');
-            localStorage.removeItem('token');
-            alert('Your profile has been deleted');
+            localStorage.removeItem("user");
+            localStorage.removeItem("token");
+            alert("Your profile has been deleted");
             window.open("/", "_self");
         // console.log(response.data);
         }).catch((error)=>{
@@ -50209,21 +50202,21 @@ function UserView(props) {
                 md: 4,
                 __source: {
                     fileName: "src/components/user-view/user-view.jsx",
-                    lineNumber: 251
+                    lineNumber: 248
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Container, {
                     className: "fav-card",
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 253
+                        lineNumber: 249
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Card, {
                         className: "border-0 mb-4",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 254
+                            lineNumber: 250
                         },
                         __self: this,
                         children: [
@@ -50233,7 +50226,7 @@ function UserView(props) {
                                 crossOrigin: "anonymous",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 257
+                                    lineNumber: 253
                                 },
                                 __self: this
                             }),
@@ -50280,7 +50273,7 @@ function UserView(props) {
                 Authorization: `Bearer ${accessToken}`
             }
         }).then((response)=>{
-            alert('The movie has been deleted from your favorites.');
+            alert("The movie has been deleted from your favorites.");
             window.open(`/profile/${activeUser}`, "_self");
         // console.log(response.data);
         }).catch((error)=>{
@@ -50295,7 +50288,7 @@ function UserView(props) {
         className: "user-detail",
         __source: {
             fileName: "src/components/user-view/user-view.jsx",
-            lineNumber: 305
+            lineNumber: 299
         },
         __self: this,
         children: [
@@ -50305,7 +50298,7 @@ function UserView(props) {
                     onHide: handleClose,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 308
+                        lineNumber: 302
                     },
                     __self: this,
                     children: [
@@ -50313,13 +50306,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 309
+                                lineNumber: 303
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 310
+                                    lineNumber: 304
                                 },
                                 __self: this,
                                 children: "Delete Account"
@@ -50328,14 +50321,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 312
+                                lineNumber: 306
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 313
+                                        lineNumber: 307
                                     },
                                     __self: this,
                                     children: "Are you sure you want to delete your account?"
@@ -50343,7 +50336,7 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 314
+                                        lineNumber: 308
                                     },
                                     __self: this,
                                     children: "All your data will be deleted."
@@ -50353,7 +50346,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 316
+                                lineNumber: 310
                             },
                             __self: this,
                             children: [
@@ -50362,7 +50355,7 @@ function UserView(props) {
                                     onClick: handleClose,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 317
+                                        lineNumber: 311
                                     },
                                     __self: this,
                                     children: "Close"
@@ -50372,7 +50365,7 @@ function UserView(props) {
                                     onClick: deleteUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 320
+                                        lineNumber: 314
                                     },
                                     __self: this,
                                     children: "Delete Account"
@@ -50388,7 +50381,7 @@ function UserView(props) {
                     onHide: handleCloseChange,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 328
+                        lineNumber: 322
                     },
                     __self: this,
                     children: [
@@ -50396,13 +50389,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 329
+                                lineNumber: 323
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 330
+                                    lineNumber: 324
                                 },
                                 __self: this,
                                 children: "Change Name"
@@ -50411,14 +50404,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 332
+                                lineNumber: 326
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 333
+                                        lineNumber: 327
                                     },
                                     __self: this,
                                     children: [
@@ -50429,21 +50422,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 334
+                                        lineNumber: 328
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formName",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 335
+                                            lineNumber: 329
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 336
+                                                    lineNumber: 330
                                                 },
                                                 __self: this,
                                                 children: "Please enter your new name: "
@@ -50457,7 +50450,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 337
+                                                    lineNumber: 331
                                                 },
                                                 __self: this
                                             }),
@@ -50465,7 +50458,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 344
+                                                    lineNumber: 338
                                                 },
                                                 __self: this,
                                                 children: nameErr
@@ -50478,7 +50471,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 348
+                                lineNumber: 342
                             },
                             __self: this,
                             children: [
@@ -50487,7 +50480,7 @@ function UserView(props) {
                                     onClick: handleCloseChange,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 349
+                                        lineNumber: 343
                                     },
                                     __self: this,
                                     children: "Close"
@@ -50497,7 +50490,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 352
+                                        lineNumber: 346
                                     },
                                     __self: this,
                                     children: "Set new Name"
@@ -50513,7 +50506,7 @@ function UserView(props) {
                     onHide: handleCloseChangeEmail,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 361
+                        lineNumber: 355
                     },
                     __self: this,
                     children: [
@@ -50521,13 +50514,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 362
+                                lineNumber: 356
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 363
+                                    lineNumber: 357
                                 },
                                 __self: this,
                                 children: "Change Email"
@@ -50536,14 +50529,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 365
+                                lineNumber: 359
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 366
+                                        lineNumber: 360
                                     },
                                     __self: this,
                                     children: [
@@ -50554,21 +50547,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 367
+                                        lineNumber: 361
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formName",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 368
+                                            lineNumber: 362
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 369
+                                                    lineNumber: 363
                                                 },
                                                 __self: this,
                                                 children: "Please enter your new Email: "
@@ -50582,7 +50575,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 370
+                                                    lineNumber: 364
                                                 },
                                                 __self: this
                                             }),
@@ -50590,7 +50583,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 377
+                                                    lineNumber: 371
                                                 },
                                                 __self: this,
                                                 children: emailErr
@@ -50603,7 +50596,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 381
+                                lineNumber: 375
                             },
                             __self: this,
                             children: [
@@ -50612,7 +50605,7 @@ function UserView(props) {
                                     onClick: handleCloseChangeEmail,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 382
+                                        lineNumber: 376
                                     },
                                     __self: this,
                                     children: "Close"
@@ -50622,7 +50615,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 385
+                                        lineNumber: 379
                                     },
                                     __self: this,
                                     children: "Set new Email"
@@ -50638,7 +50631,7 @@ function UserView(props) {
                     onHide: handleCloseChangeBirthday,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 394
+                        lineNumber: 388
                     },
                     __self: this,
                     children: [
@@ -50646,13 +50639,13 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 395
+                                lineNumber: 389
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 396
+                                    lineNumber: 390
                                 },
                                 __self: this,
                                 children: "Change Birthday"
@@ -50661,14 +50654,14 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 398
+                                lineNumber: 392
                             },
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 399
+                                        lineNumber: 393
                                     },
                                     __self: this,
                                     children: [
@@ -50680,21 +50673,21 @@ function UserView(props) {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 400
+                                        lineNumber: 394
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                         controlId: "formBirthday",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 401
+                                            lineNumber: 395
                                         },
                                         __self: this,
                                         children: [
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 402
+                                                    lineNumber: 396
                                                 },
                                                 __self: this,
                                                 children: "Please enter a date: "
@@ -50708,7 +50701,7 @@ function UserView(props) {
                                                 required: true,
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 403
+                                                    lineNumber: 397
                                                 },
                                                 __self: this
                                             }),
@@ -50716,7 +50709,7 @@ function UserView(props) {
                                                 className: "error-mesg",
                                                 __source: {
                                                     fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 410
+                                                    lineNumber: 404
                                                 },
                                                 __self: this,
                                                 children: birthdayErr
@@ -50729,7 +50722,7 @@ function UserView(props) {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 414
+                                lineNumber: 408
                             },
                             __self: this,
                             children: [
@@ -50738,7 +50731,7 @@ function UserView(props) {
                                     onClick: handleCloseChangeBirthday,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 415
+                                        lineNumber: 409
                                     },
                                     __self: this,
                                     children: "Close"
@@ -50748,7 +50741,7 @@ function UserView(props) {
                                     onClick: updateUser,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 419
+                                        lineNumber: 413
                                     },
                                     __self: this,
                                     children: "Set new Birthday"
@@ -50764,7 +50757,7 @@ function UserView(props) {
                     onHide: handleCloseChangePassword,
                     __source: {
                         fileName: "src/components/user-view/user-view.jsx",
-                        lineNumber: 428
+                        lineNumber: 422
                     },
                     __self: this,
                     children: [
@@ -50772,114 +50765,100 @@ function UserView(props) {
                             closeButton: true,
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 429
+                                lineNumber: 423
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Title, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 430
+                                    lineNumber: 424
                                 },
                                 __self: this,
                                 children: "Change Password"
                             })
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Body, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Modal.Body, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 432
+                                lineNumber: 426
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsxs("p", {
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
+                                __source: {
+                                    fileName: "src/components/user-view/user-view.jsx",
+                                    lineNumber: 427
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 433
+                                        lineNumber: 428
                                     },
                                     __self: this,
                                     children: [
-                                        "Current Password: ",
-                                        parseDate(user.birthday),
-                                        " "
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
+                                            __source: {
+                                                fileName: "src/components/user-view/user-view.jsx",
+                                                lineNumber: 429
+                                            },
+                                            __self: this,
+                                            children: "Please enter old password:"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+                                            name: "oldPassword",
+                                            id: "oldPassword",
+                                            type: "password",
+                                            value: oldPassword,
+                                            placeholder: "Old password",
+                                            onChange: (e)=>setOldPassword(e.target.value)
+                                            ,
+                                            required: true,
+                                            __source: {
+                                                fileName: "src/components/user-view/user-view.jsx",
+                                                lineNumber: 430
+                                            },
+                                            __self: this
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
+                                            __source: {
+                                                fileName: "src/components/user-view/user-view.jsx",
+                                                lineNumber: 439
+                                            },
+                                            __self: this,
+                                            children: "Please enter a new password: "
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
+                                            name: "newPassword",
+                                            id: "newPassword",
+                                            type: "password",
+                                            value: newPassword,
+                                            placeholder: "New password",
+                                            onChange: (e)=>setNewPassword(e.target.value)
+                                            ,
+                                            required: true,
+                                            __source: {
+                                                fileName: "src/components/user-view/user-view.jsx",
+                                                lineNumber: 440
+                                            },
+                                            __self: this
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("p", {
+                                            className: "error-mesg",
+                                            __source: {
+                                                fileName: "src/components/user-view/user-view.jsx",
+                                                lineNumber: 449
+                                            },
+                                            __self: this,
+                                            children: passwordErr
+                                        })
                                     ]
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form, {
-                                    __source: {
-                                        fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 434
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form.Group, {
-                                        __source: {
-                                            fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 435
-                                        },
-                                        __self: this,
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
-                                                __source: {
-                                                    fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 436
-                                                },
-                                                __self: this,
-                                                children: "Please enter old password: "
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
-                                                name: "oldPassword",
-                                                id: "oldPassword",
-                                                type: "password",
-                                                value: oldPassword,
-                                                placeholder: "Old password",
-                                                onChange: (e)=>setPassword(e.target.value)
-                                                ,
-                                                required: true,
-                                                __source: {
-                                                    fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 437
-                                                },
-                                                __self: this
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
-                                                __source: {
-                                                    fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 446
-                                                },
-                                                __self: this,
-                                                children: "Please enter a new password: "
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Control, {
-                                                name: "newPassword",
-                                                id: "newPassword",
-                                                type: "password",
-                                                value: newPassword,
-                                                placeholder: "New password",
-                                                onChange: (e)=>setPassword(e.target.value)
-                                                ,
-                                                required: true,
-                                                __source: {
-                                                    fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 447
-                                                },
-                                                __self: this
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                                className: "error-mesg",
-                                                __source: {
-                                                    fileName: "src/components/user-view/user-view.jsx",
-                                                    lineNumber: 456
-                                                },
-                                                __self: this,
-                                                children: passwordErr
-                                            })
-                                        ]
-                                    })
                                 })
-                            ]
+                            })
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Modal.Footer, {
                             __source: {
                                 fileName: "src/components/user-view/user-view.jsx",
-                                lineNumber: 460
+                                lineNumber: 453
                             },
                             __self: this,
                             children: [
@@ -50888,16 +50867,17 @@ function UserView(props) {
                                     onClick: handleCloseChangePassword,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 461
+                                        lineNumber: 454
                                     },
                                     __self: this,
                                     children: "Close"
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
                                     variant: "primary",
+                                    onClick: changePassword,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 465
+                                        lineNumber: 458
                                     },
                                     __self: this,
                                     children: "Set new Password"
@@ -50911,7 +50891,7 @@ function UserView(props) {
                 className: "user-view",
                 __source: {
                     fileName: "src/components/user-view/user-view.jsx",
-                    lineNumber: 473
+                    lineNumber: 464
                 },
                 __self: this,
                 children: [
@@ -50919,7 +50899,7 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 474
+                            lineNumber: 465
                         },
                         __self: this,
                         children: [
@@ -50927,13 +50907,13 @@ function UserView(props) {
                                 sm: 4,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 476
+                                    lineNumber: 466
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 477
+                                        lineNumber: 467
                                     },
                                     __self: this,
                                     children: "User Profile"
@@ -50943,20 +50923,20 @@ function UserView(props) {
                                 sm: 4,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 479
+                                    lineNumber: 469
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
                                     className: "userNameStyle",
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 480
+                                        lineNumber: 470
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs("h1", {
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 481
+                                            lineNumber: 471
                                         },
                                         __self: this,
                                         children: [
@@ -50970,7 +50950,7 @@ function UserView(props) {
                                 sm: 2,
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 484
+                                    lineNumber: 474
                                 },
                                 __self: this
                             }),
@@ -50979,7 +50959,7 @@ function UserView(props) {
                                 className: "trash",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 486
+                                    lineNumber: 476
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("button", {
@@ -50987,7 +50967,7 @@ function UserView(props) {
                                     onClick: handleShow,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 487
+                                        lineNumber: 477
                                     },
                                     __self: this,
                                     children: [
@@ -50995,7 +50975,7 @@ function UserView(props) {
                                             icon: _freeSolidSvgIcons.faTrashCan,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 488
+                                                lineNumber: 478
                                             },
                                             __self: this
                                         }),
@@ -51003,7 +50983,7 @@ function UserView(props) {
                                             className: "delete",
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 489
+                                                lineNumber: 479
                                             },
                                             __self: this,
                                             children: "Delete Account"
@@ -51016,20 +50996,20 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 493
+                            lineNumber: 483
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 494
+                                    lineNumber: 484
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 495
+                                        lineNumber: 485
                                     },
                                     __self: this,
                                     children: "Name:"
@@ -51038,13 +51018,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 497
+                                    lineNumber: 487
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 498
+                                        lineNumber: 488
                                     },
                                     __self: this,
                                     children: [
@@ -51056,7 +51036,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 501
+                                    lineNumber: 491
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -51064,14 +51044,14 @@ function UserView(props) {
                                     onClick: handleShowChange,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 502
+                                        lineNumber: 492
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                         icon: _freeSolidSvgIcons.faPenToSquare,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 503
+                                            lineNumber: 493
                                         },
                                         __self: this
                                     })
@@ -51083,20 +51063,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 507
+                            lineNumber: 497
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 508
+                                    lineNumber: 498
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 509
+                                        lineNumber: 499
                                     },
                                     __self: this,
                                     children: "Email:"
@@ -51105,13 +51085,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 511
+                                    lineNumber: 501
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 512
+                                        lineNumber: 502
                                     },
                                     __self: this,
                                     children: [
@@ -51123,7 +51103,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 514
+                                    lineNumber: 504
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("button", {
@@ -51131,14 +51111,14 @@ function UserView(props) {
                                     onClick: handleShowChangeEmail,
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 515
+                                        lineNumber: 505
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                         icon: _freeSolidSvgIcons.faPenToSquare,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 516
+                                            lineNumber: 506
                                         },
                                         __self: this
                                     })
@@ -51150,20 +51130,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 520
+                            lineNumber: 510
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 521
+                                    lineNumber: 511
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 522
+                                        lineNumber: 512
                                     },
                                     __self: this,
                                     children: "Birthday:"
@@ -51172,13 +51152,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 524
+                                    lineNumber: 514
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 530
+                                        lineNumber: 520
                                     },
                                     __self: this,
                                     children: parseDate(user.birthday)
@@ -51188,7 +51168,7 @@ function UserView(props) {
                                 className: "align-middle",
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 533
+                                    lineNumber: 523
                                 },
                                 __self: this,
                                 children: [
@@ -51197,14 +51177,14 @@ function UserView(props) {
                                         onClick: handleShowChangeBirthday,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 534
+                                            lineNumber: 524
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                             icon: _freeSolidSvgIcons.faPenToSquare,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 535
+                                                lineNumber: 525
                                             },
                                             __self: this
                                         })
@@ -51213,7 +51193,7 @@ function UserView(props) {
                                         className: "birthdayChange",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 537
+                                            lineNumber: 527
                                         },
                                         __self: this
                                     })
@@ -51224,7 +51204,7 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 540
+                            lineNumber: 530
                         },
                         __self: this
                     }),
@@ -51232,14 +51212,14 @@ function UserView(props) {
                         className: "hrStyle",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 541
+                            lineNumber: 531
                         },
                         __self: this
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 542
+                            lineNumber: 532
                         },
                         __self: this
                     }),
@@ -51247,20 +51227,20 @@ function UserView(props) {
                         className: "align-items-center",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 543
+                            lineNumber: 533
                         },
                         __self: this,
                         children: [
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 544
+                                    lineNumber: 534
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 545
+                                        lineNumber: 535
                                     },
                                     __self: this,
                                     children: "Change Password"
@@ -51269,13 +51249,13 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 547
+                                    lineNumber: 537
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                     __source: {
                                         fileName: "src/components/user-view/user-view.jsx",
-                                        lineNumber: 548
+                                        lineNumber: 538
                                     },
                                     __self: this
                                 })
@@ -51283,7 +51263,7 @@ function UserView(props) {
                             /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Col, {
                                 __source: {
                                     fileName: "src/components/user-view/user-view.jsx",
-                                    lineNumber: 550
+                                    lineNumber: 540
                                 },
                                 __self: this,
                                 children: [
@@ -51292,14 +51272,14 @@ function UserView(props) {
                                         onClick: handleShowChangePassword,
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 551
+                                            lineNumber: 541
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_reactFontawesome.FontAwesomeIcon, {
                                             icon: _freeSolidSvgIcons.faPenToSquare,
                                             __source: {
                                                 fileName: "src/components/user-view/user-view.jsx",
-                                                lineNumber: 552
+                                                lineNumber: 542
                                             },
                                             __self: this
                                         })
@@ -51308,7 +51288,7 @@ function UserView(props) {
                                         className: "passwordChange",
                                         __source: {
                                             fileName: "src/components/user-view/user-view.jsx",
-                                            lineNumber: 554
+                                            lineNumber: 544
                                         },
                                         __self: this
                                     })
@@ -51319,7 +51299,7 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 557
+                            lineNumber: 550
                         },
                         __self: this
                     }),
@@ -51327,21 +51307,21 @@ function UserView(props) {
                         className: "hrStyle",
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 558
+                            lineNumber: 551
                         },
                         __self: this
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("br", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 559
+                            lineNumber: 552
                         },
                         __self: this
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 560
+                            lineNumber: 553
                         },
                         __self: this,
                         children: "Favourite Movies:"
@@ -51349,7 +51329,7 @@ function UserView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                         __source: {
                             fileName: "src/components/user-view/user-view.jsx",
-                            lineNumber: 561
+                            lineNumber: 554
                         },
                         __self: this,
                         children: getFavMov()
@@ -51359,7 +51339,7 @@ function UserView(props) {
         ]
     }));
 }
-_s(UserView, "wqGvH/G9wxl8Ks/5vWoi0HbBgxc=", false, function() {
+_s(UserView, "it2eGOe0vX661JgEyrc1Q2BM+DE=", false, function() {
     return [_reactRouterDom.useParams, _reactRouterDom.useNavigate];
 });
 _c = UserView;
