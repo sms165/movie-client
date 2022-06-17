@@ -1,0 +1,62 @@
+$logo-red: #F90606;
+$btn-color: rgb(89, 169, 240);
+
+*{
+    font-family: 'Joan', serif;;
+}
+.navbar{
+    color: #ffffff;
+    background-color: #122535;
+}
+
+.nav-item{
+    @media (max-width: 992px) {
+        list-style-type:none;
+        
+    }
+  @media (min-width: 992px) {
+    display: inline;
+    list-style-type:none;
+    padding-right: 8px;
+   
+  }
+   
+}
+
+.navbar-nav{
+    float: right !important;
+}
+
+.menu {
+    float: right;
+}
+
+a{
+    color: white !important;
+}
+
+a:hover{
+    color: $logo-red !important;
+    text-decoration: none !important;
+}
+
+a:active{
+    color: $logo-red !important;
+}
+
+.logout{
+    background-color: $logo-red !important;
+    border: 0;
+    padding: 5px;
+    border-radius: 25px;
+    font-weight: bold;
+    
+}
+
+.logout:hover{
+    background-color: white !important;
+}
+
+  
+
+

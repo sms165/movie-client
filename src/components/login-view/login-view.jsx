@@ -13,26 +13,53 @@ import {
   Row,
 } from "react-bootstrap";
 
-import axios from 'axios';
+import axios from "axios";
 
 export function LoginView(props) {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
+  //Declare hook for each input
+  const [userNameErr, setUserNameErr] = useState('');
+  const [passwordErr, setPasswordErr] = useState('');
+
+  //validate user input
+  const validate = () => {
+    let isReq = true;
+    if(!userName){
+      setUserNameErr('Username is required');
+      isReq = false;
+    }else if(userName.length < 2){
+      setUserNameErr("Username must be at least two characters long");
+      isReq = false;
+    }
+    if(!password){
+      setPasswordErr('Password is required');
+      isReq = false;
+    }else if(password.length < 6){
+      setPasswordErr('Password must be at least 6 characters long');
+      isReq = false;
+    }
+    return isReq;
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+    const isReq = validate();
+    if(isReq){
+    // Send request to server
     axios.post('https://my-flix-careerfoundry.herokuapp.com/login', {
-      Username: userName,
-      Password: password
+      userName: userName,
+      password: password
     })
     .then(response => {
-      const data = respose.data;
+      const data = response.data;
       props.onLoggedIn(data);
     })
     .catch(e=> {
-      console.log('no such user')
-    })
+      console.log('no such user', userName, password)
+    });
+  }
   };
 
   const handleRegister = (e) => {
@@ -44,31 +71,38 @@ export function LoginView(props) {
 
   return (
      <div className="login">
-    <Container className="login-container" >
-      <Row >
+    <Container className="login-container fluid" >
+      <Row  >
         <Col>
           <CardGroup>
             <Card className="login-card">
             <Card.Img  src={Logo} alt="myFlix Logo" />
               <Card.Body>
                 <Card.Title>Login</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="#">register here</Card.Link>.</Card.Subtitle>
+                <Card.Subtitle className="mb-2 text-muted">If you dont have an account please <Card.Link href="/register">register here</Card.Link>.</Card.Subtitle>
                 <Form>
                   <Form.Group controlId="formUserName">
                     <Form.Label>Username:</Form.Label>
                     <Form.Control
                       type="text"
-                      onChange={(e) => setUserName(e.target.value)}
+                      placeholder="Enter username"
+                      value={userName}
+                      onChange={e => setUserName(e.target.value)}
                     />
+                     <p>{userNameErr}</p>
                   </Form.Group>
 
                   <Form.Group controlId="formPassword">
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
                       type="text"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
+                      placeholder="Password"
+                      value={password}
+                      onChange={e => setPassword(e.target.value)}
+                    /> 
+                    <p>{passwordErr}</p>
                   </Form.Group>
+                 
 
                   <Button 
                     variant="custom"

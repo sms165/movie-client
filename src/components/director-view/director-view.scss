@@ -1,0 +1,46 @@
+$btn-color: rgb(89, 169, 240);
+
+.director-view {
+  background-color: #122535;
+  padding: 5px;
+  color:white;
+  font-family: 'Joan', serif;
+}
+
+
+.image {
+  height: 50vh;
+  padding: 10px;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+}
+
+.movie-title{
+    text-align: center;
+}
+
+
+
+.actor-image{
+  height:30vh
+}
+
+.movie-grid{
+  display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+}
+
+.wrapper {
+  flex: 25%;
+  // @media (max-width: 600px) {
+  //     flex: 100%;
+  // }
+  // @media (min-width: 900px) {
+  //     flex: 50%;
+  // }
+}
+
+
