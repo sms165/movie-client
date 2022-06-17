@@ -50009,7 +50009,7 @@ $RefreshReg$(_c, "Navbar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","url:../assets/logo-white-small.svg":"hyMo9","./navbar.scss":"eqSoH","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react-router-dom":"kjA5T","react-bootstrap/Nav":"io07g","react-router":"7kx4R"}],"hyMo9":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap":"h2YVd","url:../assets/logo-white-small.svg":"hyMo9","./navbar.scss":"eqSoH","react-router-dom":"kjA5T","react-router":"7kx4R","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"hyMo9":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('3VpAv') + "logo-white-small.ec888b18.svg";
 
 },{"./helpers/bundle-url":"7B0nW"}],"eqSoH":[function() {},{}],"fZtM6":[function(require,module,exports) {
