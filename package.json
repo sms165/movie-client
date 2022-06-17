@@ -35,6 +35,7 @@
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
     "@parcel/transformer-sass": "^2.0.0-rc.0",
+    "gh-pages": "^4.0.0",
     "parcel": "^2.0.0-nightly.841",
     "parcel-bundler": "^1.12.5"
   }
