@@ -7,9 +7,7 @@
     "start": "parcel",
     "watch": "parcel watch",
     "build": "parcel build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -26,19 +24,13 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@parcel/transformer-svg-react": "^2.6.0",
-    "@redux-devtools/extension": "^3.2.2",
-    "@reduxjs/toolkit": "^1.8.2",
     "axios": "^0.27.2",
-    "parcel": "^2.0.0-rc.0",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.1.0",
     "react-player": "^2.10.1",
-    "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0",
-    "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.9"
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "@parcel/transformer-image": "^2.0.0-rc.0",
