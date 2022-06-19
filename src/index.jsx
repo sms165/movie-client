@@ -4,18 +4,29 @@ import  ReactDOM  from "react-dom";
 import { createRoot } from "react-dom/client";
 
 
+import { Provider } from "react-redux";
+
+import { configureStore } from "@reduxjs/toolkit";
+import { createStore } from "redux";
+
+
 import { MainView } from "./components/main-view/main-view";
+import {moviesApp} from "./reducers/reducers";
+
+
 
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
+
+const store = createStore(moviesApp, composeWithDevTools());
 
 // Main component 
 class MovieApplication extends React.Component {
   render() {
     return (
-      
+      <Provider store={store}>
       <MainView />
-      
+      </Provider>
     );
   }
 }
