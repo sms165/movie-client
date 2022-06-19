@@ -14,6 +14,8 @@ import {
 import { Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 
+
+
 import { LoginView } from "../login-view/login-view";
 import { RegistrationView } from "../registration-view/registration-view";
 import { MovieCard } from "../movie-card/movie-card";
@@ -27,9 +29,19 @@ import { DirectorView } from "../director-view/director-view";
 import { Navbar } from "../navbar/navbar";
 import { UserView } from "../user-view/user-view";
 
-// import {DirectorView} from "../director-view";
-// import {ActorView} from "../actor-view";
-// import {GenreView} from "../genre-view";
+
+// //Redux
+// import { setMovies } from '../../actions/actions';
+// import { connect } from "react-redux";
+//  import { moviesApp } from "../../reducers/reducers"
+
+//Redux
+import { setMovies } from "../../redux/movieSlice";
+import { connect } from "react-redux";
+import { store } from "../../redux/store"
+
+
+
 
 export function MainView(props) {
   // constructor() {
@@ -95,7 +107,8 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        setMovies(response.data);
+       store.dispatch(setMovies(response.data));
+        //setMovies(response.data);
       })
       .catch(function (error) {
         console.log(error);
