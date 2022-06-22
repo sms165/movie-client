@@ -24,6 +24,8 @@ export function MovieView(props) {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
   const [favorites, setFavorites] = useState([]);
+
+  const url = "https://www.youtube.com/watch?v=ysz5S6PUM-U?showinfo=0&enablejsapi=1&origin=http://localhost:1234";
   
 
   const [director, setDirector] = "useState";
@@ -196,7 +198,7 @@ export function MovieView(props) {
             {console.log(user)}
           </Container>
 
-          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
+          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen crossOrigin="anonymous" /> */}
 
           {/* <video width="560" height="315"  src="//v.traileraddict.com/109699"   crossOrigin="anonymous"/> */}
           {/* <link src="https://www.youtube.com/watch?v=hxyp_LkKDdk " /> */}
@@ -204,7 +206,7 @@ export function MovieView(props) {
           {/* <div > <iframe frameBorder="0" type="text/html" src="//v.traileraddict.com/109699"  width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
            */}
 
-          {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}
+          {/* <ReactPlayer url={url} crossOrigin="anonymous" /> */}
 
           {/* <ReactPlayer url={`https://www.youtube.com/watch?v=hxyp_LkKDdk${trail}`} crossOrigin="anonymous" /> */}
           <div className="backbtn">

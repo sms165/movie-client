@@ -30,15 +30,15 @@ import { Navbar } from "../navbar/navbar";
 import { UserView } from "../user-view/user-view";
 
 
-// //Redux
-// import { setMovies } from '../../actions/actions';
-// import { connect } from "react-redux";
-//  import { moviesApp } from "../../reducers/reducers"
+//Redux
+import { setMovies } from '../../actions/actions';
+import { connect } from "react-redux";
+import { moviesApp } from "../../reducers/reducers"
 
 //Redux
-import { setMovies } from "../../redux/movieSlice";
-import { connect } from "react-redux";
-import { store } from "../../redux/store"
+//import { setMovies } from "../../redux/movieSlice";
+//import { connect } from "react-redux";
+//import { store } from "../../redux/store"
 
 
 
@@ -107,7 +107,7 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-       store.dispatch(setMovies(response.data));
+       this.props.setMovies(response.data);
         //setMovies(response.data);
       })
       .catch(function (error) {

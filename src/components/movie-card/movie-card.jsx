@@ -21,7 +21,7 @@ export class MovieCard extends React.Component {
         <Link to={`/movies/${movie.title}`}>
         <Card.Img variant="top" src={movie.imageUrl} crossOrigin="anonymous" />
         </Link>
-        <Card.Body class="style-card">
+        <Card.Body className="style-card">
           <Card.Title>{movie.title}</Card.Title>
           
           <Card.Text>{movie.description}</Card.Text>

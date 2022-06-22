@@ -10,42 +10,65 @@ import Nav from 'react-bootstrap/Nav'
 export function Navbar({ user }) {
   const activeUser = localStorage.getItem("user");
 
-  const [active, setActive] = useState("default");
+  //const [active, setActive] = useState("default");
 
   function onLoggedOut() {
     localStorage.clear();
     window.open("/", "_self");
   }
 
+  function menu(){
+    return(
+      <nav>
+    <NavLink
+  to="/"
+  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+>
+  Users
+</NavLink>
+<NavLink
+  to="/actor"
+  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
+>
+  Users
+</NavLink>
+  </nav>
+    )
+    }
+
   return (
     <Navbar className="main-nav " sticky="top" expand="lg" variant="dark">
       <Container>
+     
         <Navbar.Brand>
           <img src={Logo} alt="myFlix Logo" height="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+       
           <Nav className="ml-auto justify-content-end  ">
             <div className="menu">
+              
               <Nav.Item>
-              {/* <Nav.Link eventKey={1}> */} 
+           
+               
                 <Link
-                  to="/"
-                  className={({ isActive }) =>
-                    isActive ? "lactive-class" : "not-active-class"
-                  }
+                  to="/" 
+                  activeClassName='is-active'
+                  // className={({ isActive }) =>
+                  //   isActive ? "lactive-class" : "not-active-class"
+                  // }
                 >
                   MOVIES
                 </Link>
-                {/* </Nav.Link> */}
+                
               </Nav.Item>
               <Nav.Item>
                 <Link
                   to="/actor"
                   tabIndex="1"
-                  className={({ isActive }) =>
-                    isActive ? "lactive-class" : "not-active-class"
-                  }
+                  
+                  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
                   ACTORS
                 </Link>
@@ -54,9 +77,7 @@ export function Navbar({ user }) {
                 <Link
                   to="/movies/director"
                   tabIndex="2"
-                  className={({ isActive }) =>
-                    isActive ? "lactive-class" : "not-active-class"
-                  }
+                  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
                   DIRECTORS
                 </Link>
@@ -65,9 +86,7 @@ export function Navbar({ user }) {
                 <Link
                   to="/genre"
                   tabIndex="3"
-                  className={({ isActive }) =>
-                    isActive ? "lactive-class" : "not-active-class"
-                  }
+                  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
                   GENRES
                 </Link>
@@ -76,9 +95,7 @@ export function Navbar({ user }) {
                 <Link
                   to={`/profile/${activeUser}`}
                   tabIndex="4"
-                  className={({ isActive }) =>
-                    isActive ? "lactive-class" : "not-active-class"
-                  }
+                  className={({ isActive }) => (isActive ? 'active' : 'inactive')}
                 >
                   PROFILE
                 </Link>
@@ -105,6 +122,7 @@ export function Navbar({ user }) {
          </ul> */}
             </div>
           </Nav>
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
