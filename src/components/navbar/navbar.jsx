@@ -54,7 +54,7 @@ export function Navbar({ user }) {
                
                 <Link
                   to="/" 
-                  activeClassName='is-active'
+                  activeclassName='is-active'
                   // className={({ isActive }) =>
                   //   isActive ? "lactive-class" : "not-active-class"
                   // }

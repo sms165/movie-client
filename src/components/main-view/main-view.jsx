@@ -31,14 +31,15 @@ import { UserView } from "../user-view/user-view";
 
 
 //Redux
-import { setMovies } from '../../actions/actions';
-import { connect } from "react-redux";
-import { moviesApp } from "../../reducers/reducers"
+// import { setMovies } from '../../actions/actions';
+// import { connect } from "react-redux";
+// import { moviesApp } from "../../reducers/reducers"
 
-//Redux
-//import { setMovies } from "../../redux/movieSlice";
-//import { connect } from "react-redux";
-//import { store } from "../../redux/store"
+Redux
+import { setMovies } from "../../redux/movieSlice";
+import { connect } from "react-redux";
+import { store } from "../../redux/store";
+
 
 
 
@@ -53,10 +54,11 @@ export function MainView(props) {
   //     registered: null,
   //   };
   // }
-  const [movies, setMovies] = useState([]);
+  //  const [movies, setMovies] = useState([]);
   const [user, setUser] = useState(props.user);
   const [actors, setActors] = useState([]);
   const [genres, setGenres] = useState([]);
+  
 
   // const navigate= useNavigate();
   // componentDidMount() {
@@ -107,7 +109,7 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-       this.props.setMovies(response.data);
+        store.dispatch(setMovies(response.data));
         //setMovies(response.data);
       })
       .catch(function (error) {
@@ -187,10 +189,11 @@ export function MainView(props) {
   // }
 
   return (
+    
     <Router>
       <div className="main-view">
         {user && <Navbar />}
-
+        
         {/* <div className="logout">
           <button
             onClick={() => {
@@ -354,3 +357,9 @@ export function MainView(props) {
     // )}
   );
 }
+
+let mapStateToProps = state => {
+  return { movies: state.movies }
+}
+
+export default connect(mapStateToProps, { setMovies })(MainView);

@@ -9,10 +9,10 @@ import { createRoot } from "react-dom/client";
 
 //Redux
 import { Provider } from 'react-redux';
-//import {store} from './redux/store'
-import axios from 'axios';
-import {createStore} from 'redux';
-import moviesApp from './reducers/reducers';
+import {store} from './redux/store'
+
+//import {createStore} from 'redux';
+//import moviesApp from './reducers/reducers';
 
 
 import { MainView } from "./components/main-view/main-view";
@@ -23,7 +23,7 @@ import { MainView } from "./components/main-view/main-view";
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
-const store = createStore(moviesApp);
+// const store = createStore(moviesApp);
 
 // Main component 
 class MovieApplication extends React.Component {
