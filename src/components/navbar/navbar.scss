@@ -18,6 +18,12 @@ $btn-color: rgb(89, 169, 240);
     display: inline;
     list-style-type:none;
     padding-right: 8px;
+
+    .logout{
+        margin-left: 5px;
+    }
+
+    
    
   }
    
@@ -27,9 +33,7 @@ $btn-color: rgb(89, 169, 240);
     float: right !important;
 }
 
-.menu {
-    float: right;
-}
+
 
 a{
     color: white !important;
@@ -50,12 +54,18 @@ a:active{
     padding: 5px;
     border-radius: 25px;
     font-weight: bold;
+   
     
 }
 
 .logout:hover{
     background-color: white !important;
 }
+
+.active {
+    color: $logo-red !important;
+  }
+
 
   
 
