@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Navbar, Container, Nav, Button, Link,  } from "react-bootstrap";
+import { Navbar, Container, Nav, Button, Link } from "react-bootstrap";
 import Logo from "url:../assets/logo-white-small.svg";
 import "./navbar.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { NavLink } from 'react-router';
-import Nav from 'react-bootstrap/Nav';
-import {useLocation} from "react-router-dom";
+import { NavLink } from "react-router";
+import Nav from "react-bootstrap/Nav";
+import { useLocation } from "react-router-dom";
 
 export function Navbar({ user }) {
   const activeUser = localStorage.getItem("user");
@@ -21,74 +21,37 @@ export function Navbar({ user }) {
   }
 
   return (
-    <Navbar  className="main-nav " sticky="top" expand="lg" variant="dark">
-      <Container >
+    <Navbar className="main-nav " sticky="top" expand="lg" variant="dark">
+      <Container>
         <Navbar.Brand>
           <img src={Logo} alt="myFlix Logo" height="100px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav activeKey={location.pathname} className="ml-auto justify-content-end  ">
-           
-             
-              {/* <Nav.Link eventKey={1}> */} 
-                <Nav.Link
-                  href="/"
-                  
-                >
-                  MOVIES
-                </Nav.Link>
-                {/* </Nav.Link> */}
-             
-                <Nav.Link
-                  href="/actor"
-                  
-                >
-                  ACTORS
-                </Nav.Link>
-              
-                <Nav.Link
-                  href="/movies/director"
-                  
-                >
-                  DIRECTORS
-                </Nav.Link>
-              
-                <Nav.Link
-                  href="/genre"
-                  
-                >
-                  GENRES
-                </Nav.Link>
-              
-                <Nav.Link
-                  href={`/profile/${activeUser}`}
-                 
-                >
-                  PROFILE
-                </Nav.Link>
-              
-              {/* <ul>
-            <li><a  className='movies' eventkey="movies"  href="/">MOVIES</a></li>
-            <li><a className='actors' eventkey="actors" href="/actor">ACTORS</a></li>
-            <li><a className='directors' href="/movies/director">DIRECTORS</a></li>
-            <li><a className='genres' href="/genre">GENRES</a></li>
-            <li><a className='profile' href={`/profile/${activeUser}`}>PROFILE</a></li>
-            <li> */}
-            
-                <button
-                  className="logout"
-                  onClick={() => {
-                    onLoggedOut();
-                  }}
-                >
-                  LOGOUT
-                </button>
-              
-              {/* </li>
-            
-         </ul> */}
-            
+          <Nav
+            activeKey={location.pathname}
+            className="ml-auto justify-content-end  "
+          >
+            {/* <Nav.Link eventKey={1}> */}
+            <Nav.Link href="/">MOVIES</Nav.Link>
+            {/* </Nav.Link> */}
+
+            <Nav.Link href="/actor">ACTORS</Nav.Link>
+
+            <Nav.Link href="/movies/director">DIRECTORS</Nav.Link>
+
+            <Nav.Link href="/genre">GENRES</Nav.Link>
+
+            <Nav.Link href={`/profile/${activeUser}`}>PROFILE</Nav.Link>
+
+            <button
+              className="logout"
+              onClick={() => {
+                onLoggedOut();
+              }}
+            >
+              LOGOUT
+            </button>
           </Nav>
         </Navbar.Collapse>
       </Container>
