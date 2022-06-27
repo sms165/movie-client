@@ -33,6 +33,12 @@ import { UserView } from "../user-view/user-view";
 // import {ActorView} from "../actor-view";
 // import {GenreView} from "../genre-view";
 
+// import action
+import{setMovies, setActors, setGenres, setUsers} from "../../actions/actions";
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+
 export function MainView(props) {
   // constructor() {
   //   super();
@@ -43,10 +49,18 @@ export function MainView(props) {
   //     registered: null,
   //   };
   // }
-  const [movies, setMovies] = useState([]);
-  const [user, setUser] = useState(props.user);
-  const [actors, setActors] = useState([]);
-  const [genres, setGenres] = useState([]);
+  // const [movies, setMovies] = useState([]);
+  // const [user, setUser] = useState(props.user);
+  // const [actors, setActors] = useState([]);
+  // const [genres, setGenres] = useState([]);
+
+  const movies = useSelector((state) => state.movies);
+  const actors = useSelector((state) => state.actors);
+  const genres = useSelector((state) => state.genres);
+  const user = useSelector((state) => state.users);
+  
+
+  const dispatch = useDispatch();
 
   // const navigate= useNavigate();
   // componentDidMount() {
@@ -63,7 +77,8 @@ export function MainView(props) {
   useEffect(() => {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      setUser(localStorage.getItem("user"));
+      const userData= localStorage.getItem("user")
+      dispatch(setUsers(userData));
     }
     getMovies(accessToken);
     getActors(accessToken);
@@ -78,7 +93,7 @@ export function MainView(props) {
 
   function onLoggedIn(authData) {
     console.log(authData);
-    setUser(authData.user.userName);
+    setUsers(authData.user.userName);
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.userName);
@@ -88,7 +103,7 @@ export function MainView(props) {
   function onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
-    setUser("");
+    setUsers("");
   }
 
   function getMovies(token) {
@@ -97,7 +112,7 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        setMovies(response.data);
+        dispatch(setMovies(response.data));
       })
       .catch(function (error) {
         console.log(error);
@@ -110,7 +125,7 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        setActors(response.data);
+        dispatch(setActors(response.data));
       })
       .catch(function (error) {
         console.log(error);
@@ -123,7 +138,7 @@ export function MainView(props) {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
-        setGenres(response.data);
+        dispatch(setGenres(response.data));
       })
       .catch(function (error) {
         console.log(error);

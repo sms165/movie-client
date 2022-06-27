@@ -8,6 +8,8 @@ import {Link} from 'react-router-dom'
 import { Card, Container } from "react-bootstrap";
 import {Button} from "react-bootstrap";
 
+
+
 export class MovieCard extends React.Component {
   render() {
     const { movie } = this.props;
