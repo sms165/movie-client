@@ -196,17 +196,15 @@ export function MovieView(props) {
             {console.log(user)}
           </Container>
 
-          {/* <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen /> */}
-
-          {/* <video width="560" height="315"  src="//v.traileraddict.com/109699"   crossOrigin="anonymous"/> */}
-          {/* <link src="https://www.youtube.com/watch?v=hxyp_LkKDdk " /> */}
-
-          {/* <div > <iframe frameBorder="0" type="text/html" src="//v.traileraddict.com/109699"  width="560" height="315" allowFullScreen crossOrigin="anonymous" > </iframe> </div>
-           */}
-
-          {/* <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' /> */}
-
-          {/* <ReactPlayer url={`https://www.youtube.com/watch?v=hxyp_LkKDdk${trail}`} crossOrigin="anonymous" /> */}
+          <Container>
+          <div className="actors">
+              <div className="label h2">Movie Trailer: </div>
+              <Row>
+          <iframe width="560" height="315" src={movie.trailerUrl}  title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    </Row>
+                    </div>
+                   
+         </Container>
           <div className="backbtn">
             <Button
               variant="custom"
@@ -222,3 +220,4 @@ export function MovieView(props) {
     </Container>
   );
 }
+

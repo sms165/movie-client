@@ -9,3 +9,11 @@
     color:white;
     font-family: 'Joan', serif;
   }
+
+
+  .director-card:hover{
+    .card-title{
+        color: #F90606;
+    }
+    opacity: .5;
+  }

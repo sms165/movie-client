@@ -13,19 +13,23 @@ export class DirectorCard extends React.Component {
     const { director } = this.props;
 
     return (
+      <Link to={`/movies/director/${director.name}`}> 
       <Container className="director-card">
       <Card className="border-0 mb-4">
           
-        <Link to={`/movies/director/${director.name}`}> 
+        {/* <Link to={`/movies/director/${director.name}`}>  */}
         <Card.Img variant="top" src={director.portrait} crossOrigin="anonymous" />
-        </Link>
+        {/* </Link> */}
         <Card.Body className="style-card">
+        {/* <Link to={`/movies/director/${director.name}`}>  */}
           <Card.Title>{director.name}</Card.Title>
+          {/* </Link> */}
           
         </Card.Body>
         
       </Card>
       </Container>
+      </Link>
     );
   }
 }

@@ -95,6 +95,14 @@
   font-family: Joan, serif;
 }
 
+.movie-card:hover {
+  opacity: .5;
+}
+
+.movie-card:hover .card-title {
+  color: #f90606;
+}
+
 .movie-view {
   color: #fff;
   background-color: #122535;
@@ -134,6 +142,14 @@
   color: #fff;
   background-color: #122535;
   font-family: Joan, serif;
+}
+
+.actor-card:hover {
+  opacity: .5;
+}
+
+.actor-card:hover .card-title {
+  color: #f90606;
 }
 
 .actor-view {
@@ -190,6 +206,14 @@
   color: #fff;
   background-color: #122535;
   font-family: Joan, serif;
+}
+
+.director-card:hover {
+  opacity: .5;
+}
+
+.director-card:hover .card-title {
+  color: #f90606;
 }
 
 .director-view {

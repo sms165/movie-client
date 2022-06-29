@@ -10,3 +10,10 @@
     font-family: 'Joan', serif;
     text-align: center;
   }
+
+  .movie-card:hover{
+    .card-title{
+        color: #F90606;
+    }
+    opacity: .5;
+  }

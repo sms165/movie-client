@@ -13,19 +13,22 @@ export class ActorCard extends React.Component {
     const { actors } = this.props;
 
     return (
+      <Link to={`/movies/actor/${actors.name}`}>
       <Container className="actor-card">
       <Card className="border-0 mb-4">
           
-        <Link to={`/movies/actor/${actors.name}`}>
+        {/* <Link to={`/movies/actor/${actors.name}`}> */}
         <Card.Img variant="top" src={actors.portrait} crossOrigin="anonymous" />
-        </Link>
+        {/* </Link> */}
         <Card.Body class="style-card">
+        {/* <Link to={`/movies/actor/${actors.name}`}> */}
           <Card.Title>{actors.name}</Card.Title>
-          
+          {/* </Link> */}
         </Card.Body>
         
       </Card>
       </Container>
+      </Link>
     );
   }
 }
