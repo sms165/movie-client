@@ -93,7 +93,7 @@ export function MainView(props) {
 
   function onLoggedIn(authData) {
     console.log(authData);
-    setUsers(authData.user.userName);
+    dispatch(setUsers(authData.user.userName));
 
     localStorage.setItem("token", authData.token);
     localStorage.setItem("user", authData.user.userName);

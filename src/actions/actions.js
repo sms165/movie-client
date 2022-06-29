@@ -18,7 +18,7 @@ export function setGenres(value) {
   return { type: SET_GENRES, value };
 }
 
-export function setUser(value) {
+export function setUsers(value) {
   return { type: SET_USERS, value };
 }
 
