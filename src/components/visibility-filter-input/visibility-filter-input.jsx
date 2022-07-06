@@ -3,22 +3,23 @@ import { connect } from 'react-redux';
 
 import Form from 'react-bootstrap/Form';
 
+// import action
+import{setFilter} from "../../actions/actions";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
 
-import { setFilter } from '../../actions/actions';
 
 
-export function VisibilityFilterInput(props) {
-    const visibilityFilter = useSelector((state) => state.visibiltyFilter);
-
-    const dispatch = useDispatch();
-
+function VisibilityFilterInput(props) {
   return <Form.Control
     onChange={e => props.setFilter(e.target.value)}
     value={props.visibilityFilter}
-    placeholder="filter"
+    placeholder="Search by title"
   />;
 }
 
+export default connect(
+  null,
+  { setFilter }
+)(VisibilityFilterInput);

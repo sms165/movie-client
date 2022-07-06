@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./movie-card.scss";
 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+
 
 // bootstrap
 import { Card, Container } from "react-bootstrap";
@@ -16,7 +17,9 @@ export class MovieCard extends React.Component {
     
 
     return (
+      <> 
       <Link to={`/movies/${movie.title}`}>
+        
       <Container className="movie-card">
       <Card className="border-0 mb-4">
         {/* <Link to={`/actor`}>Actors</Link> */}
@@ -35,6 +38,7 @@ export class MovieCard extends React.Component {
       </Card>
       </Container>
       </Link>
+      </>
     );
   }
 }
