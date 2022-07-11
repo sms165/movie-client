@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 
-
 import axios from "axios";
 import "./main-view.scss";
 
@@ -10,7 +9,7 @@ import {
   Routes,
   useNavigate,
   Navigate,
-  Redirect
+  Redirect,
 } from "react-router-dom";
 
 import { Row } from "react-bootstrap";
@@ -28,16 +27,23 @@ import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
 import { Navbar } from "../navbar/navbar";
 import { UserView } from "../user-view/user-view";
+import { MovieList } from "../movies-list/movies-list";
 
 // import {DirectorView} from "../director-view";
 // import {ActorView} from "../actor-view";
 // import {GenreView} from "../genre-view";
 
 // import action
-import{setMovies, setActors, setGenres, setUsers} from "../../actions/actions";
+import {
+  setMovies,
+  setActors,
+  setGenres,
+  setUsers,
+} from "../../actions/actions";
 
 // redux
 import { useDispatch, useSelector } from "react-redux";
+import { MoviesList } from "../movies-list/movies-list";
 
 export function MainView(props) {
   // constructor() {
@@ -58,7 +64,6 @@ export function MainView(props) {
   const actors = useSelector((state) => state.actors);
   const genres = useSelector((state) => state.genres);
   const user = useSelector((state) => state.users);
-  
 
   const dispatch = useDispatch();
 
@@ -77,7 +82,7 @@ export function MainView(props) {
   useEffect(() => {
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
-      const userData= localStorage.getItem("user")
+      const userData = localStorage.getItem("user");
       dispatch(setUsers(userData));
     }
     getMovies(accessToken);
@@ -159,7 +164,7 @@ export function MainView(props) {
       if (!directors.includes(movie.director)) {
         directors.push(movie.director);
       }
-    });    
+    });
     return removeDuplicates(directors, "name");
   }
 
@@ -213,11 +218,12 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  movies.map((m) => (
-                    <Col md={3} key={m._id}>
-                      <MovieCard movie={m} />
-                    </Col>
-                  ))
+                  <MoviesList movies={movies} actors={actors} />
+                  // movies.map((m) => (
+                  //   <Col md={3} key={m._id}>
+                  //     <MovieCard movie={m} />
+                  //   </Col>
+                  // ))
                 )
               }
             />
@@ -240,11 +246,12 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  actors.map((a) => (
-                    <Col md={3} key={a._id}>
-                      <ActorCard actors={a} />
-                    </Col>
-                  ))
+                  <MoviesList movies={movies} actors={actors} />
+                  // actors.map((a) => (
+                  //   <Col md={3} key={a._id}>
+                  //     <ActorCard actors={a} />
+                  //   </Col>
+                  // ))
                 )
               }
             />
@@ -255,9 +262,8 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  
                   genres.map((a) => (
-                    <Col md={5}  key={a._id}>
+                    <Col md={5} key={a._id}>
                       <GenreCard genres={a} />
                     </Col>
                   ))
@@ -294,7 +300,7 @@ export function MainView(props) {
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
                   getDirectors(movies).map((m) => (
-                    <Col md={3} key={m._id}>
+                    <Col md={3} key={m.name}>
                       <DirectorCard director={m} />
                     </Col>
                   ))
@@ -308,25 +314,27 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <DirectorView/>
+                  <DirectorView />
                 )
               }
             />
 
-<Route
+            <Route
               path="/profile/:userName"
               element={
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
-                ) : 
-                  <UserView movies />
-                
+                ) : (
+                  <UserView />
+                )
               }
             />
 
             <Route
               path="/register"
-              element={user ? <Navigate replace to="/" /> : <RegistrationView />}
+              element={
+                user ? <Navigate replace to="/" /> : <RegistrationView />
+              }
             />
           </Routes>
         </Row>

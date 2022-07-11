@@ -177,10 +177,6 @@
   display: flex;
 }
 
-.wrapper {
-  flex: 25%;
-}
-
 .genreImg {
   color: #fff;
   text-align: center;
@@ -368,6 +364,15 @@ a:active {
   text-align: center;
   background-color: #1a354b;
   font-family: Joan, serif;
+}
+
+.filter {
+  white-space: nowrap;
+  margin: auto;
+}
+
+.filter-row {
+  width: 100vw;
 }
 
 .my-flix {

@@ -9,6 +9,8 @@ import Nav from "react-bootstrap/Nav";
 import { useLocation } from "react-router-dom";
 import {  Form } from 'react-bootstrap';
 
+// import MovieList from "../movies-list/movies-list"
+
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
 export function Navbar({ user }) {
@@ -29,9 +31,6 @@ export function Navbar({ user }) {
         <Navbar.Brand><Nav.Link href="/">
           <img src={Logo} alt="myFlix Logo" height="100px" /></Nav.Link>
         </Navbar.Brand>
-        <Form className="d-flex">
-      <VisibilityFilterInput />
-    </Form>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav
@@ -61,6 +60,9 @@ export function Navbar({ user }) {
           </Nav>
         </Navbar.Collapse>
       </Container>
+      {/* <Form className="d-flex">
+      <VisibilityFilterInput />
+    </Form> */}
     </Navbar>
   );
 }

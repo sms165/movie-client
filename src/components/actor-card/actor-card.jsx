@@ -20,7 +20,7 @@ export class ActorCard extends React.Component {
         {/* <Link to={`/movies/actor/${actors.name}`}> */}
         <Card.Img variant="top" src={actors.portrait} crossOrigin="anonymous" />
         {/* </Link> */}
-        <Card.Body class="style-card">
+        <Card.Body className="style-card">
         {/* <Link to={`/movies/actor/${actors.name}`}> */}
           <Card.Title>{actors.name}</Card.Title>
           {/* </Link> */}

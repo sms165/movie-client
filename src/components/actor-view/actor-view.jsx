@@ -21,6 +21,26 @@ export function ActorView(props) {
 
   const navigate = useNavigate();
 
+  const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+  const month =["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "Novemeber", "December"];
+
+  function dateFormat(eventDate){
+    let d = new Date(eventDate)
+    let dayOfTheWeek= weekday[d.getDay()];
+    console.log(dayOfTheWeek)
+    let dateMonth =month[d.getMonth()];
+    let dateDay = d.getDate()
+    let year =d.getFullYear();
+    console.log(dayOfTheWeek+", "+dateMonth+" "+dateDay+" "+year);
+    return dayOfTheWeek+", "+dateMonth+" "+dateDay+" "+year
+   
+
+  }
+
+  
+
+
   useEffect(() => {
     axios
       .get(baseURL + "movies/actor/" + actor, {
@@ -62,8 +82,14 @@ export function ActorView(props) {
           <br/>
           <br/>
         <h3>Birthday: </h3>
-            {actorsDetail[0].actors[0].birthYear}
+        {dateFormat(actorsDetail[0].actors[0].birthYear)}
+            {/* {actorsDetail[0].actors[0].birthYear} */}
         < br/>
+        < br/>
+        {actorsDetail[0].actors[0].deathYear !== undefined &&<>
+        <h3>Death: </h3>
+        {dateFormat(actorsDetail[0].actors[0].deathYear)}</>
+      }
         </Col>
         </Row>
         </Container>
@@ -84,7 +110,7 @@ export function ActorView(props) {
                           <div className="movie-image">
                           <a href={`/movies/${actor.title}`}>
                             <img
-                            
+
                               src={actor.imageUrl}
                               alt="movie poster"
                               crossOrigin="anonymous"
