@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "npm i @parcel/transformer-image",
   "source": "src/index.html",
-  
   "scripts": {
     "start": "parcel",
     "watch": "parcel watch",
@@ -26,6 +25,7 @@
     "@fortawesome/react-fontawesome": "^0.1.18",
     "@parcel/transformer-sass": "^2.6.2",
     "axios": "^0.27.2",
+    "buffer": "^6.0.3",
     "parcel": "^2.6.2",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
