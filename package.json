@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "npm i @parcel/transformer-image",
   "source": "src/index.html",
+  "main": "index.js",
   "scripts": {
     "start": "parcel",
     "watch": "parcel watch",
