@@ -2,7 +2,7 @@
   "name": "movie-client",
   "version": "1.0.0",
   "description": "npm i @parcel/transformer-image",
-  "source": "src/index.html",
+  "main": "src/index.html",
   "scripts": {
     "start": "parcel",
     "watch": "parcel watch",
