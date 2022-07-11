@@ -13,7 +13,7 @@ import {  Form } from 'react-bootstrap';
 
 import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 
-export function Navbar() {
+export function Navigation() {
   const activeUser = localStorage.getItem("user");
 
   const [active, setActive] = useState("default");
