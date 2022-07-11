@@ -25,7 +25,7 @@ import { GenreCard } from "../genre-card/genre-card";
 import { GenreView } from "../genre-view/genre-view";
 import { DirectorCard } from "../director-card/director-card";
 import { DirectorView } from "../director-view/director-view";
-import { Navbar } from "../navbar/navbar";
+import { NavBar } from "../navbar/navbar";
 import { UserView } from "../user-view/user-view";
 import { MovieList } from "../movies-list/movies-list";
 
@@ -198,7 +198,7 @@ export function MainView(props) {
   return (
     <Router>
       <div className="main-view">
-        {user && <Navbar />}
+        {user && <NavBar />}
 
         {/* <div className="logout">
           <button
