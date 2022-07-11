@@ -1,0 +1,438 @@
+.main-view {
+  min-height: 100vh;
+  min-width: 100vw;
+  background-color: #0d1a25;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  padding: 0;
+}
+
+.row {
+  padding: 1rem;
+}
+
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  min-height: 100vh;
+  min-width: 100vw;
+  color: gray;
+  height: 100vh;
+  background-image: url("movie-theater.f841a98f.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  margin: -1rem;
+  padding: 0;
+  font-family: Helvetica, sans-serif;
+  display: flex;
+}
+
+.card.login-card {
+  background-color: #0d1a25;
+  padding: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.btn-custom {
+  background-color: #59a9f0 !important;
+}
+
+.registration {
+  min-height: 100vh;
+  min-width: 100vw;
+  color: gray;
+  height: 100vh;
+  background-image: url("movie-theater.f841a98f.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  display: flex;
+}
+
+.error-mesg {
+  color: red;
+}
+
+.card.registration-card {
+  background-color: #0d1a25;
+  padding: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+}
+
+.btn-custom {
+  background-color: #59a9f0 !important;
+}
+
+.movie-card {
+  color: #fff;
+  background-color: #122535;
+  padding-top: 10px;
+}
+
+.style-card {
+  color: #fff;
+  text-align: center;
+  background-color: #122535;
+  font-family: Joan, serif;
+}
+
+.movie-card:hover {
+  opacity: .5;
+}
+
+.movie-card:hover .card-title {
+  color: #f90606;
+}
+
+.movie-view {
+  color: #fff;
+  background-color: #122535;
+  padding: 5px;
+  font-family: Joan, serif;
+}
+
+.image {
+  height: 50vh;
+  padding: 10px;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.backbtn {
+  padding: 5px;
+}
+
+.actor-image, .director-image {
+  height: 30vh;
+}
+
+.actor-grid, .director-grid {
+  flex-flow: wrap;
+  display: flex;
+}
+
+.actor-card {
+  color: #fff;
+  background-color: #122535;
+  padding-top: 10px;
+}
+
+.style-card {
+  color: #fff;
+  background-color: #122535;
+  font-family: Joan, serif;
+}
+
+.actor-card:hover {
+  opacity: .5;
+}
+
+.actor-card:hover .card-title {
+  color: #f90606;
+}
+
+.actor-view {
+  color: #fff;
+  background-color: #122535;
+  padding: 5px;
+  font-family: Joan, serif;
+}
+
+.image {
+  height: 50vh;
+  padding: 10px;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.actor-image {
+  height: 30vh;
+}
+
+.movie-grid {
+  flex-flow: wrap;
+  display: flex;
+}
+
+.genreImg {
+  color: #fff;
+  text-align: center;
+  background-color: #122535;
+  padding: 60px 30px;
+  font-family: Joan, serif;
+  text-decoration: none;
+}
+
+.genreImg:hover {
+  text-decoration: none;
+}
+
+
+
+.director-card {
+  color: #fff;
+  background-color: #122535;
+  padding-top: 10px;
+}
+
+.style-card {
+  color: #fff;
+  background-color: #122535;
+  font-family: Joan, serif;
+}
+
+.director-card:hover {
+  opacity: .5;
+}
+
+.director-card:hover .card-title {
+  color: #f90606;
+}
+
+.director-view {
+  color: #fff;
+  background-color: #122535;
+  padding: 5px;
+  font-family: Joan, serif;
+}
+
+.image {
+  height: 50vh;
+  padding: 10px;
+}
+
+.movie-title {
+  text-align: center;
+}
+
+.actor-image {
+  height: 30vh;
+}
+
+.movie-grid {
+  flex-flow: wrap;
+  display: flex;
+}
+
+.wrapper {
+  flex: 25%;
+}
+<<<<<<<< HEAD:dist/index.2b25e0b4.css
+
+* {
+  font-family: Joan, serif;
+}
+
+.navbar {
+  color: #fff;
+========
+* {
+  font-family: "Joan", serif;
+}
+
+.navbar {
+  color: #ffffff;
+>>>>>>>> main:dist/index.17d663fa.css
+  background-color: #122535;
+}
+
+@media (max-width: 992px) {
+  .nav-item {
+    list-style-type: none;
+  }
+}
+<<<<<<<< HEAD:dist/index.2b25e0b4.css
+
+@media (min-width: 992px) {
+  .nav-item {
+    padding-right: 8px;
+    list-style-type: none;
+    display: inline;
+  }
+
+  .nav-item .logout {
+    margin-left: 5px;
+========
+@media (min-width: 992px) {
+  .nav-item {
+    display: inline;
+    list-style-type: none;
+    padding-right: 8px;
+>>>>>>>> main:dist/index.17d663fa.css
+  }
+}
+
+.navbar-nav {
+  float: right !important;
+}
+
+<<<<<<<< HEAD:dist/index.2b25e0b4.css
+a {
+  color: #fff !important;
+}
+
+a:hover {
+  color: #f90606 !important;
+========
+.menu {
+  float: right;
+}
+
+a {
+  color: white !important;
+}
+
+a:hover {
+  color: #F90606 !important;
+>>>>>>>> main:dist/index.17d663fa.css
+  text-decoration: none !important;
+}
+
+a:active {
+<<<<<<<< HEAD:dist/index.2b25e0b4.css
+  color: #f90606 !important;
+}
+
+.logout {
+  border: 0;
+  border-radius: 25px;
+  padding: 5px;
+  font-weight: bold;
+  background-color: #f90606 !important;
+}
+
+.logout:hover {
+  background-color: #fff !important;
+}
+
+.active {
+  color: #f90606 !important;
+}
+
+========
+  color: #F90606 !important;
+}
+
+.logout {
+  background-color: #F90606 !important;
+  border: 0;
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.logout:hover {
+  background-color: white !important;
+}
+>>>>>>>> main:dist/index.17d663fa.css
+.user-view {
+  color: #fff;
+  background-color: #122535;
+  padding: 5px;
+  font-family: Joan, serif;
+}
+
+.trash {
+  justify-content: center !important;
+}
+
+.user-title {
+  text-align: center;
+}
+
+.backbtn {
+  margin-left: 40%;
+  margin-right: 40%;
+  padding: 5px;
+}
+
+.alignBtn {
+  justify-items: center;
+}
+
+.btnStyle {
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.btnStyle:hover {
+  color: #f90606;
+}
+
+.hrStyle {
+  border: 4px solid #0d1a25;
+}
+
+.userNameStyle {
+  color: #f90606;
+}
+
+.delete {
+  text-align: center;
+  font-size: xx-small;
+}
+
+.fav-card {
+  color: #fff;
+  background-color: #1a354b;
+  padding-top: 10px;
+}
+
+.fav-style-card {
+  color: #fff;
+  text-align: center;
+<<<<<<<< HEAD:dist/index.2b25e0b4.css
+  background-color: #1a354b;
+  font-family: Joan, serif;
+}
+
+.filter {
+  white-space: nowrap;
+  margin: auto;
+}
+
+.filter-row {
+  width: 100vw;
+}
+
+========
+}
+>>>>>>>> main:dist/index.17d663fa.css
+.my-flix {
+  color: #4682b4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */

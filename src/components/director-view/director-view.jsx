@@ -19,6 +19,42 @@ export function DirectorView(props) {
 
   const navigate = useNavigate();
 
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  const month = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "Novemeber",
+    "December",
+  ];
+
+  function dateFormat(eventDate) {
+    let d = new Date(eventDate);
+    let dayOfTheWeek = weekday[d.getDay()];
+    console.log(dayOfTheWeek);
+    let dateMonth = month[d.getMonth()];
+    let dateDay = d.getDate();
+    let year = d.getFullYear();
+    console.log(dayOfTheWeek + ", " + dateMonth + " " + dateDay + " " + year);
+    return dayOfTheWeek + ", " + dateMonth + " " + dateDay + " " + year;
+  }
+
   useEffect(() => {
     axios
       .get(baseURL + "movies/director/" + directorName, {
@@ -31,28 +67,24 @@ export function DirectorView(props) {
       .catch((error) => console.error(error));
   }, []);
 
-
   return (
     <Container className="movie-detail">
       {directorDetail && (
-       
-
         <div className="director-view">
           <Container className="director-size">
             <Row>
               <Col>
-            
-              <div className="actor-image">
-                <img
-                  src={directorDetail[0].director.portrait}
-                  alt="actor image"
-                  crossOrigin="anonymous"
-                  className="image rounded float-left"
-                />
+                <div className="actor-image">
+                  <img
+                    src={directorDetail[0].director.portrait}
+                    alt="actor image"
+                    crossOrigin="anonymous"
+                    className="image rounded float-left"
+                  />
                 </div>
-                </Col>
+              </Col>
 
-                <Col>
+              <Col>
                 {/* <p className="h6">{directorDetail[0].director.name}</p> */}
                 <h1>{directorDetail[0].director.name}</h1>
                 <br />
@@ -62,33 +94,38 @@ export function DirectorView(props) {
                 <br />
                 <br />
                 <h3>Birthday: </h3>
-                {directorDetail[0].director.birthYear}
-              
-            
-            <br />
-            </Col>
+                {dateFormat(directorDetail[0].director.birthYear)}
+                <br />
+                <br />
+
+                {directorDetail[0].director.deathYear !== undefined && (
+                  <>
+                    <h3>Death: </h3>
+                    {dateFormat(directorDetail[0].director.deathYear)}
+                  </>
+                )}
+              </Col>
             </Row>
           </Container>
 
-          <Container  >
+          <Container>
             <Row>
-            <div className="director-movies">
-              <h2>Movies: </h2>
-              
+              <div className="director-movies">
+                <h2>Movies: </h2>
+
                 <Col className="movie-grid">
                   {directorDetail.map((director, index) => (
                     <div key={director}>
                       <Row>
                         <Col xs={true} md={true}>
                           <div className="movie-image">
-                          <a href={`/movies/${director.title}`}>
-                            <img
-                            
-                              src={director.imageUrl}
-                              alt="movie poster"
-                              crossOrigin="anonymous"
-                              className="image "
-                            />
+                            <a href={`/movies/${director.title}`}>
+                              <img
+                                src={director.imageUrl}
+                                alt="movie poster"
+                                crossOrigin="anonymous"
+                                className="image "
+                              />
                             </a>
                           </div>
                           <p className="h6 text-center">{director.title}</p>
@@ -97,11 +134,9 @@ export function DirectorView(props) {
                     </div>
                   ))}
                 </Col>
-              
-            </div>
+              </div>
             </Row>
           </Container>
-
 
           <div className="backbtn">
             <Button

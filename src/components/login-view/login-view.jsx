@@ -57,7 +57,9 @@ export function LoginView(props) {
       props.onLoggedIn(data);
     })
     .catch(e=> {
-      console.log('no such user', userName, password)
+      console.log('no such user', userName, password);
+      alert('Wrong username or password!');
+
     });
   }
   };
@@ -95,7 +97,7 @@ export function LoginView(props) {
                   <Form.Group controlId="formPassword">
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
-                      type="text"
+                      type="password"
                       placeholder="Password"
                       value={password}
                       onChange={e => setPassword(e.target.value)}
