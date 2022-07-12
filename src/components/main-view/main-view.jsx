@@ -65,7 +65,11 @@ export function MainView(props) {
   const genres = useSelector((state) => state.genres);
   const user = useSelector((state) => state.users);
 
+  const [director, setDirector]= useState([]);
+
   const dispatch = useDispatch();
+
+ 
 
   // const navigate= useNavigate();
   // componentDidMount() {
@@ -80,6 +84,7 @@ export function MainView(props) {
 
   // instead of componentDidMount
   useEffect(() => {
+    
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       const userData = localStorage.getItem("user");
@@ -88,6 +93,9 @@ export function MainView(props) {
     getMovies(accessToken);
     getActors(accessToken);
     getGenres(accessToken);
+    setDirector(getDirectors(movies));
+    
+    
   }, [user]);
 
   // setSelectedMovie(newSelectedMovie) {
@@ -165,7 +173,7 @@ export function MainView(props) {
         directors.push(movie.director);
       }
     });
-    return removeDuplicates(directors, "name");
+    return (removeDuplicates(directors, "name"));
   }
 
   // onRegister(registered) {
@@ -299,11 +307,12 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  getDirectors(movies).map((m) => (
-                    <Col md={3} key={m.name}>
-                      <DirectorCard director={m} />
-                    </Col>
-                  ))
+                  <MoviesList movies={movies} actors={actors} director={director} />
+                  // getDirectors(movies).map((m) => (
+                  //   <Col md={3} key={m.name}>
+                  //     <DirectorCard director={m} />
+                  //   </Col>
+                  // ))
                 )
               }
             />
