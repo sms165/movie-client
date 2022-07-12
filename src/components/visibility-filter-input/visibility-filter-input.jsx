@@ -21,6 +21,8 @@ import { useDispatch, useSelector } from "react-redux";
 
   if(location.pathname =='/'){
       inputText="Search by movie title"
+  }else if(location.pathname =='/movies/director'){
+    inputText="Search by movie director"
   }else{
       inputText="Search by actor name"
   }

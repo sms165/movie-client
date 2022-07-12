@@ -84,7 +84,7 @@ export function MainView(props) {
 
   // instead of componentDidMount
   useEffect(() => {
-    
+      // setDirector(getDirectors(movies));
     let accessToken = localStorage.getItem("token");
     if (accessToken !== null) {
       const userData = localStorage.getItem("user");
@@ -93,10 +93,14 @@ export function MainView(props) {
     getMovies(accessToken);
     getActors(accessToken);
     getGenres(accessToken);
-    setDirector(getDirectors(movies));
-    
+
+   
     
   }, [user]);
+
+  useEffect(() =>{
+    setDirector(getDirectors(movies));
+  },[])
 
   // setSelectedMovie(newSelectedMovie) {
   //   this.setState({
@@ -173,7 +177,7 @@ export function MainView(props) {
         directors.push(movie.director);
       }
     });
-    return (removeDuplicates(directors, "name"));
+    return removeDuplicates(directors, "name");
   }
 
   // onRegister(registered) {
@@ -226,7 +230,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <MoviesList movies={movies} actors={actors} />
+                  <MoviesList movies={movies} actors={actors} director={director} />
                   // movies.map((m) => (
                   //   <Col md={3} key={m._id}>
                   //     <MovieCard movie={m} />
@@ -254,7 +258,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <MoviesList movies={movies} actors={actors} />
+                  <MoviesList movies={movies} actors={actors} director={director} />
                   // actors.map((a) => (
                   //   <Col md={3} key={a._id}>
                   //     <ActorCard actors={a} />
@@ -300,13 +304,15 @@ export function MainView(props) {
                 )
               }
             />
-
+ 
             <Route
               path="/movies/director"
               element={
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
+                 
+   
                   <MoviesList movies={movies} actors={actors} director={director} />
                   // getDirectors(movies).map((m) => (
                   //   <Col md={3} key={m.name}>

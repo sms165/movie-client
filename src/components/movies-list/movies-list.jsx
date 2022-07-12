@@ -19,7 +19,7 @@ export function MoviesList(props) {
   let filteredActors = actors;
   
   
-let filteredDirector = director;
+ let filteredDirector = director;
   const location = useLocation();
   
 
