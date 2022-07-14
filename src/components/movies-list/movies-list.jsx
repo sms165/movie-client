@@ -14,12 +14,11 @@ import { useLocation } from "react-router-dom";
 
 export function MoviesList(props) {
   const { visibilityFilter } = useSelector((state) => state);
-  const { movies, actors, director } = props;
+  const { movies, actors, directors } = props;
   let filteredMovies = movies;
   let filteredActors = actors;
-  
-  
- let filteredDirector = director;
+  let filteredDirectors = directors;
+   
   const location = useLocation();
   
 
@@ -33,7 +32,7 @@ export function MoviesList(props) {
       );
     } else if (location.pathname == "/movies/director") {
       
-        filteredDirector = director.filter((m) =>
+        filteredDirectors = directors.filter((m) =>
         m.name.toLowerCase().includes(visibilityFilter.toLowerCase())
       );
     } else {
@@ -48,7 +47,7 @@ export function MoviesList(props) {
   return (
     <>
       {/* <Col md={12} style={{ margin: "1em", }}> */}
-      {console.log(director)}
+      {console.log(directors)}
       {console.log(movies)}
       <Row className="filter-row">
         <div className="filter">
@@ -76,9 +75,8 @@ export function MoviesList(props) {
         </Row>
       )}
       {location.pathname == "/movies/director" && (
-        // console.log('hello')
         <Row>
-          {filteredDirector.map((m) => (
+          {filteredDirectors.map((m) => (
             <Col md={3} key={m.name}>
               <DirectorCard director={m} />
             </Col>

@@ -65,7 +65,7 @@ export function MainView(props) {
   const genres = useSelector((state) => state.genres);
   const user = useSelector((state) => state.users);
 
-  const [director, setDirector]= useState([]);
+  
 
   const dispatch = useDispatch();
 
@@ -98,9 +98,7 @@ export function MainView(props) {
     
   }, [user]);
 
-  useEffect(() =>{
-    setDirector(getDirectors(movies));
-  },[])
+ 
 
   // setSelectedMovie(newSelectedMovie) {
   //   this.setState({
@@ -211,6 +209,7 @@ export function MainView(props) {
     <Router>
       <div className="main-view">
         {user && <NavBar />}
+        
 
         {/* <div className="logout">
           <button
@@ -230,7 +229,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <MoviesList movies={movies} actors={actors} director={director} />
+                  <MoviesList movies={movies} actors={actors} directors={getDirectors(movies)} />
                   // movies.map((m) => (
                   //   <Col md={3} key={m._id}>
                   //     <MovieCard movie={m} />
@@ -258,7 +257,7 @@ export function MainView(props) {
                 !user ? (
                   <LoginView onLoggedIn={(user) => onLoggedIn(user)} />
                 ) : (
-                  <MoviesList movies={movies} actors={actors} director={director} />
+                  <MoviesList movies={movies} actors={actors} directors={getDirectors(movies)} />
                   // actors.map((a) => (
                   //   <Col md={3} key={a._id}>
                   //     <ActorCard actors={a} />
@@ -313,7 +312,7 @@ export function MainView(props) {
                 ) : (
                  
    
-                  <MoviesList movies={movies} actors={actors} director={director} />
+                  <MoviesList movies={movies} actors={actors} directors={getDirectors(movies)} />
                   // getDirectors(movies).map((m) => (
                   //   <Col md={3} key={m.name}>
                   //     <DirectorCard director={m} />
