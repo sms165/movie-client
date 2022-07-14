@@ -15,7 +15,7 @@ export class DirectorCard extends React.Component {
     return (
       <Link to={`/movies/director/${director.name}`}> 
       <Container className="director-card">
-      <Card className="border-0 mb-4">
+      <Card className="border-0 mb-4 mw">
           
         {/* <Link to={`/movies/director/${director.name}`}>  */}
         <Card.Img variant="top" src={director.portrait} crossOrigin="anonymous" />

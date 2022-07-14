@@ -40,7 +40,7 @@ export function DirectorView(props) {
     "August",
     "September",
     "October",
-    "Novemeber",
+    "November",
     "December",
   ];
 

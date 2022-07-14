@@ -212,6 +212,10 @@
   color: #f90606;
 }
 
+.mw {
+  min-width: 20vw !important;
+}
+
 .director-view {
   color: #fff;
   background-color: #122535;
