@@ -105,7 +105,7 @@ export function MovieView(props) {
                 <div className="movie-title">
                   <span className="title h1 ">{movie.title}</span>
                   <p>
-                    <Button onClick={updateUser}>Add to favorites</Button>
+                    <Button onClick={updateUser} variant="custom">Add to favorites</Button>
                     {console.log(user)}
                   </p>
                 </div>

@@ -282,7 +282,7 @@ export function UserView(props) {
                 onClick={() => {
                   delFavMovies(movie._id);
                 }}
-                variant="primary"
+                variant="custom"
               >
                 Delete from favorites
               </Button>
