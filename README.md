@@ -70,7 +70,7 @@ Single movie view and all movies views
 ### ... as a developer, who wants to work with the project
 1. Clone or download repository ...
 ```bash
-git clone https://github.com/F3NJ0/movie_api.git
+git clone https://github.com/sms165/movie-client.git
 ```
 
 2. Run parcel to build
