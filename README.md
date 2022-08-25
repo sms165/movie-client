@@ -2,8 +2,8 @@
 
 ## Hosted version
 https://myflix-moviedb.netlify.app
-username: tester
-password: password
+* username: tester
+* password: password
 ## Description
 This project is using React to build the client-side for an application called femmovies based on its existing server-side code (REST API and database).
 
