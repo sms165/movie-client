@@ -166,7 +166,8 @@ export function UserView(props) {
   };
 
   const changePassword = () => {
-    if(userName =="tester"){
+    console.log(userName)
+    if(userName ==="tester"){
       alert("Sorry test account cannot be changed")
     }else{
     const isReq = validate();
@@ -226,7 +227,7 @@ export function UserView(props) {
   };
 
   const deleteUser = () => {
-    if(userName =="tester"){
+    if(userName ==="tester"){
       alert("Sorry test account cannot be deleted")
     }else{
     axios
