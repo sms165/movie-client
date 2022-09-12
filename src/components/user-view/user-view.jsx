@@ -166,6 +166,9 @@ export function UserView(props) {
   };
 
   const changePassword = () => {
+    if(userName =="tester"){
+      alert("Sorry test account cannot be changed")
+    }else{
     const isReq = validate();
     // if(isReq){
     //   console.log(newPassword, newPasswordTwo)
@@ -194,6 +197,7 @@ export function UserView(props) {
    else{
     setPasswordErr("Passwords don't match");
   }
+}
   };
 
   const updateUser = () => {
@@ -222,6 +226,9 @@ export function UserView(props) {
   };
 
   const deleteUser = () => {
+    if(userName =="tester"){
+      alert("Sorry test account cannot be deleted")
+    }else{
     axios
       .delete(
         `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
@@ -237,6 +244,7 @@ export function UserView(props) {
       .catch((error) => {
         console.error(error);
       });
+    }
   };
 
   function parseDate(date) {
