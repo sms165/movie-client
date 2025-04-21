@@ -67,7 +67,7 @@ const validate = () => {
     // props.onRegister(false);
     const isReq= validate();
     if(isReq){
-      axios.post('https://my-flix-careerfoundry.herokuapp.com/users', {userName: userName, password:password, name: name, email: email, birthday: birthday})
+      axios.post('https://movie-api-jb24.onrender.com/users', {userName: userName, password:password, name: name, email: email, birthday: birthday})
       .then((response) =>{
         const data = response.data;
         console.log(data)

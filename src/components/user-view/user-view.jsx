@@ -30,7 +30,7 @@ import { DeleteModal } from "./delete-modal";
 import ReactPlayer from "react-player/youtube";
 
 export function UserView(props) {
-  const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
+  const baseURL = "https://movie-api-jb24.onrender.com/";
 
   const { userName } = useParams();
   // let movie = movie.find(movie =>movie.title === {title})
@@ -97,7 +97,7 @@ export function UserView(props) {
 
   const getUser = () => {
     axios
-      .get(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+      .get(`https://movie-api-jb24.onrender.com/users/${activeUser}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
@@ -114,7 +114,7 @@ export function UserView(props) {
 
   const getMovies = () => {
     axios
-      .get("https://my-flix-careerfoundry.herokuapp.com/movies", {
+      .get("https://movie-api-jb24.onrender.com/movies", {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
@@ -178,7 +178,7 @@ export function UserView(props) {
 
     axios
       .put(
-        `https://my-flix-careerfoundry.herokuapp.com/users/${userName}/change_password`,
+        `https://movie-api-jb24.onrender.com/users/${userName}/change_password`,
         {
           oldPassword: oldPassword,
           newPassword: newPassword,
@@ -206,7 +206,7 @@ export function UserView(props) {
     if (isReq) {
       axios
         .put(
-          `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
+          `https://movie-api-jb24.onrender.com/users/${activeUser}`,
           {
             name: name,
             email: email,
@@ -232,7 +232,7 @@ export function UserView(props) {
     }else{
     axios
       .delete(
-        `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`,
+        `https://movie-api-jb24.onrender.com/users/${activeUser}`,
         { headers: { Authorization: `Bearer ${accessToken}` } }
       )
       .then((response) => {
@@ -306,7 +306,7 @@ export function UserView(props) {
     console.log(id);
     axios
       .delete(
-        `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/${id}`,
+        `https://movie-api-jb24.onrender.com/users/${activeUser}/${id}`,
         { headers: { Authorization: `Bearer ${accessToken}` } }
       )
       .then((response) => {

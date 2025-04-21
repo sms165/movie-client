@@ -9,7 +9,7 @@ import ReactPlayer from "react-player/youtube";
 import ReactPlayer from "react-player/lazy";
 
 export function MovieView(props) {
-  const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
+  const baseURL = "https://movie-api-jb24.onrender.com/";
 
   const { title } = useParams();
   // let movie = movie.find(movie =>movie.title === {title})
@@ -35,7 +35,7 @@ export function MovieView(props) {
 
   const getUser = () => {
     axios
-      .get(`https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}`, {
+      .get(`https://movie-api-jb24.onrender.com/users/${activeUser}`, {
         headers: { Authorization: `Bearer ${accessToken}` },
       })
       .then((response) => {
@@ -53,7 +53,7 @@ export function MovieView(props) {
   const updateUser = () => {
     axios
       .post(
-        `https://my-flix-careerfoundry.herokuapp.com/users/${activeUser}/${id}`,
+        `https://movie-api-jb24.onrender.com/users/${activeUser}/${id}`,
         {
           favorites: favorites,
         },

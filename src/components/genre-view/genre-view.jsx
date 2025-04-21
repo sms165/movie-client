@@ -14,7 +14,7 @@ import {
 } from "react-bootstrap";
 
 export function GenreView(props) {
-  const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
+  const baseURL = "https://movie-api-jb24.onrender.com/";
 
   const { genres } = useParams();
   // let movie = movie.find(movie =>movie.title === {title})

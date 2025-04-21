@@ -123,7 +123,7 @@ export function MainView(props) {
 
   function getMovies(token) {
     axios
-      .get("https://my-flix-careerfoundry.herokuapp.com/movies", {
+      .get("https://movie-api-jb24.onrender.com/movies", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -136,7 +136,7 @@ export function MainView(props) {
 
   function getActors(token) {
     axios
-      .get("https://my-flix-careerfoundry.herokuapp.com/actor", {
+      .get("https://movie-api-jb24.onrender.com/actor", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -149,7 +149,7 @@ export function MainView(props) {
 
   function getGenres(token) {
     axios
-      .get("https://my-flix-careerfoundry.herokuapp.com/genre", {
+      .get("https://movie-api-jb24.onrender.com/genre", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {

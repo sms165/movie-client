@@ -6,7 +6,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Container, Row, Col, Button, Card, CardGroup } from "react-bootstrap";
 
 export function DirectorView(props) {
-  const baseURL = "https://my-flix-careerfoundry.herokuapp.com/";
+  const baseURL = "https://movie-api-jb24.onrender.com/";
 
   const { directorName } = useParams();
   // let movie = movie.find(movie =>movie.title === {title})

@@ -48,7 +48,7 @@ export function LoginView(props) {
     const isReq = validate();
     if(isReq){
     // Send request to server
-    axios.post('https://my-flix-careerfoundry.herokuapp.com/login', {
+    axios.post('https://movie-api-jb24.onrender.com/login', {
       userName: userName,
       password: password
     })
